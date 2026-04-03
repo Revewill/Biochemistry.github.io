@@ -43,10 +43,28 @@
     [Source Data](./Source%20Data/)
     ├── [RBP4.seq.fasta](./Source%20Data/RBP4.seq.fasta)
     └── [RBP4.str.pdb](./Source%20Data/RBP4.str.pdb)
-  * Including sequence in [`fasta` format](https://rest.uniprot.org/uniprotkb/P02753.fasta) and [`pdb` structure with ligand](https://www.rcsb.org/structure/1RBP); click to view web source.
+  * Including sequence in [`fasta` format](https://rest.uniprot.org/uniprotkb/P02753.fasta) and [`pdb` structure with ligand](https://www.rcsb.org/structure/1RBP); click to view web source;
+  * Check [`fasta` file](./Source%20Data/RBP4.seq.fasta) here.
+
+    ```fasta
+    >sp|P02753|RET4_HUMAN Retinol-binding protein 4 OS=Homo sapiens OX=9606 GN=RBP4 PE=1 SV=3
+    MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIV
+    AEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGND
+    DHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLA
+    RQYRLIVHNGYCDGRSERNLL
+    ```
 ---
 ### T2
 > Protein structure prediction.
+* Run prediction on [ProteinX server](https://protenix-server.com/);
+  * Submit the following sequence and set default parameters;
+
+    ```
+    MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMSATAKRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNLL
+    ```
+  * Results are in folder [Predict](./Results/Predict/) under folder [Results](./Results/);
+  * Later analysis are mostly based on this `cif` file: [RBP4_str_predict_sample_0.cif](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif).
+
 
 ---
 ### T3
