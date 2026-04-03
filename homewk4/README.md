@@ -21,13 +21,13 @@
         * Another site of RBP4 binds to receptor **[STRA6](https://www.uniprot.org/uniprotkb/Q9BX79/entry)** to transfer retinol.
       * Due to the small size of RBP4, it binds with TTR to form a tetramer to prevent its loss through renal filtration;
       * Also relevant with Type II diabetes, obesity, etc.
-    * Ligand: **retinol (vitamin A)**
+    * Ligand: [**retinol (vitamin A)**](https://pubchem.ncbi.nlm.nih.gov/compound/445354)
 
       ```smiles
-      CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CCO)C)C
+      CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/CO)/C)/C
       ```
-    * Family: **Lipocalin** family
-    * Length: 201 aa (amino acids); MW: ~21 kDa
+    * Family: **Lipocalin** family;
+    * Length: 201 aa (amino acids); MW: ~21 kDa;
     * Pathology and variants[^4].
       * Pathological variants: [**A73T**](https://web.expasy.org/variant_pages/VAR_073856.html) and [**A75T**](https://web.expasy.org/variant_pages/VAR_073857.html);
       * Molecular pathology:
@@ -44,6 +44,7 @@
     ├── [RBP4.seq.fasta](./Source%20Data/RBP4.seq.fasta)
     └── [RBP4.str.pdb](./Source%20Data/RBP4.str.pdb)
   * Including sequence in [`fasta` format](https://rest.uniprot.org/uniprotkb/P02753.fasta) and [`pdb` structure with ligand](https://www.rcsb.org/structure/1RBP); click to view web source;
+    > Note that the [`fasta` file](./Source%20Data/RBP4.seq.fasta) is the whole sequence with signaling peptide, while the downloaded [`pdb` file](./Source%20Data/RBP4.str.pdb) is the mature structure without; the [prediction structure file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) generated in [T2](#t2) is derived from the downloaded whole sequence, making it an immature structure.
   * Check [`fasta` file](./Source%20Data/RBP4.seq.fasta) here.
 
     ```fasta
@@ -64,8 +65,40 @@
     ```
   * Results are in folder [Predict](./Results/Predict/) under folder [Results](./Results/);
   * Later analysis are mostly based on this `cif` file: [RBP4_str_predict_sample_0.cif](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif).
+* Operate on `cif` file with ChimeraX
 
+    ```bash
+    # 1. Open file
+    open <path_to_cif_file>
 
+    # 2. Set basic display arguments
+    set bgColor white
+    color #1 #366d47ff
+    lighting simple
+
+    # 3. Highlight variant sites: 73A and 75A
+    select :73,75
+    show sel atoms
+    style sel ball
+    color sel #8B6508
+
+    # 4. Create labels
+    label :73 text A73T
+    label :75 text A75T
+    label height 1.5
+    label color #ffd87e
+
+    # 5. Save figure
+    select clear
+    save <path_to_png_file> width 3000 height 2000 supersample 3
+    ```
+* Acquire figures
+  * Fig.1a shows the overall view of the protein including the signaling peptide;
+![fig1a](./Processed/Predict/RBP4.pred.mut.1.png)
+  * Fig.1b shows the overall view of the protein excluding the signaling peptide and highlighting the β-barrel;
+![fig1b](./Processed/Predict/RBP4.pred.mut.2.png)
+  * Fig.1c shows the detailed image of the mutation sites inside the β-barrel.
+![fig1c](./Processed/Predict/RBP4.pred.mut.3.png)
 ---
 ### T3
 > Identify most promising bniding pocket.
