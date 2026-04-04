@@ -1,0 +1,6 @@
+Mol ID,Library,SMILES,DrugClip Score,Vina Docking Score
+STL592018,Vitas-M,O=C1C=CC(=O)N1c2ccc(cc2)-c(nc3-c4ccccc4)cc(n3)-c(cc5)ccc5N6C(=O)C=CC6=O,3.14,
+F473-2218,ChemDiv,c1cc(C)ccc1-c(cc2OCC)nc(c23)ccc(c3)C(=O)NCCN4CCN(CC4)CC,3.07,
+OSSL_321529,Princeton_BioMolecular_Research,CCOC(=O)/C=C(C)/N\N=c(cc1CC)\oc(c2)c1cc(CC3)c2O[C@@]34CCCCC4,2.83,
+STK174716,Vitas-M,CCCC\N=C(\N1CCCC)SC(\C1=O)=C/C(=O)Nc(cc2)ccc2C(=O)OCC,2.78,
+Z241121656,Enamine_screening_collection_sdf_202504,CCOC(=O)c1ccc(cc1)-n(c(C)c2C)c(n23)nc4c3c(=O)n(c(=O)n4C)CCN5CCOCC5,2.77,
