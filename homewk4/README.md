@@ -69,7 +69,7 @@
 
     ```bash
     # 1. Open file
-    open <path_to_cif_file>
+    open <path_to_cif_file> format mmcif
 
     # 2. Set basic display arguments
     set bgColor white
@@ -93,7 +93,7 @@
     save <path_to_png_file> width 3000 height 2000 supersample 3
     ```
 * Acquire figures
-  * Fig.1a shows the overall view of the protein including the signaling peptide;
+  * Fig.1a shows the overall view of the protein, with the α-helix on the left being the unsevered signaling peptide;
 ![fig1a](./Processed/Predict/RBP4.pred.mut.1.png)
   * Fig.1b shows the overall view of the protein excluding the signaling peptide and highlighting the β-barrel;
 ![fig1b](./Processed/Predict/RBP4.pred.mut.2.png)
@@ -101,7 +101,111 @@
 ![fig1c](./Processed/Predict/RBP4.pred.mut.3.png)
 ---
 ### T3
-> Identify most promising bniding pocket.
+> Identify most promising binding pocket.
+* Preparation;
+  * In the last `chimera` session (from [T2](#t2)), we may use the following command to convert the [`cif` file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) to a [`pdb` file](./Results/Pocket/RBP4.str.predict.pdb); this step is for convenience in later analysis.
+
+    ```bash
+    save <path_to_pdb_file> format pdb models #1
+    ```
+* Predict promising binding pockets in `linux`;
+  * If you are unfamiliar with operating in `linux` for bioinformatic analysis, watch [this teaching video](https://b23.tv/xMzD6oO) in bilibili to get a quick start;
+    * We first need to install `miniconda3` and `mamba`;
+
+      ```bash
+      # Change to your working directory
+      $ cd <your_working_dir>
+
+      # Install miniconda3
+      $ wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      $ bash Miniconda3-latest-Linux-x86_64.sh
+      $ source ~/.bashrc
+      # If you don't have wget, use apt or yum command lines to install wget
+
+      # Install mamba
+      $ conda install -n base mamba -c conda-forge -y
+      ```
+    * Then we need to move the [`pdb` file](./Results/Pocket/RBP4.str.predict.pdb) to our working directory.
+  * Install and run `fpocket` for pocket prediction;
+
+    ```bash
+    # Install fpocket
+    $ mamba install -c conda-forge fpocket
+
+    # Run fpocket
+    $ fpocket -f RBP4.str.predict.pdb
+    # Aftercompletion, the results are stored in a directory called RBP4.str.predict_out.
+    ```
+  * View [results](./Results/Pocket/RBP4.str.predict_out/).
+    * Under this folder, there are 2 files that are important;
+
+      [RBP4.str.predict_out](./Results/Pocket/RBP4.str.predict_out/)
+      ├── [RBP4.str.predict_info.txt](./Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt)
+      └── [pockets](./Results/Pocket/RBP4.str.predict_out/pockets/)
+          └── [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb)
+    * [RBP4.str.predict_info.txt](./Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt) is a table that lists the credibility (score) of each predicted pocket;
+    * [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb) is a `pdb` file that depicts all atoms predicted to form the most possible pocket among all.
+* Visualization in ChimeraX.
+  * Pipeline;
+    * Open files and set basic outlook;
+
+      ```bash
+      # Open files
+      open <path_to_cif_file> format mmcif
+      open <path_to_atm.pdb_file>
+
+      # Set background and basic settings
+      set bgColor white
+      color #1 #366d47ff
+      lighting simple
+
+      hide #2.1 models
+      select #2
+      color sel byatom
+      style sel ball
+      ```
+    * Visualize pocket;
+
+      ```bash
+      # We can show the surface of atoms to visualize the pocket
+      show sel surface
+      color #2.2 #7cbbbeff
+      transparency 70
+      ```
+    * Determine pocket residues and highlight them;
+
+      ```bash
+      # We can determine pocket residues by setting a distance threshold, like 3.5 Å
+      select #1 & #2 :<3.5
+
+      # Save information on the pocket residues for later analysis as txt file
+      info residues sel saveFile <path_to_txt_file>
+
+      # Highlight selected residues
+      show sel atoms
+      color sel byatom
+
+      select #1 & ~sel
+      color sel lightgrey
+      transparency sel 90 target ac
+      ```
+    * Record spin movies and save figures;
+    * Show mutation sites reletive to the pocket.
+
+      ```bash
+      # Modify certain outlook
+      select #2
+      color sel lightgrey target a
+
+      # Highlight mutation sites
+      select #1:73,75
+      color sel #8B6508
+
+      label :73@ca text A73T
+      label :75@ca text A75T
+      label height 1.5
+      label color #ffd87e
+      ```
 
 ---
 ### T4
