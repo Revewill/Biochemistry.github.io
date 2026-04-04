@@ -504,7 +504,22 @@
   * 1. Hydrogen bond;
     * Run command in ChimeraX;
 
+      ```bash
+      hbonds #1.1 restrict #1.2 interModel true reveal true log true
+      Finding intermodel H-bonds
+      Finding intramodel H-bonds
+      Constraints relaxed by 0.4 angstroms and 20 degrees
+      Models used:
+        1.2 STL592018_complex.pdb R
+        1.1 STL592018_complex.pdb L
 
+      0 H-bonds
+      H-bonds (donor, acceptor, hydrogen, D..A dist, D-H..A dist):
+
+      0 hydrogen bonds found
+      ```
+    * Conclusion: there are **no hydrogen bonds** between the ligand and the protein.
+  * 2. Hydrophobic interactions;
 ---
 ### T6
 > Experimental strategies.
