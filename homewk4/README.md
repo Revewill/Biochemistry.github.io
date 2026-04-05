@@ -471,7 +471,7 @@
 > Detailed interactions.
 
 > In this section, docked `pdb` file is of the best ligand screened in [T4](#t4).
-* **Basic settings in ChimeraX;**
+* **Basic visualization in ChimeraX;**
   * Pipeline;
 
     ```bash
@@ -496,30 +496,114 @@
     ```
 
   * Acquire figures.
-    * [Fig.3a](./Processed/Interactions/interaction.1.png) shows the selected ligand structure (colored by atom);
-  ![Fig.3a](./Processed/Interactions/interaction.1.png)
-    * [Fig.3b](./Processed/Interactions/interaction.2.png) shows the relative position of the ligand to the protein and pocket.
-  ![Fig.3b](./Processed/Interactions/interaction.2.png)
+    * [Fig.3a](./Processed/Interactions/interactions.1.png) shows the selected ligand structure (colored by atom);
+  ![Fig.3a](./Processed/Interactions/interactions.1.png)
+    * [Fig.3b](./Processed/Interactions/interactions.2.png) shows the relative position of the ligand to the protein and pocket.
+  ![Fig.3b](./Processed/Interactions/interactions.2.png)
 * **Interaction hunting.**
-  * 1. Hydrogen bond;
-    * Run command in ChimeraX;
+  > I used the online analyzing platform **[PLIP](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index)** (Protein Ligand-Interaction Profiler) to analyze potential protein-ligand interactions.
+  * Input: submitted `pbd` file [STL592018.docked.pdb](./Results/Screening/STL592018.docked.pdb);
+  * Output: a [`txt` file](./Results/Interactions/report.txt) listing all interactions found and a [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse) that visualizes interactions in a PyMol session;
+    > [**PyMol**](https://www.pymol.org/) is another structure analysis software similar to **coot**; you may acquire your PyMol license by agreeing to use PyMol for educational purposes solely.
+    * Elaboration on `txt` report columns;
+
+      | Column | Name | Meaning | Example |
+      | :--- | :--- | :--- | :--- |
+      | **RESNR** | Protein residue number | Residue ID in protein chain | `38` |
+      | **RESTYPE** | Protein residue type | 3-letter amino acid code | `PHE` |
+      | **RESCHAIN** | Protein chain ID | Chain identifier | `R` |
+      | **RESNR_LIG** | Ligand residue number | Ligand residue ID | `1` |
+      | **RESTYPE_LIG** | Ligand residue type | Usually `UNL` | `UNL` |
+      | **RESCHAIN_LIG** | Ligand chain ID | Chain identifier | `L` |
+      | **DIST** | Distance | Interaction distance (Å) | `3.16` |
+      | **LIGCARBONIDX** | Ligand carbon index | Ligand C atom index | `1624` |
+      | **PROTCARBONIDX** | Protein carbon index | Protein C atom index | `311` |
+      | **LIGCOO** | Ligand coordinates | (x, y, z) in Å | `-3.952, 0.540, 6.468` |
+      | **PROTCOO** | Protein coordinates | (x, y, z) in Å | `-2.068, 0.210, 8.989` |
+      | **SIDECHAIN** | Sidechain involvement | `True` = sidechain involved | `True` |
+      | **DIST_H-A** | H to acceptor distance | Distance (Å) | `2.73` |
+      | **DIST_D-A** | Donor to acceptor distance | Distance (Å) | `3.50` |
+      | **DON_ANGLE** | Donor angle | Angle (degrees) | `139.41` |
+      | **PROTISDON** | Protein is donor? | `True` = protein donates H | `True` |
+      | **DONORIDX** | Donor atom index | PDB atom index | `947` |
+      | **DONORTYPE** | Donor atom type | e.g., `O3`, `Ng+` | `O3` |
+      | **ACCEPTORIDX** | Acceptor atom index | PDB atom index | `1614` |
+      | **ACCEPTORTYPE** | Acceptor atom type | e.g., `Nar` | `Nar` |
+      | **PROT_IDX_LIST** | Protein atom index list | Comma-separated ring atom indices | `505,506,507,508,509,510` |
+      | **CENTDIST** | Center distance | Distance between ring centers (Å) | `4.15` |
+      | **ANGLE** | Interplanar angle | Angle between ring planes (deg) | `66.37` |
+      | **OFFSET** | Ring offset | Perpendicular distance between planes (Å) | `0.59` |
+      | **TYPE** | Stacking type | `T` = T-shaped, `P` = parallel | `T` |
+      | **LIG_IDX_LIST** | Ligand atom index list | Comma-separated ring atom indices | `1621,1623,1624,1625,1626` |
+    * Summary table.
+
+      | Interaction Type | Counts | Residues Involved |
+      | :--- | :--- | :--- |
+      | Hydrophobic | 14 | 38F, 42W, 54F, 54F, 55L, 55L, 80L, 107Y, 114L, 115Q, 119D, 134Q, 138R, 153F |
+      | Hydrogen Bonds | 3 | 119D, 136S, 138R |
+      | π-Stacking | 2 | 63F, 153F |
+  * Visualize in **PyMol**.
+    * Pipeline;
 
       ```bash
-      hbonds #1.1 restrict #1.2 interModel true reveal true log true
-      Finding intermodel H-bonds
-      Finding intramodel H-bonds
-      Constraints relaxed by 0.4 angstroms and 20 degrees
-      Models used:
-        1.2 STL592018_complex.pdb R
-        1.1 STL592018_complex.pdb L
+      # First load from the pse file downloaded from PLIP
+      # Basic Settings
+      PyMOL>set antialias, 2
+      Setting: antialias set to 2.
+      PyMOL>set ray_opaque_background, 1
+      Setting: ray_opaque_background set to 1.
+      PyMOL>cmd.color_deep("cyan", 'HBonds', 0)
 
-      0 H-bonds
-      H-bonds (donor, acceptor, hydrogen, D..A dist, D-H..A dist):
+      # Show only residues involved in one specific interaction
+      PyMOL>select res, STL592018_complex_Protein & resi <RESID>
+      # <RESID> is the string of IDs of residues involved in the interaction
+      # e.g., 63+153 for π-stacking
+      PyMOL>select other, STL592018_complex_Protein & not (res or resn UNL)
+      # Selected all atoms in protein except previously selected atoms and UNL (code for the ligand)
+      PyMOL>cmd.hide("sticks"    ,"other_atoms")
+      # Hide other atoms
 
-      0 hydrogen bonds found
+      # Save as figure
+      PyMOL>ray 3500, 2500
+      # Ray is a rendering function
+      PyMOL>png <path_to_your_figure>, dpi=300
       ```
-    * Conclusion: there are **no hydrogen bonds** between the ligand and the protein.
-  * 2. Hydrophobic interactions;
+
+    * Acquire figures.
+
+      * [Fig.3c](./Processed/Interactions/interactions.3.png) shows **all interactions** detected;
+    ![Fig.3c](./Processed/Interactions/interactions.3.png)
+        > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #27FEFE">hydrogen bonds</span>, <span style="color: #717171">hydrophobic interactions</span>, <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.
+      * [Fig.3d](./Processed/Interactions/interactions.4.png) shows **hydrogen bonds** detected;
+    ![Fig.3d](./Processed/Interactions/interactions.4.png)
+        > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #27FEFE">hydrogen bonds</span>.
+        * Note that these hydrogen bonds features `C-H` bonds as proton donor, which is a result of **loose** hydrogen bond hunting; you may interpret these interactions as **electrostatic interactions or dipolar interactions** weaker than hydrogen bonds.
+      * [Fig.3e](./Processed/Interactions/interactions.5.png) shows **hydrophobic interactions** detected;
+    ![Fig.3e](./Processed/Interactions/interactions.5.png)
+        > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #717171">hydrophobic interactions</span>.
+      * [Fig.3f](./Processed/Interactions/interactions.6.png) shows **π-stackings** detected.
+    ![Fig.3f](./Processed/Interactions/interactions.6.png)
+        > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.
+  * Visualize in **LigPlot+**.
+    > **LigPot+** is a structual biology software for 2D visualization of protein-ligand interactions.
+  
+    > You may acquire academic license for and download **LigPlot+** on [this webpage](https://www.ebi.ac.uk/thornton-srv/software/LigPlus/).
+    * In the last **PyMol** session loaded from the [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse), save the session as a [`pdb` file](./Results/Interactions/RBP4.interactions.ligplot+.input.pdb) as input into **LigPlot+**;
+      * Go to `file` → `Export Molecule`;
+      * Select `PDB` in `Save as Type` module, and click `Write CONECT records for all bonds`;
+      * Save `pdb` to appointed directory.
+    * Open **LigPlot+** and set default runtime parameters (loosened to search for more potential interactions);
+      * Hydrogen-bond calculation parameters;
+        * Maximum H-A distance: 3.10 Å;
+        * Maximum D-A distance: 3.80 Å.
+      * Non-bonded contact parameters.
+        * Minimum contact distance: 3.75 Å;
+        * Maximum contact distance: 4.75 Å.
+    * Load from the [`pdb` file](./Results/Interactions/RBP4.interactions.ligplot+.input.pdb) and export as [`ps` image](./Processed/Interactions/interactions.7.ps), then convert [`ps`](./Processed/Interactions/interactions.7.ps) to [`png`](./Processed/Interactions/interactions.7.png).
+      * [Fig.3g](./Processed/Interactions/interactions.7.png) shows all interactions.
+    ![Fig.3g](./Processed/Interactions/interactions.7.png)
+
+        > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converged purple lines: π-stacking.
 ---
 ### T6
 > Experimental strategies.
