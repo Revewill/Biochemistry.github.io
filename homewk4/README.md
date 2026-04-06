@@ -500,7 +500,7 @@
   ![Fig.3a](./Processed/Interactions/interactions.1.png)
     * [Fig.3b](./Processed/Interactions/interactions.2.png) shows the relative position of the ligand to the protein and pocket.
   ![Fig.3b](./Processed/Interactions/interactions.2.png)
-* **Interaction hunting.**
+* **Interaction hunting;**
   > I used the online analyzing platform **[PLIP](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index)** (Protein Ligand-Interaction Profiler) to analyze potential protein-ligand interactions.
   * Input: submitted `pbd` file [STL592018.docked.pdb](./Results/Screening/STL592018.docked.pdb);
   * Output: a [`txt` file](./Results/Interactions/report.txt) listing all interactions found and a [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse) that visualizes interactions in a PyMol session;
@@ -604,6 +604,7 @@
     ![Fig.3g](./Processed/Interactions/interactions.7.png)
 
         > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converged purple lines: π-stacking.
+* **Structure optimization based on predicted interactions.**
 ---
 ### T6
 > Experimental strategies.
@@ -615,7 +616,7 @@
       * RBP4 has **a natural fluorescence signal at Trp107** inside its pocket;
       * When retinol binds, it absorbs this signal (quenching), causing fluorescence to decrease;
       * If the compound binds to the same pocket, it will also cause a measurable change in this signal.
-    *   Step-by-Step in the lab;
+    * Short protocol;
         * 1. Purify RBP4 protein;
         * 2. Add a fixed concentration of retinol to RBP4 in a 96-well plate;
         * 3. Add increasing concentrations of STL592018, from 0.1 nM to 100 µM, to different wells;
@@ -630,33 +631,38 @@
         * How strong it binds ($K_D$).
     * Principle;
       * Immobilized RBP4 protein molecules on a **chip** are fulshed with compound solution;
-      * When the compound binds, it changes the **refractive index** near the chip surface, generating a signal;
+      * When the compound binds, it changes the **refractive index** near the chip surface, generating a signal[^6];
       * By measuring how this signal changes over time at different concentrations, we can acquire the precise binding parameters.
-    * Step-by-Step in the lab;
-        * 1. Immobilize RBP4 on a Biacore **sensor chip** CM5 using an amine coupling kit[^6];
+    * Short protocol;
+        * 1. Immobilize RBP4 on a Biacore **sensor chip** CM5 using an amine coupling kit;
         * 2. Prepare the compound at different concentrations (*e.g.*, 1 nM to 100 µM);
         * 3. Inject each concentration over the chip (**association phase**), then flow buffer alone (**dissociation phase**);
-        * 4. Regenerate the chip with a mild buffer (*e.g.*, Glycine-HCl, pH 2.5) to remove remaining compound between injections[citation:2];
+        * 4. Regenerate the chip with a mild buffer (*e.g.*, Glycine-HCl, pH 2.5) to remove remaining compound between injections;
         * 5. Use the data to calculate kinetic parameters.
     * Key Readouts;
         * **$K_D$ (nM or µM):** The equilibrium dissociation constant: a lower $K_D$ means tighter binding;
         * **$k_{off}$ (s⁻¹):** The dissociation rate: in clinical terms, a slow dissociation rate (small $k_{off}$) is often more important for **long-lasting** effects.
 * **Assay 3: Cellular Retinol Delivery Assay Using STRA6-Expressing Cells**
     * What it measures;
-      * Assesses whether the compound affects the **physiological function** of RBP4 (its ability to deliver retinol into cells via the STRA6 receptor);.
-    * Principle; Cells engineered to express the STRA6 receptor (the "door" for RBP4) are used. You add RBP4 loaded with retinol, along with your compound. If your compound binds the pocket, it should block or alter retinol delivery, which can be measured by quantifying how much retinol gets inside the cells.
-    *   **Step-by-Step in the Lab:**
-        *   1. Culture HEK293 cells that stably express human STRA6 and the enzyme LRAT, which traps retinol inside the cell[citation:3].
-        *   2. Load purified RBP4 (wild-type and mutant) with a fluorescent retinol analog or standard retinol.
-        *   3. Pre-incubate the loaded RBP4 with your compound (STL592018) at various concentrations (0, 10 nM, 1 µM, 10 µM).
-        *   4. Add the mixture to the cells and incubate for 1-2 hours at 37°C.
-        *   5. Wash the cells thoroughly to remove unbound RBP4 and compound.
-        *   6. Measure intracellular retinol content using **HPLC** (most precise, used in seminal STRA6 studies[citation:3]), **flow cytometry** (if using a fluorescent analog), or **spectrophotometry**.
-    *   **Key Readouts:**
-        *   **Cellular retinol uptake (pmol/10⁶ cells):** Quantifies how much retinol enters the cell. You can measure if your compound reduces this uptake.
-        *   **Rescue effect on mutant RBP4:** The A73T/A75T mutant alone should deliver less retinol than wild-type. If your compound further reduces delivery, it could be harmful. An ideal compound might selectively block the mutant's binding to STRA6 without affecting the wild-type's delivery function.
+      * Assesses whether the compound affects the **physiological function** of RBP4 (its ability to deliver retinol into cells via the STRA6 receptor).
+    * Principle[^7];
+      * Cells engineered to express the STRA6 receptor;
+      * Add RBP4 loaded with retinol, along with the compound;
+      * If the compound binds the pocket, it should hamper retinol delivery, which can be measured by quantifying how much retinol gets inside the cells.
+    * Short protocol;
+        * 1. Culture HEK293 cells that stably express human STRA6 and the enzyme LRAT, which traps retinol inside the cell;
+        * 2. Load purified RBP4 with retinol;
+        * 3. Pre-incubate the loaded RBP4 with STL592018 at various concentrations (0, 10 nM, 1 µM, 10 µM);
+        * 4. Incubate the mixture with the cells;
+        * 5. Wash the cells thoroughly to remove unbound RBP4 and the compound;
+        * 6. Measure intracellular retinol content using **HPLC**, **flow cytometry** (if using a fluorescent retinol analog), or **spectrophotometry**.
+    * Key Readouts;
+        * **Cellular retinol uptake (pmol/10⁶ cells):** Quantifies how much retinol enters the cell, thereby reflecting the effect of compound binding.
 
 [^1]: [Williamson, K. A., et al. Mutations in RBP4 cause an autosomal dominant form of microphthalmia. *Am. J. Hum. Genet.* 105(3): 566-577, 2019.](https://doi.org/10.1016/j.ajhg.2019.07.010)
 [^2]: [Verma, A., et al. Clinical spectrum of RBP4-related microphthalmia. *Ophthalmology*. 128(4): 612-619, 2021.](https://doi.org/10.1016/j.ophtha.2020.09.028)
 [^3]: [Chou, C. M., et al. RBP4 retinol-binding protein. *Mol. Vis.* 26: 412-425, 2020.](https://doi.org/10.1007/s00412-020-00735-w)
 [^4]: [Chou, C. M., et al. Biochemical basis for dominant inheritance, variable penetrance, and maternal effects in RBP4 congenital eye disease. *Cell.* 161(3): 634-646, 2015.](https://doi.org/10.1016/j.cell.2015.03.006)
+[^5]: [Sharif, O., et al. Time-resolved fluorescence resonance energy transfer and surface plasmon resonance-based assays for retinoid and transthyretin binding to retinol-binding protein 4. *Analytical Biochemistry.* 393(1): 73-80, 2009.](https://doi.org/10.1016/j.ab.2009.05.038)
+[^6]: [Liedberg, B., Nylander, C., & Lundström, I. Surface plasmon resonance for gas detection and biosensing. *Sensors and Actuators.* 4: 299-304, 1983.](https://doi.org/10.1016/0250-6874(83)85036-7)
+[^7]: [Isken, A., et al. RBP4 disrupts vitamin A uptake homeostasis in a STRA6-deficient animal model for Matthew-Wood syndrome. *Cell Metabolism.* 7(3): 258-268, 2008.](https://doi.org/10.1016/j.cmet.2007.12.003)
