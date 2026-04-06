@@ -1,8 +1,8 @@
 # Homework 4
 
-> An answer `md` file for homework 4 in course *Biochemistry* by 黄悉然.
+> An answer `md` file for homework 4 in course *Biochemistry* by 黄悉然, made highly understandable.
 
-> Quickly direct to [T1](#t1), [T2](#t2), [T3](#t3), [T4](#t4), [T5](#t5) or [T6](#t6).
+> Quickly direct to [T1](#t1), [T2](#t2), [T3](#t3), [T4](#t4), [T5](#t5) or [T6](#t6). 
 ---
 ### T1
 > Select disease and protein of interest.
@@ -105,10 +105,19 @@
 
 > In this section, RBP4 structure is still based on prediction from [T2](#t2).
 * **Preparation;**
-  * In the last `chimera` session (from [T2](#t2)), we may use the following command to convert the [`cif` file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) to a [`pdb` file](./Results/Pocket/RBP4.str.predict.pdb); this step is for convenience in later analysis.
+  * In the last `chimera` session (from [T2](#t2)), we may use the following command to convert the [`cif` file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) to a [`pdb` file](./Results/Pocket/RBP4.str.predict.pdb); this step is for convenience in later analysis;
 
     ```bash
     save <path_to_pdb_file> format pdb models #1
+    ```
+  * Another approach is to convert the file in `linux` (if you're unfamiliar with `linux`, it's an operation system like `MacOS` or `Windows`) using the following commands.
+    > `apt` command is primarily used in `Ubuntu`/`Debian`; for `Red Hat`/`CentOS` users, use `yum`; for `Fedora` users, use `dnf`; for `Alpine` users, use `apk`.
+
+    ```bash
+    $ apt-get update
+    # If you are not root user, use sudo instead
+    $ apt-get install -y openbabel
+    $ obabel <path_to_cif_file> -O <path_to_pdb_file>
     ```
 * **Predict promising binding pockets in `linux`;**
   * If you are unfamiliar with operating in `linux` for bioinformatic analysis, watch [this teaching video](https://b23.tv/xMzD6oO) in bilibili to get a quick start;
@@ -605,6 +614,7 @@
 
         > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converged purple lines: π-stacking.
 * **Structure optimization based on predicted interactions.**
+  * 
 ---
 ### T6
 > Experimental strategies.
