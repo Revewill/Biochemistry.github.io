@@ -586,7 +586,7 @@
       * [Fig.3d](./Processed/Interactions/interactions.4.png) shows **hydrogen bonds** detected;
     ![Fig.3d](./Processed/Interactions/interactions.4.png)
         > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #27FEFE">hydrogen bonds</span>.
-        * Note that these hydrogen bonds features `C-H` bonds as proton donor, which is a result of **loose** hydrogen bond hunting; you may interpret these interactions as **electrostatic interactions or dipolar interactions** weaker than hydrogen bonds.
+        * Note that the lengths of these hydrogen bonds may exceed normal lengths, which is a result of **loose** hydrogen bond hunting; you may interpret these interactions as **electrostatic interactions or dipolar interactions** weaker than hydrogen bonds.
       * [Fig.3e](./Processed/Interactions/interactions.5.png) shows **hydrophobic interactions** detected;
     ![Fig.3e](./Processed/Interactions/interactions.5.png)
         > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #717171">hydrophobic interactions</span>.
@@ -609,12 +609,26 @@
         * Minimum contact distance: 3.75 Å;
         * Maximum contact distance: 4.75 Å.
     * Load from the [`pdb` file](./Results/Interactions/RBP4.interactions.ligplot+.input.pdb) and export as [`ps` image](./Processed/Interactions/interactions.7.ps), then convert [`ps`](./Processed/Interactions/interactions.7.ps) to [`png`](./Processed/Interactions/interactions.7.png).
-      * [Fig.3g](./Processed/Interactions/interactions.7.png) shows all interactions.
+      * [Fig.3g](./Processed/Interactions/interactions.7.png) shows all interactions, though slightly different from the results acquired from previous analysis as **LigPlot+** tends to compute interactions by itself.
     ![Fig.3g](./Processed/Interactions/interactions.7.png)
 
         > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converged purple lines: π-stacking.
 * **Structure optimization based on predicted interactions.**
-  * 
+  * Prediction based on personal knowledge;
+    * Summarized features of docking;
+      * Main interactions are **hydrophobic interactions** between the aromatic rings on the ligand and residues;
+      * Others include a few **weak hydrogen bonds** and **π-stackings**.
+    * Plausible modifications to enhance **affinity**;
+      > **Affinity** refers primarily to the binding strength of the ligand.
+      * **Hydrophobic interactions** are essentially saturated;
+      * **Hydrogen bonds** may be strengthened targeting the predicted sites on the ligand;
+        * The `O1` atom (the hydroxide group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is subtituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
+      * **π-stackings** may be strengthened targeting the predicted sites on the ligand.
+        * In [Fig.3f](./Processed/Interactions/interactions.6.png), the left 5-carbon ring is the main actor in π-stacking;
+      ![Fig.3f](./Processed/Interactions/interactions.6.png)
+        * Increasing **π cloud density** of the ring could strengthen the interaction, and we can achieve this by adding an **electron-donating group** at the ring.
+          * *e.g.*, `-OMe` or `-Me`.
+  * Prediction based on computer analysis.
 ---
 ### T6
 > Experimental strategies.
