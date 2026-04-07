@@ -1040,7 +1040,7 @@
       * Acquire results and reach conclusions;
       * Alternative solution: **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**.
         * Download the **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)** program, test data and test results [here](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.3c00408/suppl_file/ci3c00408_si_002.zip) or directly get the [`zip` file](./Supplementary/Interactions/HydraMap.zip);
-        * Prepare ligand file through **PyMol**;
+        * Prepare [ligand file](./Supplementary/Interactions/ligand.mol2) through **PyMol**;
           * In the last PyMol session (loaded from [docked `pdb` file](./Results/Screening/STL592018.docked.pdb)), run these commands;
 
             ```bash
