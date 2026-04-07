@@ -512,7 +512,7 @@
 * **Interaction hunting;**
   > I used the online analyzing platform **[PLIP](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index)** (Protein Ligand-Interaction Profiler) to analyze potential protein-ligand interactions.
   * Input: submitted `pbd` file [STL592018.docked.pdb](./Results/Screening/STL592018.docked.pdb);
-  * Output: a [`txt` file](./Results/Interactions/report.txt) listing all interactions found and a [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse) that visualizes interactions in a PyMol session;
+  * Output: a [`txt` file](./Results/Interactions/report.txt) listing all interactions found and a [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse) that visualizes interactions in a PyMol session, and you may also check results on [webpage](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/result/61e0171a-6322-4af5-ae71-994f8d057af2);
     > [**PyMol**](https://www.pymol.org/) is another structure analysis software similar to **coot**; you may acquire your PyMol license by agreeing to use PyMol for educational purposes solely.
     * Elaboration on `txt` report columns;
 
