@@ -18,8 +18,8 @@
     * Function (see reference on [UniProt](https://www.uniprot.org/uniprotkb/P02753/entry));
       * Transports **retinol (vitamin A)** from **liver** to peripheral tissues, particularly to the **retina** for visual cycle maintenance;
         * Binds retinol with high affinity ($K_d \in (0.1,1) \text{nM}$) within its **hydrophobic β-barrel pocket**;
-        * Another site of RBP4 binds to receptor **[STRA6](https://www.uniprot.org/uniprotkb/Q9BX79/entry)** to transfer retinol.
-      * Due to the small size of RBP4, it binds with TTR to form a tetramer to prevent its loss through renal filtration;
+        * Another site of RBP4 binds to receptor **[STRA6](https://www.uniprot.org/uniprotkb/Q9BX79/entry)** to transfer retinol; RBP4 with retinol (**holo-RBP4**) molecules have greater binding capacity with STRA6 compared to those without (**apo-RBP4**), due to conformational changes induced by RBP4 binding.
+      * Due to the small size of holo-RBP4, it binds with **TTR** to form a tetramer to prevent its loss through renal filtration;
       * Also relevant with Type II diabetes, obesity, etc.
     * Ligand: [**retinol (vitamin A)**](https://pubchem.ncbi.nlm.nih.gov/compound/445354)
 
@@ -545,6 +545,7 @@
       | **TYPE** | Stacking type | `T` = T-shaped, `P` = parallel | `T` |
       | **LIG_IDX_LIST** | Ligand atom index list | Comma-separated ring atom indices | `1621,1623,1624,1625,1626` |
     * Summary table.
+      > Note that the residue indexes below starts with `0`. For instance, the original 120 Asp is denoted 119D.
 
       | Interaction Type | Counts | Residues Involved |
       | :--- | :--- | :--- |
@@ -622,13 +623,265 @@
       > **Affinity** refers primarily to the binding strength of the ligand.
       * **Hydrophobic interactions** are essentially saturated;
       * **Hydrogen bonds** may be strengthened targeting the predicted sites on the ligand;
-        * The `O1` atom (the hydroxide group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is subtituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
+   ![Fig.3g](./Processed/Interactions/interactions.7.png)
+        * The ligand `O1` atom (the hydroxyl group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is subtituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
+        * The ligand `C18` atom in [Fig.3g](./Processed/Interactions/interactions.7.png) is close to both **Asp119** `OD1` and **Arg138** `NH1`, while `C19` is close to **Asp119** `O`, and hydrogen bonds might be created with the following methods;
+          * Subtituting `C18` with a **nitrogen** atom that potentially creates hydrogen bond with **Asp119** `OD1`;
+          * Adding a **hydroxyl** group (`-OH`) to `C18` that potentially creates hydrogen bonds with both **Asp119** `OD1` and **Arg138** `NH1`;
+          * Adding a **hydroxyl** group (`-OH`) or **amino** group (`-NH2`) to `C19` that potentially creates hydrogen bond with **Asp119** `O`.
       * **π-stackings** may be strengthened targeting the predicted sites on the ligand.
         * In [Fig.3f](./Processed/Interactions/interactions.6.png), the left 5-carbon ring is the main actor in π-stacking;
       ![Fig.3f](./Processed/Interactions/interactions.6.png)
         * Increasing **π cloud density** of the ring could strengthen the interaction, and we can achieve this by adding an **electron-donating group** at the ring.
           * *e.g.*, `-OMe` or `-Me`.
+    * Plausible modifications to enhance **selectivity**;
+      > **Selectivity** means that the ligand will bind specifically to RBP4, not other proteins alike.
+      * Run `BLAST` to find unique residues in RBP4 binding sites;
+        * Find homologous proteins in *homo sapiens*;
+          > [**BLAST**](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is an algorithm that searches for all homologous or similar sequences with the input in a reference database. [blastp](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins&PROGRAM=blastp) means [**BLAST**](https://blast.ncbi.nlm.nih.gov/Blast.cgi) for proteins.
+          * Input UniProt ID [P02753](https://www.uniprot.org/uniprotkb/P02753/entry) and run [blastp](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins&PROGRAM=blastp);
+          * From the output, we can identify 2 homologous proteins with RBP4, accession [AAB32200.1](https://www.ncbi.nlm.nih.gov/protein/AAB32200.1?report=genbank&log$=prottop&blast_rank=9&RID=X7JGN27J016) and [2QOS_C](https://www.ncbi.nlm.nih.gov/protein/2QOS_C?report=genbank&log$=prottop&blast_rank=11&RID=X7JGN27J016).
+        * Align all homologous proteins with [COBALT](https://blast.ncbi.nlm.nih.gov/tools/cobalt);
+          > [**COBALT**](https://blast.ncbi.nlm.nih.gov/tools/cobalt), or Constraint-based Multiple Alignment Tool, is an alignment algorithm that supports **structure- or function-constrained** multiple alignment analysis.
+          * Input 3 accessions: AAB32200.1, 2QOS_C, P02753 (RBP4);
+          * Download output [`fa`](./Results/Interactions/alignment.fa) and visualized [`pdf`](./Results/Interactions/alignment.pdf) files.
+
+            ```
+            >gb|AAB32200.1| apolipoprotein D, apoD [human, plasma, Peptide, 246 aa] [Homo sapiens]
+            ----------------QAFHLGKCPNPPVQENFDVNKYLGRWYEI-EKIPTTFENGRCIQ
+            ANYSLMENGKIKVL--NQELRADGTVNQIEGEATPVNLTEPAKLEVKF---SWFMPSA--
+            PYWILATDYENYALVYSCTCII--QLFHVDFAWILARNPN-LPPETVDSLKNILTSNNID
+            VKKMTVTDQ-VNCPKLSQAKEPCVESLVSQYFQTVTDYGKDLMEKVKSPELQAEAKSYFE
+            KSKEQLTPLIKKAGTELVNFLSYFVELGTQPATQ
+            >pdb|2QOS|C Chain C, Complement component 8, gamma polypeptide [Homo sapiens]
+            --------------------ASPISTIQPKANFDAQQFAGTWLLV-AVGSAARFLQEQGH
+            RAEATTLHVAPQGTAMAVSTFRKLDGICWQVRQLYGDTGVLGRFLLQARG-----ARGAV
+            HVVVAETDYQSFAVLYLERAGQL-------SVKLYARSLP-VSDSVLSGFEQRVQEAHLT
+            EDQIFYFPKYGFCEAADQFHVLDEVRR---------------------------------
+            ----------------------------------
+            >sp|P02753.3| RecName: Full=Retinol-binding protein 4; AltName: Full=Plasma retinol-binding protein; Short=PRBP; Short=RBP; Contains: RecName: Full=Plasma retinol-binding protein(1-182); Contains: RecName: Full=Plasma retinol-binding protein(1-181); Contains: RecName: Full=Plasma retinol-binding protein(1-179); Contains: RecName: Full=Plasma retinol-binding protein(1-176); Flags: Precursor [Homo sapiens]
+            MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIV
+            AEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGND
+            DHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLA
+            RQYRLIVHN-GYCDGRSERNLL--------------------------------------
+            ----------------------------------
+            ```
+        * Create and run [`R` script](./Scripts/Interactions/alignment.unique.R) to identify unique residues that form protein-ligand interactions.
+          > You can download **[RStudio](https://posit.co/download/rstudio-desktop)** to code in `R` language. If you're new to `R`, here's a [quick video tutorial](https://b23.tv/Mq2BwVG).
+          * Create [`R` script](./Scripts/Interactions/alignment.unique.R);
+
+            ```R
+            lines <- readLines("alignment.fa")
+
+            # Extract sequences with gaps preserved
+            seq_apod_full <- ""
+            seq_c8g_full <- ""
+            seq_rbp4_full <- ""
+
+            current_seq <- NULL
+            for (line in lines) {
+              if (grepl("apolipoprotein D", line, ignore.case = TRUE)) {
+                current_seq <- "apod"
+              } else if (grepl("2QOS", line, ignore.case = TRUE)) {
+                current_seq <- "c8g"
+              } else if (grepl("Retinol-binding protein 4", line, ignore.case = TRUE)) {
+                current_seq <- "rbp4"
+              } else if (!grepl("^>", line) && nchar(trimws(line)) > 0) {
+                seq_line <- trimws(line)
+                if (current_seq == "apod") {
+                  seq_apod_full <- paste0(seq_apod_full, seq_line)
+                } else if (current_seq == "c8g") {
+                  seq_c8g_full <- paste0(seq_c8g_full, seq_line)
+                } else if (current_seq == "rbp4") {
+                  seq_rbp4_full <- paste0(seq_rbp4_full, seq_line)
+                }
+              }
+            }
+
+            # Split into characters (including gaps)
+            apod_vec <- strsplit(seq_apod_full, "")[[1]]
+            c8g_vec <- strsplit(seq_c8g_full, "")[[1]]
+            rbp4_vec <- strsplit(seq_rbp4_full, "")[[1]]
+
+            # Get RBP4 sequence without gaps (for position reference)
+            rbp4_no_gap <- rbp4_vec[rbp4_vec != "-"]
+            rbp4_seq <- paste(rbp4_no_gap, collapse = "")
+
+            cat("\n=== RBP4 SEQUENCE (no gaps) ===\n")
+            cat(rbp4_seq, "\n")
+            cat(paste0("Length: ", nchar(rbp4_seq), "\n\n"))
+
+            # LigPlot+ interaction residues (mature numbering)
+            interaction_ligplot <- c(42, 54, 55, 63, 80, 107, 114, 115, 119, 134, 136, 138, 153)
+
+            # Convert to original sequence numbering (LigPlot+ + 1)
+            interaction_positions <- interaction_ligplot + 1
+
+            # Function to classify amino acid properties
+            get_property <- function(aa) {
+              hydrophobic <- c("A", "V", "L", "I", "M", "F", "W", "Y", "P", "G")
+              positive <- c("R", "K", "H")
+              negative <- c("D", "E")
+              polar <- c("S", "T", "N", "Q", "C")
+              
+              if (aa %in% hydrophobic) return("hydrophobic")
+              else if (aa %in% positive) return("positive")
+              else if (aa %in% negative) return("negative")
+              else if (aa %in% polar) return("polar")
+              else return("unknown")
+            }
+
+            # Find alignment positions for each interaction residue
+            results <- data.frame()
+
+            for (pos in interaction_positions) {
+              # Get the actual amino acid at this position in RBP4 (no-gap sequence)
+              if (pos > nchar(rbp4_seq)) {
+                next
+              }
+              rbp4_aa <- substr(rbp4_seq, pos, pos)
+              
+              # Find where this position is in the alignment (accounting for gaps)
+              non_gap_count <- 0
+              align_idx <- NA
+              for (i in 1:length(rbp4_vec)) {
+                if (rbp4_vec[i] != "-") {
+                  non_gap_count <- non_gap_count + 1
+                  if (non_gap_count == pos) {
+                    align_idx <- i
+                    break
+                  }
+                }
+              }
+              
+              if (is.na(align_idx)) {
+                next
+              }
+              
+              apod_aa <- ifelse(apod_vec[align_idx] == "-", "gap", apod_vec[align_idx])
+              c8g_aa <- ifelse(c8g_vec[align_idx] == "-", "gap", c8g_vec[align_idx])
+              
+              rbp4_prop <- get_property(rbp4_aa)
+              apod_prop <- ifelse(apod_aa == "gap", "gap", get_property(apod_aa))
+              c8g_prop <- ifelse(c8g_aa == "gap", "gap", get_property(c8g_aa))
+              
+              # Calculate uniqueness score
+              score <- 0
+              if (rbp4_aa != apod_aa) score <- score + 1
+              if (rbp4_aa != c8g_aa) score <- score + 1
+              if (rbp4_prop != apod_prop) score <- score + 1
+              if (rbp4_prop != c8g_prop) score <- score + 1
+              if (apod_prop == c8g_prop & rbp4_prop != apod_prop) score <- score + 1
+              
+              # Find original LigPlot+ number (pos - 1)
+              ligplot_num <- pos - 1
+              
+              results <- rbind(results, data.frame(
+                Num = ligplot_num,
+                Original_Num = pos,
+                RBP4 = rbp4_aa,
+                RBP4_Prop = rbp4_prop,
+                APOD = apod_aa,
+                APOD_Prop = apod_prop,
+                C8G = c8g_aa,
+                C8G_Prop = c8g_prop,
+                Score = score
+              ))
+            }
+
+            # Sort by score descending
+            results <- results[order(-results$Score), ][1:5,]
+
+            cat("\n=== INTERACTION RESIDUES SORTED BY UNIQUENESS SCORE ===\n")
+            print(results)
+            ```
+          * Run [`R` script](./Scripts/Interactions/alignment.unique.R).
+            > Note that the original index starts from `1` while the index applied by PLIP starts from `0`.
+
+            ```R
+            r$> source("alignment.unique.R")
+            ```
+
+            ```
+            === RBP4 SEQUENCE (no gaps) ===
+            MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNLL 
+            Length: 201
+
+
+            === INTERACTION RESIDUES SORTED BY UNIQUENESS SCORE ===
+              Num Original_Num RBP4   RBP4_Prop APOD   APOD_Prop C8G    C8G_Prop Score
+            8  115          116    Q       polar    P hydrophobic   A hydrophobic     5
+            10 134          135    Q       polar    V hydrophobic   L hydrophobic     5
+            9  119          120    D    negative  gap         gap   V hydrophobic     4
+            5   80           81    L hydrophobic    R    positive   F hydrophobic     3
+            7  114          115    L hydrophobic    M hydrophobic gap         gap     3
+            ```
+      * From the output, we can see that **Asp119** is a critically unique residue involved in interactions.
+        * Therefore, designing polar interactions with **Asp119** is a reasonable modification to enhance **selectivity**;
+        * We may consider adding an **amino** group (`-NH2`) to ligand `C19` that potentially creates hydrogen bond with **Asp119** `O`.
   * Prediction based on computer analysis.
+    * [**AMBER MD**](https://ambermd.org/index.php);
+      > This software is for water molecule binding analysis. It can determine whether the interaction of a water molecule and a residue is stable or not. If the binding energy is low, we may modify the ligand to interact targeting this residue to enhance stability.
+      
+    * [**RING**](https://ring.biocomputingup.it/).
+      > This web server is for `RIN` analysis. Abbreviated for Residue Interaction Network Generator. It is commonly acknowledged that the more involved a residue is in interactions within the protein, the more likely it's a critical residue in conformational changes, ligand recognition and signaling transduction.
+      * Input RBP4 UniProt ID [P02753](https://www.uniprot.org/uniprotkb/P02753/entry) and run [**RING**](https://ring.biocomputingup.it/) analysis;
+      * Output results can be seen in [network `json` format](./Results/Interactions/P02753.json), [RINGNode `cif` format](./Results/Interactions/P02753.cif_ringNodes) or directly on [**webpage**](https://ring.biocomputingup.it/job/0d2073bf-5dba-4489-804f-a19980fd941c).
+        * The first column in [RINGNode `cif` file](./Results/Interactions/P02753.cif_ringNodes) lists all residues, and the corresponding **Degree** column lists how many interactions they are involved in;
+        * In `linux`, run the following command;
+
+          ```bash
+          $ awk -F'\t' '{print $1 "\t" $7}' P02753.cif_ringNodes |\
+          > head -5 | column -t
+          NodeId     Degree
+          A:1:_:MET  1
+          A:2:_:LYS  2
+          A:3:_:TRP  3
+          A:4:_:VAL  3
+          ```
+        * Create [`R` script](./Scripts/Interactions/RINGNodes.sort.R) to analyze this [`cif_ringNodes`file](./Results/Interactions/P02753.cif_ringNodes);
+
+          ```R
+          # Load the node table
+          df <- read.table("P02753.cif_ringNodes", header = TRUE, sep = "\t", fill = TRUE)
+
+          # Residues of interest
+          res <- c(42, 54, 55, 63, 80, 107, 114, 115, 119, 134, 136, 138, 153)
+          ring_res <- res + 1
+
+          # Subset
+          df_sub <- df[df$Position %in% ring_res, c("Position", "Residue", "Degree")]
+
+          # Sort by Degree descending
+          df_sorted <- df_sub[order(-df_sub$Degree), ]
+
+          # Switch to original indexes
+          df_sorted$Position <- df_sorted$Position - 1
+
+          # Top 7
+          head(df_sorted, 7)
+          ```
+        * Run the [script](./Scripts/Interactions/RINGNodes.sort.R) and reach conclusion.
+
+          ```R
+          r$> source("RINGNodes.sort.R")
+              Position Residue Degree
+          108      107     TYR     10
+          135      134     GLN     10
+          139      138     ARG     10
+          154      153     VAL     10
+          137      136     SER      9
+          43        42     TYR      8
+          120      119     ASP      8
+          ```
+          * From the result, we can see that these residues are interaction centers among pocket residues, and by cross-referring with both LigPlot+ and PLIP results, we can infer that ligand modifications targeting the following residues will be of most significance.
+            * **Arg138**;
+              * Could be achieved by adding hydroxyl group to ligand `C18` or `C16`.
+            * **Asp119**;
+              * Could be achieved by adding hydroxyl/amino group to ligand `C19`, or substituting `C18` with nitrogen.
+            * **Ser136**.
+              * Could be achieved by adding carboxyl/amide group to ligand `C19`.
+
 ---
 ### T6
 > Experimental strategies.
