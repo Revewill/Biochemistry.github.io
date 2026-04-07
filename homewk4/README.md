@@ -822,7 +822,223 @@
   * Prediction based on computer analysis.
     * [**AMBER MD**](https://ambermd.org/index.php);
       > This software is for water molecule binding analysis. It can determine whether the interaction of a water molecule and a residue is stable or not. If the binding energy is low, we may modify the ligand to interact targeting this residue to enhance stability.
-      
+
+      > Please take note that running an MD analysis is extremely time-consuming, sometimes lasting for days. If you insist running MD, please ensure that you don't shut down your computer during analysis and be patient. An alternative, much faster option is **[HydraMap](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**, which we will elaborate on later but will not run.
+      * Install **ambertools** and prepare environment in `linux`;
+        > The `pdb` file we use is [RBP4.str.predict.pdb](./Results/Pocket/RBP4.str.predict.pdb).
+
+          ```bash
+          # Install ambertools
+          $ conda install -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ ambertools=24
+
+          # Make working directory and move the pdb file into it
+          $ mkdir ~/MD && cd ~/MD
+          $ mv <path_to_pdb_file> .
+
+          # Create bash scripts for running MD
+          $ touch run_md.sh monitor.sh
+          # These scripts can be edited via vim later
+          ```
+      * Edit 2 `bash` scripts;
+        * **[run_md.sh](./Scripts/Interactions/run_md.sh)** is the script for running MD;
+
+          ```bash
+          #!/bin/bash
+          # GIST analysis pipeline for RBP4 - runs with sander (AmberTools)
+
+          set -e  # exit on error
+
+          # Log file
+          LOG="md_pipeline.log"
+          exec > >(tee -a "$LOG") 2>&1
+
+          echo "=========================================="
+          echo "Starting MD pipeline at $(date)"
+          echo "=========================================="
+
+          # Check if PDB exists
+          if [ ! -f "RBP4.str.predict.pdb" ]; then
+              echo "ERROR: RBP4.str.predict.pdb not found in current directory"
+              exit 1
+          fi
+
+          # Step 1: tleap
+          echo ""
+          echo "[Step 1] Running tleap..."
+          cat > leap.in << 'EOFLEAP'
+          source leaprc.protein.ff14SB
+          source leaprc.water.tip3p
+          prot = loadpdb RBP4.str.predict.pdb
+          solvateOct prot TIP3PBOX 10.0
+          addIons prot Na+ 0
+          saveamberparm prot rbp4.prmtop rbp4.inpcrd
+          quit
+          EOFLEAP
+          tleap -f leap.in > leap.out 2>&1
+          if [ $? -ne 0 ]; then
+              echo "ERROR: tleap failed. Check leap.out"
+              exit 1
+          fi
+          echo "tleap completed successfully"
+
+          Step 2: Minimization
+          echo ""
+          echo "[Step 2] Running minimization (1000 steps)..."
+          cat > min.in << 'EOFM'
+          Minimization
+          &cntrl
+            imin=1, maxcyc=1000, ncyc=500,
+            ntb=1, cut=10.0,
+            ntpr=100
+          /
+          EOFM
+          sander -O -i min.in -o min.out -p rbp4.prmtop -c rbp4.inpcrd -r min.rst
+          if [ $? -ne 0 ]; then
+              echo "ERROR: Minimization failed. Check min.out"
+              exit 1
+          fi
+          echo "Minimization completed"
+
+          # Step 3: Heating (NVT) - modified parameters
+          echo ""
+          echo "[Step 3] Running heating (NVT, 100 ps, gentle ramp)..."
+          cat > heat.in << 'EOFH'
+          Heating NVT with temperature ramp
+          &cntrl
+            irest=0, ntx=1,
+            nstlim=100000, dt=0.001,
+            ntt=3, gamma_ln=2.0, temp0=300.0,
+            ntb=1, cut=10.0,
+            ntr=1, restraint_wt=25.0,
+            restraintmask="!:WAT & !@H=",
+            ntpr=500, ntwx=5000,
+            nmropt=1
+          /
+          &wt type='TEMP0', istep1=0, istep2=100000, value1=0.0, value2=300.0 /
+          &wt type='END' /
+          EOFH
+
+          sander -O -i heat.in -o heat.out -p rbp4.prmtop -c min.rst -r heat.rst -ref min.rst
+          if [ $? -ne 0 ]; then
+              echo "ERROR: Heating failed. Check heat.out"
+              exit 1
+          fi
+          echo "Heating completed"
+
+          # Step 4: Equilibration (NPT) - modified parameters (dt=0.002, nstlim=50000 for 100 ps)
+          echo ""
+          echo "[Step 4] Running equilibration (NPT, 100 ps)..."
+          cat > equil.in << 'EOFE'
+          Equilibration NPT
+          &cntrl
+            irest=1, ntx=5,
+            nstlim=50000, dt=0.002,
+            ntt=3, gamma_ln=2.0, temp0=300.0,
+            ntb=2, ntp=1, pres0=1.0, taup=1.0,
+            cut=10.0,
+            ntr=1, restraint_wt=25.0,
+            restraintmask="!:WAT & !@H=",
+            ntpr=500, ntwx=5000
+          /
+          EOFE
+
+          sander -O -i equil.in -o equil.out -p rbp4.prmtop -c heat.rst -r equil.rst -ref heat.rst
+          if [ $? -ne 0 ]; then
+              echo "ERROR: Equilibration failed. Check equil.out"
+              exit 1
+          fi
+          echo "Equilibration completed"
+
+          # Step 5: Production MD (5 ns) - dt=0.002, nstlim=2500000
+          echo ""
+          echo "[Step 5] Running production MD (5 ns, 2.5M steps)..."
+          cat > md.in << 'EOFM'
+          Production MD 5 ns
+          &cntrl
+            irest=1, ntx=5,
+            nstlim=2500000, dt=0.002,
+            ntt=3, gamma_ln=2.0, temp0=300.0,
+            ntb=2, ntp=1, pres0=1.0, taup=1.0,
+            cut=10.0,
+            ntwx=5000, ntpr=500, ntwr=5000
+          /
+          EOFM
+
+          sander -O -i md.in -o md.out -p rbp4.prmtop -c equil.rst -r md.rst -x mdcrd.nc
+          if [ $? -ne 0 ]; then
+              echo "ERROR: Production MD failed. Check md.out"
+              exit 1
+          fi
+          echo "Production MD completed"
+
+          # Step 6: Calculate pocket center (optional, for GIST)
+          echo ""
+          echo "[Step 6] Calculating pocket center from aromatic residues..."
+
+          python3 << 'EOFP'
+          import sys
+          with open("RBP4.str.predict.pdb", "r") as f:
+              coords = []
+              for line in f:
+                  if line.startswith("ATOM") and line[12:16].strip() in ["PHE","TRP","TYR"]:
+                      try:
+                          x = float(line[30:38]); y = float(line[38:46]); z = float(line[46:54])
+                          coords.append([x,y,z])
+                      except:
+                          pass
+              if coords:
+                  cx = sum(c[0] for c in coords)/len(coords)
+                  cy = sum(c[1] for c in coords)/len(coords)
+                  cz = sum(c[2] for c in coords)/len(coords)
+                  with open("pocket_center.txt", "w") as out:
+                      out.write(f"Pocket center: {cx:.3f} {cy:.3f} {cz:.3f}\n")
+                  print(f"Pocket center calculated: {cx:.3f} {cy:.3f} {cz:.3f}")
+              else:
+                  print("WARNING: Could not calculate pocket center - no aromatic residues found")
+                  with open("pocket_center.txt", "w") as out:
+                      out.write("Pocket center: 0.000 0.000 0.000\n")
+          EOFP
+
+          echo ""
+          echo "=========================================="
+          echo "MD PIPELINE COMPLETED SUCCESSFULLY at $(date)"
+          echo "=========================================="
+          echo ""
+          echo "Generated files:"
+          ls -lh rbp4.prmtop rbp4.inpcrd min.rst heat.rst equil.rst md.rst mdcrd.nc pocket_center.txt 2>/dev/null
+          echo ""
+          ```
+
+        * **[monitor.sh](./Scripts/Interactions/monitor.sh)** is the script for monitoring the process in case of errors.
+
+          ```bash
+          #!/bin/bash
+          while true; do
+              if ! pgrep -f "run_md.sh" > /dev/null; then
+                  echo "MD job has stopped at $(date)" >> monitor.log
+                  echo "Last 20 lines of run.log:" >> monitor.log
+                  tail -20 run.log >> monitor.log
+                  break
+              fi
+              sleep 900  # Check every 15min
+          done
+          ```
+      * Run analysis;
+        > The reason we use `nohup` command to run these scripts is that the analysis might take days, and `nohup` ensures the project continues to run even if your computer is in sleep mode.
+
+        ```bash
+        # Run run_md.sh and record everything into run.log
+        $ nohup bash run_md.sh > run.log 2>&1 &
+
+        # Run monitor.sh and record everything into monitor.out
+        $ nohup bash monitor.sh > monitor.out 2>&1 &
+
+        # Open 2 terminals respectively and check timely updates on analysis
+        $ tail -f run.log
+        $ tail -f monitor.out
+        ```
+      * 
+
     * [**RING**](https://ring.biocomputingup.it/).
       > This web server is for `RIN` analysis. Abbreviated for Residue Interaction Network Generator. It is commonly acknowledged that the more involved a residue is in interactions within the protein, the more likely it's a critical residue in conformational changes, ligand recognition and signaling transduction.
       * Input RBP4 UniProt ID [P02753](https://www.uniprot.org/uniprotkb/P02753/entry) and run [**RING**](https://ring.biocomputingup.it/) analysis;
