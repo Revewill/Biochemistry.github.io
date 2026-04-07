@@ -1037,8 +1037,31 @@
         $ tail -f run.log
         $ tail -f monitor.out
         ```
-      * 
+      * Acquire results and reach conclusions;
+      * Alternative solution: **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**.
+        * Download the **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)** program, test data and test results [here](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.3c00408/suppl_file/ci3c00408_si_002.zip) or directly get the [`zip` file](./Supplementary/Interactions/HydraMap.zip);
+        * Prepare ligand file through **PyMol**;
+          * In the last PyMol session (loaded from [docked `pdb` file](./Results/Screening/STL592018.docked.pdb)), run these commands;
 
+            ```bash
+            PyMOL> save ~\ligand.mol2, resn UNL
+            ```
+        * Run these commands in `linux` and acquire results.
+
+          ```bash
+          # Unzip the zip file
+          $ unzip <path_to_zip_file>
+
+          # Prepare working directory
+          $ cd HydraMap/Program
+          $ mv <path_to_RBP4.str.predict.pdb_file> <path_to_ligand.mol2_file> .
+
+          # Run MD (refer to HydraMap/README.txt for help)
+          $ ./wsitem RBP4.str.predict.pdb ligand.mol2 holo 3.0 3.0 2.0 10
+          $ ./getwat RBP4.str.predict.pdb ligand.mol2 RBP4.str.predict_holo_ws.pdb 5.0
+          $ ./wnmin RBP4.str.predict.pdb RBP4.str.predict_holo_min-5A.pdb 100
+          $ ./wnmin2 RBP4.str.predict.pdb ligand.mol2 RBP4.str.predict_holo_min-5A.pdb 100
+          ```
     * [**RING**](https://ring.biocomputingup.it/).
       > This web server is for `RIN` analysis. Abbreviated for Residue Interaction Network Generator. It is commonly acknowledged that the more involved a residue is in interactions within the protein, the more likely it's a critical residue in conformational changes, ligand recognition and signaling transduction.
       * Input RBP4 UniProt ID [P02753](https://www.uniprot.org/uniprotkb/P02753/entry) and run [**RING**](https://ring.biocomputingup.it/) analysis;
