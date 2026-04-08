@@ -36,7 +36,7 @@
         * As a result, the variants' binding efficiency with retinol is compromised, while the conformational changes increase their affinity with STRA6.
       * Physiological pathology
         * The mutated proteins prevail in competition with normal proteins to bind with receptor STRA6 yet deliver less retinol, making the mutation a dominant one;
-        * Lack of retinol in eye tissues result in a disorder of eye formation.
+        * Lack of retinol in eye tissues results in a disorder of eye formation.
 * **Downloaded relevant data.**
   * All source data are stored in folder [**Source Data**](./Source%20Data/) under parent folder;
 
@@ -44,7 +44,7 @@
     ├── [RBP4.seq.fasta](./Source%20Data/RBP4.seq.fasta)
     └── [RBP4.str.pdb](./Source%20Data/RBP4.str.pdb)
   * Including sequence in [`fasta` format](https://rest.uniprot.org/uniprotkb/P02753.fasta) and [`pdb` structure with ligand](https://www.rcsb.org/structure/1RBP); click to view web source;
-    > Note that the [`fasta` file](./Source%20Data/RBP4.seq.fasta) is the whole sequence with signaling peptide, while the downloaded [`pdb` file](./Source%20Data/RBP4.str.pdb) is the mature structure without; the [prediction structure file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) generated in [T2](#t2) is derived from the downloaded whole sequence, making it an immature structure.
+    > Note that the [`fasta` file](./Source%20Data/RBP4.seq.fasta) is the whole sequence with signal peptide, while the downloaded [`pdb` file](./Source%20Data/RBP4.str.pdb) is the mature structure without; the [prediction structure file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) generated in [T2](#t2) is derived from the downloaded whole sequence, making it an immature structure.
   * Check [`fasta` file](./Source%20Data/RBP4.seq.fasta) here.
 
     ```fasta
@@ -93,9 +93,9 @@
     save <path_to_png_file> width 3000 height 2000 supersample 3
     ```
 * **Acquire figures.**
-  * [Fig.1a](./Processed/Predict/RBP4.pred.mut.1.png) shows the overall view of the protein, with the α-helix on the left being the unsevered signaling peptide;
+  * [Fig.1a](./Processed/Predict/RBP4.pred.mut.1.png) shows the overall view of the protein, with the α-helix on the left being the unsevered signal peptide;
 ![fig1a](./Processed/Predict/RBP4.pred.mut.1.png)
-  * [Fig.1b](./Processed/Predict/RBP4.pred.mut.2.png) shows the overall view of the protein excluding the signaling peptide and highlighting the β-barrel;
+  * [Fig.1b](./Processed/Predict/RBP4.pred.mut.2.png) shows the overall view of the protein excluding the signal peptide and highlighting the β-barrel;
 ![fig1b](./Processed/Predict/RBP4.pred.mut.2.png)
   * [Fig.1c](./Processed/Predict/RBP4.pred.mut.3.png) shows the detailed image of the mutation sites inside the β-barrel.
 ![fig1c](./Processed/Predict/RBP4.pred.mut.3.png)
@@ -145,7 +145,7 @@
 
     # Run fpocket
     $ fpocket -f RBP4.str.predict.pdb
-    # Aftercompletion, the results are stored in a directory called RBP4.str.predict_out.
+    # After completion, the results are stored in a directory called RBP4.str.predict_out.
     ```
   * View [results](./Results/Pocket/RBP4.str.predict_out/).
     * Under this folder, there are 2 files that are important;
@@ -201,7 +201,7 @@
       transparency sel 90 target ac
       ```
     * Record spin movies and save figures;
-    * Show mutation sites reletive to the pocket.
+    * Show mutation sites relative to the pocket.
 
       ```bash
       # Modify certain outlook
@@ -225,7 +225,7 @@
   ![Fig.2b](./Processed/Pocket/pocket.predict.2.png)
 
     * [pocket.predict.residues.txt](./Processed/Pocket/pocket.predict.residues.txt) shows all information on predicted residues that constitute the pocket.
-      > The column for `index` in this `txt` file equals to a residue's position subtracted by 1. This is because in bioinformatic studies, `index` starts with 0, while position starts with 1.
+      > The column for `index` in this `txt` file equals a residue's position subtracted by 1. This is because in bioinformatic studies, `index` starts with 0, while position starts with 1.
       * We can analyze this file with the following commands in `linux`;
 
         ```bash
@@ -511,7 +511,7 @@
   ![Fig.3b](./Processed/Interactions/interactions.2.png)
 * **Interaction hunting;**
   > I used the online analyzing platform **[PLIP](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index)** (Protein Ligand-Interaction Profiler) to analyze potential protein-ligand interactions.
-  * Input: submitted `pbd` file [STL592018.docked.pdb](./Results/Screening/STL592018.docked.pdb);
+  * Input: submitted `pdb` file [STL592018.docked.pdb](./Results/Screening/STL592018.docked.pdb);
   * Output: a [`txt` file](./Results/Interactions/report.txt) listing all interactions found and a [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse) that visualizes interactions in a PyMol session, and you may also check results on [webpage](https://plip-tool.biotec.tu-dresden.de/plip-web/plip/result/61e0171a-6322-4af5-ae71-994f8d057af2);
     > [**PyMol**](https://www.pymol.org/) is another structure analysis software similar to **coot**; you may acquire your PyMol license by agreeing to use PyMol for educational purposes solely.
     * Elaboration on `txt` report columns;
@@ -595,7 +595,7 @@
     ![Fig.3f](./Processed/Interactions/interactions.6.png)
         > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.
   * Visualize in **LigPlot+**.
-    > **LigPot+** is a structual biology software for 2D visualization of protein-ligand interactions.
+    > **LigPot+** is a structural biology software for 2D visualization of protein-ligand interactions.
   
     > You may acquire academic license for and download **LigPlot+** on [this webpage](https://www.ebi.ac.uk/thornton-srv/software/LigPlus/).
     * In the last **PyMol** session loaded from the [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse), save the session as a [`pdb` file](./Results/Interactions/RBP4.interactions.ligplot+.input.pdb) as input into **LigPlot+**;
@@ -613,7 +613,7 @@
       * [Fig.3g](./Processed/Interactions/interactions.7.png) shows all interactions, though slightly different from the results acquired from previous analysis as **LigPlot+** tends to compute interactions by itself.
     ![Fig.3g](./Processed/Interactions/interactions.7.png)
 
-        > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converged purple lines: π-stacking.
+        > Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converging purple lines: π-stacking.
 * **Structure optimization based on predicted interactions.**
   * Prediction based on personal knowledge;
     * Summarized features of docking;
@@ -624,7 +624,7 @@
       * **Hydrophobic interactions** are essentially saturated;
       * **Hydrogen bonds** may be strengthened targeting the predicted sites on the ligand;
    ![Fig.3g](./Processed/Interactions/interactions.7.png)
-        * The ligand `O1` atom (the hydroxyl group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is subtituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
+        * The ligand `O1` atom (the hydroxyl group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is substituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
         * The ligand `C18` atom in [Fig.3g](./Processed/Interactions/interactions.7.png) is close to both **Asp119** `OD1` and **Arg138** `NH1`, while `C19` is close to **Asp119** `O`, and hydrogen bonds might be created with the following methods;
           * Subtituting `C18` with a **nitrogen** atom that potentially creates hydrogen bond with **Asp119** `OD1`;
           * Adding a **hydroxyl** group (`-OH`) to `C18` that potentially creates hydrogen bonds with both **Asp119** `OD1` and **Arg138** `NH1`;
@@ -1146,7 +1146,7 @@
         * How fast the compound binds ($k_{on}$) and how long it stays bound ($k_{off}$);
         * How strong it binds ($K_D$).
     * Principle;
-      * Immobilized RBP4 protein molecules on a **chip** are fulshed with compound solution;
+      * Immobilized RBP4 protein molecules on a **chip** are flushed with compound solution;
       * When the compound binds, it changes the **refractive index** near the chip surface, generating a signal[^6];
       * By measuring how this signal changes over time at different concentrations, we can acquire the precise binding parameters.
     * Short protocol;
