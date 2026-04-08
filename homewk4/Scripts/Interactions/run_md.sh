@@ -87,9 +87,9 @@ cat > equil.in << 'EOFE'
 Equilibration NPT
 &cntrl
   irest=1, ntx=5,
-  nstlim=50000, dt=0.002,
+  nstlim=100000, dt=0.001,
   ntt=3, gamma_ln=2.0, temp0=300.0,
-  ntb=2, ntp=1, pres0=1.0, taup=1.0,
+  ntb=2, ntp=1, pres0=1.0, taup=2.0,
   cut=10.0,
   ntr=1, restraint_wt=25.0,
   restraintmask="!:WAT & !@H=",
