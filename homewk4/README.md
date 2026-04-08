@@ -41,7 +41,9 @@
   * All source data are stored in folder [**Source Data**](./Source%20Data/) under parent folder;
 
     [Source Data](./Source%20Data/)
+
     ├── [RBP4.seq.fasta](./Source%20Data/RBP4.seq.fasta)
+
     └── [RBP4.str.pdb](./Source%20Data/RBP4.str.pdb)
   * Including sequence in [`fasta` format](https://rest.uniprot.org/uniprotkb/P02753.fasta) and [`pdb` structure with ligand](https://www.rcsb.org/structure/1RBP); click to view web source;
     > Note that the [`fasta` file](./Source%20Data/RBP4.seq.fasta) is the whole sequence with signal peptide, while the downloaded [`pdb` file](./Source%20Data/RBP4.str.pdb) is the mature structure without; the [prediction structure file](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif) generated in [T2](#t2) is derived from the downloaded whole sequence, making it an immature structure.
@@ -151,9 +153,13 @@
     * Under this folder, there are 2 files that are important;
 
       [RBP4.str.predict_out](./Results/Pocket/RBP4.str.predict_out/)
+
       ├── [RBP4.str.predict_info.txt](./Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt)
+
       └── [pockets](./Results/Pocket/RBP4.str.predict_out/pockets/)
+
           └── [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb)
+          
     * [RBP4.str.predict_info.txt](./Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt) is a table that lists the credibility (score) of each predicted pocket;
     * [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb) is a `pdb` file that depicts all atoms predicted to form the most possible pocket among all.
 * **Visualization in ChimeraX.**
@@ -595,7 +601,7 @@
     ![Fig.3f](./Processed/Interactions/interactions.6.png)
         > <span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.
   * Visualize in **LigPlot+**.
-    > **LigPot+** is a structural biology software for 2D visualization of protein-ligand interactions.
+    > **LigPlot+** is a structural biology software for 2D visualization of protein-ligand interactions.
   
     > You may acquire academic license for and download **LigPlot+** on [this webpage](https://www.ebi.ac.uk/thornton-srv/software/LigPlus/).
     * In the last **PyMol** session loaded from the [`pse` file](./Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse), save the session as a [`pdb` file](./Results/Interactions/RBP4.interactions.ligplot+.input.pdb) as input into **LigPlot+**;
@@ -626,7 +632,7 @@
    ![Fig.3g](./Processed/Interactions/interactions.7.png)
         * The ligand `O1` atom (the hydroxyl group) in [Fig.3g](./Processed/Interactions/interactions.7.png) is a proton donor for the `NE2` atom in residue **His121**, and it could be strengthened if the `O1` atom is substituted with a **carboxyl group** (`-COOH`), which might have more bonding sites (potentially with **His121** `ND1`), better bonding angles and shorter distance;
         * The ligand `C18` atom in [Fig.3g](./Processed/Interactions/interactions.7.png) is close to both **Asp119** `OD1` and **Arg138** `NH1`, while `C19` is close to **Asp119** `O`, and hydrogen bonds might be created with the following methods;
-          * Subtituting `C18` with a **nitrogen** atom that potentially creates hydrogen bond with **Asp119** `OD1`;
+          * Substituting `C18` with a **nitrogen** atom that potentially creates hydrogen bond with **Asp119** `OD1`;
           * Adding a **hydroxyl** group (`-OH`) to `C18` that potentially creates hydrogen bonds with both **Asp119** `OD1` and **Arg138** `NH1`;
           * Adding a **hydroxyl** group (`-OH`) or **amino** group (`-NH2`) to `C19` that potentially creates hydrogen bond with **Asp119** `O`.
       * **π-stackings** may be strengthened targeting the predicted sites on the ligand.
