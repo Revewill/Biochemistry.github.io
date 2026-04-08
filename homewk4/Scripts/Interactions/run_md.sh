@@ -111,7 +111,7 @@ cat > md.in << 'EOFM'
 Production MD 5 ns
 &cntrl
   irest=1, ntx=5,
-  nstlim=2500000, dt=0.002,
+  nstlim=500000, dt=0.002,
   ntt=3, gamma_ln=2.0, temp0=300.0,
   ntb=2, ntp=1, pres0=1.0, taup=1.0,
   cut=10.0,
@@ -125,34 +125,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "Production MD completed"
-
-# Step 6: Calculate pocket center (optional, for GIST)
-echo ""
-echo "[Step 6] Calculating pocket center from aromatic residues..."
-
-python3 << 'EOFP'
-import sys
-with open("RBP4.str.predict.pdb", "r") as f:
-    coords = []
-    for line in f:
-        if line.startswith("ATOM") and line[12:16].strip() in ["PHE","TRP","TYR"]:
-            try:
-                x = float(line[30:38]); y = float(line[38:46]); z = float(line[46:54])
-                coords.append([x,y,z])
-            except:
-                pass
-    if coords:
-        cx = sum(c[0] for c in coords)/len(coords)
-        cy = sum(c[1] for c in coords)/len(coords)
-        cz = sum(c[2] for c in coords)/len(coords)
-        with open("pocket_center.txt", "w") as out:
-            out.write(f"Pocket center: {cx:.3f} {cy:.3f} {cz:.3f}\n")
-        print(f"Pocket center calculated: {cx:.3f} {cy:.3f} {cz:.3f}")
-    else:
-        print("WARNING: Could not calculate pocket center - no aromatic residues found")
-        with open("pocket_center.txt", "w") as out:
-            out.write("Pocket center: 0.000 0.000 0.000\n")
-EOFP
 
 echo ""
 echo "=========================================="
