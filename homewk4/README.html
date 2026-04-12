@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>README</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="./README_files/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="homework-4">Homework 4 </h1>
+<blockquote>
+<p>An answer <code>md</code> file for homework 4 in course <em>Biochemistry</em> by 黄悉然, made highly understandable.</p>
+</blockquote>
+<blockquote>
+<p>Quickly direct to <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t1">T1</a>, <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t2">T2</a>, <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t3">T3</a>, <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t4">T4</a>, <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t5">T5</a> or <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t6">T6</a>.</p>
+</blockquote>
+<blockquote>
+<p>Note that a portion of scripts and several software resources are generated or provided by AI.</p>
+</blockquote>
+<hr>
+<h3 id="t1">T1 </h3>
+<blockquote>
+<p>Select disease and protein of interest.</p>
+</blockquote>
+<ul>
+<li><strong>Selected disease and protein;</strong>
+<ul>
+<li>Disease: <a href="https://omim.org/entry/616428"><strong>MCOPCB10</strong></a>, autosomal dominant <strong>microphthalmia/coloboma</strong>-10 (MIM ID: <a href="https://omim.org/entry/616428">#616428</a>);
+<ul>
+<li><strong>MCOPCB10</strong> is an <strong>AD</strong> genetic disease caused by mutations in the <strong>RBP4</strong> gene<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn1" id="fnref1">[1]</a></sup>;</li>
+<li>Manifested as ocular developmental disorders including microphthalmia, anophthalmia, and/or coloboma<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn2" id="fnref2">[2]</a></sup>;</li>
+<li>Caused by <strong>heterozygous mutation</strong> in <a href="https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/9922"><strong>RBP4</strong> gene</a> (MIM ID: <a href="https://omim.org/entry/180250">180250</a>; HGNC ID: <a href="https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/9922">9922</a>; Ensembl ID: <a href="https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000138207">ENSG00000138207</a>; UCSC ID: <a href="http://genome.cse.ucsc.edu/cgi-bin/hgGene?org=Human&amp;hgg_chrom=none&amp;hgg_type=knownGene&amp;hgg_gene=uc003vng.3">uc003vng.3</a>)<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn3" id="fnref3">[3]</a></sup>.
+<ul>
+<li><strong>RBP4</strong>, retinol binding protein 4;</li>
+<li>Encodes protein <strong>RBP4</strong>, a key protein in MCOPCB10 pathology.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Protein: <a href="https://www.uniprot.org/uniprotkb/P02753/entry"><strong>RBP4</strong></a>, retinol-binding protein 4 (UniProt ID: <a href="https://www.uniprot.org/uniprotkb/P02753/entry">P02753</a>).
+<ul>
+<li>
+<p><strong>RBP4</strong>, <em>homo sapiens</em>, encoded by gene RBP4;</p>
+</li>
+<li>
+<p>Function (see reference on <a href="https://www.uniprot.org/uniprotkb/P02753/entry">UniProt</a>);</p>
+<ul>
+<li>Transports <strong>retinol (vitamin A)</strong> from <strong>liver</strong> to peripheral tissues, particularly to the <strong>retina</strong> for visual cycle maintenance;
+<ul>
+<li>Binds retinol with high affinity (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>d</mi></msub><mo>∈</mo><mo stretchy="false">(</mo><mn>0.1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mtext>nM</mtext></mrow><annotation encoding="application/x-tex">K_d \in (0.1,1) \text{nM}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord text"><span class="mord">nM</span></span></span></span></span>) within its <strong>hydrophobic β-barrel pocket</strong>;</li>
+<li>Another site of RBP4 binds to receptor <strong><a href="https://www.uniprot.org/uniprotkb/Q9BX79/entry">STRA6</a></strong> to transfer retinol; RBP4 with retinol (<strong>holo-RBP4</strong>) molecules have greater binding capacity with STRA6 compared to those without (<strong>apo-RBP4</strong>), due to conformational changes induced by RBP4 binding.</li>
+</ul>
+</li>
+<li>Due to the small size of holo-RBP4, it binds with <strong>TTR</strong> to form a tetramer to prevent its loss through renal filtration;</li>
+<li>Also relevant with Type II diabetes, obesity, etc.</li>
+</ul>
+</li>
+<li>
+<p>Ligand: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/445354"><strong>retinol (vitamin A)</strong></a></p>
+<pre data-role="codeBlock" data-info="smiles" class="language-smiles smiles"><code>CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/CO)/C)/C
+</code></pre></li>
+<li>
+<p>Family: <strong>Lipocalin</strong> family;</p>
+</li>
+<li>
+<p>Length: 201 aa (amino acids); MW: ~21 kDa;</p>
+</li>
+<li>
+<p>Pathology and variants<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn4" id="fnref4">[4]</a></sup>.</p>
+<ul>
+<li>Pathological variants: <a href="https://web.expasy.org/variant_pages/VAR_073856.html"><strong>A73T</strong></a> and <a href="https://web.expasy.org/variant_pages/VAR_073857.html"><strong>A75T</strong></a>;</li>
+<li>Molecular pathology:
+<ul>
+<li>Site <strong>73</strong> and <strong>75</strong> are located in the <strong>hydrophobic β-barrel pocket</strong>, binding pocket of retinol;</li>
+<li>These mutations from hydrophobic residues to hydrophilic ones are unfavorable for retinol binding and conformation stability;</li>
+<li>As a result, the variants' binding efficiency with retinol is compromised, while the conformational changes increase their affinity with STRA6.</li>
+</ul>
+</li>
+<li>Physiological pathology
+<ul>
+<li>The mutated proteins prevail in competition with normal proteins to bind with receptor STRA6 yet deliver less retinol, making the mutation a dominant one;</li>
+<li>Lack of retinol in eye tissues results in a disorder of eye formation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Downloaded relevant data.</strong>
+<ul>
+<li>
+<p>All source data are stored in folder <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data"><strong>Source Data</strong></a> under parent folder;</p>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data">Source Data</a></p>
+<p>├── <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data/RBP4.seq.fasta">RBP4.seq.fasta</a></p>
+<p>└── <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data/RBP4.str.pdb">RBP4.str.pdb</a></p>
+</li>
+<li>
+<p>Including sequence in <a href="https://rest.uniprot.org/uniprotkb/P02753.fasta"><code>fasta</code> format</a> and <a href="https://www.rcsb.org/structure/1RBP"><code>pdb</code> structure with ligand</a>; click to view web source;</p>
+<blockquote>
+<p>Note that the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data/RBP4.seq.fasta"><code>fasta</code> file</a> is the whole sequence with signal peptide, while the downloaded <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data/RBP4.str.pdb"><code>pdb</code> file</a> is the mature structure without; the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif">prediction structure file</a> generated in <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t2">T2</a> is derived from the downloaded whole sequence, making it an immature structure.</p>
+</blockquote>
+</li>
+<li>
+<p>Check <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Source%20Data/RBP4.seq.fasta"><code>fasta</code> file</a> here.</p>
+<pre data-role="codeBlock" data-info="fasta" class="language-fasta fasta"><code>&gt;sp|P02753|RET4_HUMAN Retinol-binding protein 4 OS=Homo sapiens OX=9606 GN=RBP4 PE=1 SV=3
+MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIV
+AEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGND
+DHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLA
+RQYRLIVHNGYCDGRSERNLL
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="t2">T2 </h3>
+<blockquote>
+<p>Protein structure prediction.</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Run prediction on <a href="https://protenix-server.com/">ProteinX server</a>;</strong></p>
+<ul>
+<li>
+<p>Submit the following sequence and set default parameters;</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMSATAKRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNLL
+</code></pre></li>
+<li>
+<p>Results are in folder <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Predict">Predict</a> under folder <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results">Results</a>;</p>
+</li>
+<li>
+<p>Later analysis are mostly based on this <code>cif</code> file: <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif">RBP4_str_predict_sample_0.cif</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Operate on <code>cif</code> file with ChimeraX</strong></p>
+<blockquote>
+<p>See <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Predict/predict.cxs"><code>cxs</code> session file</a>.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 1. Open file</span>
+<span class="token function">open</span> <span class="token operator">&lt;</span>path_to_cif_file<span class="token operator">&gt;</span> <span class="token function">format</span> mmcif
+
+<span class="token comment"># 2. Set basic display arguments</span>
+<span class="token builtin class-name">set</span> bgColor white
+color <span class="token comment">#1 #366d47ff</span>
+lighting simple
+
+<span class="token comment"># 3. Highlight variant sites: 73A and 75A</span>
+<span class="token keyword keyword-select">select</span> :73,75
+show sel atoms
+style sel ball
+color sel <span class="token comment">#8B6508</span>
+
+<span class="token comment"># 4. Create labels</span>
+label :73 text A73T
+label :75 text A75T
+label height <span class="token number">1.5</span>
+label color <span class="token comment">#ffd87e</span>
+
+<span class="token comment"># 5. Save figure</span>
+<span class="token keyword keyword-select">select</span> <span class="token function">clear</span>
+save <span class="token operator">&lt;</span>path_to_png_file<span class="token operator">&gt;</span> width <span class="token number">3000</span> height <span class="token number">2000</span> supersample <span class="token number">3</span>
+</code></pre></li>
+<li>
+<p><strong>Acquire figures.</strong></p>
+<ul>
+<li><a href="./README_files/RBP4.pred.mut.1.png">Fig.1a</a> shows the overall view of the protein, with the α-helix on the left being the unsevered signal peptide;<br>
+<img src="./README_files/RBP4.pred.mut.1.png" alt="fig1a"></li>
+<li><a href="./README_files/RBP4.pred.mut.2.png">Fig.1b</a> shows the overall view of the protein excluding the signal peptide and highlighting the β-barrel;<br>
+<img src="./README_files/RBP4.pred.mut.2.png" alt="fig1b"></li>
+<li><a href="./README_files/RBP4.pred.mut.3.png">Fig.1c</a> shows the detailed image of the mutation sites inside the β-barrel.<br>
+<img src="./README_files/RBP4.pred.mut.3.png" alt="fig1c"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="t3">T3 </h3>
+<blockquote>
+<p>Identify most promising binding pocket.</p>
+</blockquote>
+<blockquote>
+<p>In this section, RBP4 structure is still based on prediction from <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t2">T2</a>.</p>
+</blockquote>
+<ul>
+<li><strong>Preparation;</strong>
+<ul>
+<li>
+<p>In the last <code>chimera</code> session (from <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t2">T2</a>), we may use the following command to convert the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif"><code>cif</code> file</a> to a <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict.pdb"><code>pdb</code> file</a>; this step is for convenience in later analysis;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>save <span class="token operator">&lt;</span>path_to_pdb_file<span class="token operator">&gt;</span> <span class="token function">format</span> pdb models <span class="token comment">#1</span>
+</code></pre></li>
+<li>
+<p>Another approach is to convert the file in <code>linux</code> (if you're unfamiliar with <code>linux</code>, it's an operation system like <code>MacOS</code> or <code>Windows</code>) using the following commands.</p>
+<blockquote>
+<p><code>apt</code> command is primarily used in <code>Ubuntu</code>/<code>Debian</code>; for <code>Red Hat</code>/<code>CentOS</code> users, use <code>yum</code>; for <code>Fedora</code> users, use <code>dnf</code>; for <code>Alpine</code> users, use <code>apk</code>.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">apt-get</span> update
+<span class="token comment"># If you are not root user, use sudo instead</span>
+$ <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> openbabel
+$ obabel <span class="token operator">&lt;</span>path_to_cif_file<span class="token operator">&gt;</span> <span class="token parameter variable">-O</span> <span class="token operator">&lt;</span>path_to_pdb_file<span class="token operator">&gt;</span>
+</code></pre></li>
+</ul>
+</li>
+<li><strong>Predict promising binding pockets in <code>linux</code>;</strong>
+<ul>
+<li>
+<p>If you are unfamiliar with operating in <code>linux</code> for bioinformatic analysis, watch <a href="https://b23.tv/xMzD6oO">this teaching video</a> in bilibili to get a quick start;</p>
+<ul>
+<li>
+<p>We first need to install <code>miniconda3</code> and <code>mamba</code>;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Change to your working directory</span>
+$ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>your_working_dir<span class="token operator">&gt;</span>
+
+<span class="token comment"># Install miniconda3</span>
+$ <span class="token function">wget</span> <span class="token parameter variable">-c</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ <span class="token function">bash</span> Miniconda3-latest-Linux-x86_64.sh
+$ <span class="token builtin class-name">source</span> ~/.bashrc
+<span class="token comment"># If you don't have wget, use apt or yum command lines to install wget</span>
+
+<span class="token comment"># Install mamba</span>
+$ conda <span class="token function">install</span> <span class="token parameter variable">-n</span> base mamba <span class="token parameter variable">-c</span> conda-forge <span class="token parameter variable">-y</span>
+</code></pre></li>
+<li>
+<p>Then we need to move the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict.pdb"><code>pdb</code> file</a> to our working directory.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Install and run <code>fpocket</code> for pocket prediction;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Install fpocket</span>
+$ mamba <span class="token function">install</span> <span class="token parameter variable">-c</span> conda-forge fpocket
+
+<span class="token comment"># Run fpocket</span>
+$ fpocket <span class="token parameter variable">-f</span> RBP4.str.predict.pdb
+<span class="token comment"># After completion, the results are stored in a directory called RBP4.str.predict_out.</span>
+</code></pre></li>
+<li>
+<p>View <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out">results</a>.</p>
+<ul>
+<li>
+<p>Under this folder, there are 2 files that are important;</p>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out">RBP4.str.predict_out</a></p>
+<p>├── <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt">RBP4.str.predict_info.txt</a></p>
+<p>└── <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out/pockets">pockets</a></p>
+<pre class="language-text">└── [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb)
+</pre>
+</li>
+<li>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt">RBP4.str.predict_info.txt</a> is a table that lists the credibility (score) of each predicted pocket;</p>
+</li>
+<li>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb">pocket1_atm.pdb</a> is a <code>pdb</code> file that depicts all atoms predicted to form the most possible pocket among all.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Visualization in ChimeraX.</strong><blockquote>
+<p>See <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Pocket/pocket.cxs"><code>cxs</code> session file</a>.</p>
+</blockquote>
+<ul>
+<li>Pipeline;
+<ul>
+<li>
+<p>Open files and set basic outlook;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Open files</span>
+<span class="token function">open</span> <span class="token operator">&lt;</span>path_to_cif_file<span class="token operator">&gt;</span> <span class="token function">format</span> mmcif
+<span class="token function">open</span> <span class="token operator">&lt;</span>path_to_atm.pdb_file<span class="token operator">&gt;</span>
+
+<span class="token comment"># Set background and basic settings</span>
+<span class="token builtin class-name">set</span> bgColor white
+color <span class="token comment">#1 #366d47ff</span>
+lighting simple
+
+hide <span class="token comment">#2.1 models</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#2</span>
+color sel <span class="token comment">#87ceeb</span>
+style sel ball
+</code></pre></li>
+<li>
+<p>Visualize pocket;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># We can show the surface of atoms to visualize the pocket</span>
+show sel surface
+color <span class="token comment">#2.2 #7cbbbeff</span>
+transparency <span class="token number">70</span>
+</code></pre></li>
+<li>
+<p>Determine pocket residues and highlight them;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># We can determine pocket residues by setting a distance threshold, like 3.5 Å</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1 &amp; #2 :&lt;3.5</span>
+
+<span class="token comment"># Save information on the pocket residues for later analysis as txt file</span>
+info residues sel saveFile <span class="token operator">&lt;</span>path_to_txt_file<span class="token operator">&gt;</span>
+
+<span class="token comment"># Highlight selected residues</span>
+show sel atoms
+color sel byatom
+
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1 &amp; ~sel</span>
+color sel lightgrey
+transparency sel <span class="token number">90</span> target ac
+</code></pre></li>
+<li>
+<p>Record spin movies and save figures;</p>
+</li>
+<li>
+<p>Show mutation sites relative to the pocket.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Modify certain outlook</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#2</span>
+color sel lightgrey target a
+
+<span class="token comment"># Highlight mutation sites</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1:73,75</span>
+color sel <span class="token comment">#8B6508</span>
+
+label :73@ca text A73T
+label :75@ca text A75T
+label height <span class="token number">1.5</span>
+label color <span class="token comment">#ffd87e</span>
+</code></pre></li>
+</ul>
+</li>
+<li>Acquire results.
+<ul>
+<li>
+<p><a href="./README_files/pocket.predict.1.png">Fig.2a</a> and <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Pocket/pocket.predict.1.mp4">Mov.2a</a> shows the overview of the pocket; the pocket and pocket atoms are colored in lightblue, with residues within the pocket colored darkgreen;<br>
+<img src="./README_files/pocket.predict.1.png" alt="Fig.2a"></p>
+</li>
+<li>
+<p><a href="./README_files/pocket.predict.2.png">Fig.2b</a> and <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Pocket/pocket.predict.2.mp4">Mov.2b</a> shows the relative position of mutation sites with the predicted pocket; mutation sites are colored in gold;<br>
+<img src="./README_files/pocket.predict.2.png" alt="Fig.2b"></p>
+</li>
+<li>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Pocket/pocket.predict.residues.txt">pocket.predict.residues.txt</a> shows all information on predicted residues that constitute the pocket.</p>
+<blockquote>
+<p>The column for <code>index</code> in this <code>txt</code> file equals a residue's position subtracted by 1. This is because in bioinformatic studies, <code>index</code> starts with 0, while position starts with 1.</p>
+</blockquote>
+<ul>
+<li>
+<p>We can analyze this file with the following commands in <code>linux</code>;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">wc</span> <span class="token parameter variable">-l</span> pocket.predict.residues.txt
+<span class="token number">46</span> pocket.predict.residues.txt
+<span class="token comment"># Suggests that this pocket is constituted by 46 residues</span>
+</code></pre><pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">awk</span> -F<span class="token string">' '</span> <span class="token string">'{print $5}'</span> pocket.predict.residues.txt <span class="token operator">|</span><span class="token punctuation">\</span>
+<span class="token operator">&gt;</span> <span class="token function">sort</span> <span class="token operator">|</span> <span class="token function">uniq</span> <span class="token parameter variable">-c</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-rn</span>
+      <span class="token number">5</span> PHE
+      <span class="token number">5</span> LYS
+      <span class="token number">5</span> ALA
+      <span class="token number">4</span> SER
+      <span class="token number">4</span> ASP
+      <span class="token number">3</span> TYR
+      <span class="token number">3</span> MET
+      <span class="token number">3</span> LEU
+      <span class="token number">2</span> VAL
+      <span class="token number">2</span> THR
+      <span class="token number">2</span> GLY
+      <span class="token number">2</span> GLN
+      <span class="token number">1</span> TRP
+      <span class="token number">1</span> PRO
+      <span class="token number">1</span> ILE
+      <span class="token number">1</span> HIS
+      <span class="token number">1</span> GLU
+      <span class="token number">1</span> ARG
+<span class="token comment"># Counts all residues sorted by type</span>
+</code></pre></li>
+<li>
+<p>We can also create a <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Pocket/pocket.predict.residues.count.sh"><code>bash</code> script</a> to separate hydrophobic and hydrophilic residues;</p>
+<ul>
+<li>
+<p><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Pocket/pocket.predict.residues.count.sh">Script</a>;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Edit script in vim</span>
+<span class="token function">vim</span> pocket.predict.residues.count.sh
+</code></pre><pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># Usage: ./pocket.predict.residues.count.sh &lt;count_file&gt; &lt;original_file&gt;</span>
+<span class="token comment"># Example: ./pocket.predict.residues.count.sh pocket.predict.residues.count.txt pocket.predict.residues.txt</span>
+
+<span class="token assign-left variable">count_file</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$1</span>"</span>
+<span class="token assign-left variable">orig_file</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$2</span>"</span>
+
+<span class="token comment"># 1. Collect positions for each AA from original file</span>
+<span class="token function">awk</span> <span class="token string">'
+BEGIN {
+    split("GLY,ALA,VAL,LEU,ILE,MET,PHE,TRP,PRO", hydro, ",");
+    for (i in hydro) hydrophobic[hydro[i]] = 1;
+    split("SER,THR,TYR,ASN,GLN,LYS,ARG,HIS,ASP,GLU", hydrophi, ",");
+    for (i in hydrophi) hydrophilic[hydrophi[i]] = 1;
+    
+    hydro_all = "";
+    phil_all = "";
+}
+{
+    # Extract residue ID
+    match($0, /#1\/A:([0-9]+)/);
+    pos = substr($0, RSTART+5, RLENGTH-5);
+    aa = $5;
+    
+    if (aa in hydrophobic) {
+        # Per-residue positions
+        hydro_pos[aa] = hydro_pos[aa] ? hydro_pos[aa] "," pos : pos;
+        hydro_sum[aa]++;
+        # Combined positions
+        hydro_all = hydro_all ? hydro_all "," pos : pos;
+    } else if (aa in hydrophilic) {
+        # Per-residue positions
+        phil_pos[aa] = phil_pos[aa] ? phil_pos[aa] "," pos : pos;
+        phil_sum[aa]++;
+        # Combined positions
+        phil_all = phil_all ? phil_all "," pos : pos;
+    }
+}
+END {
+    # Print
+    printf "=== Hydrophobic Combined Positions ===\n";
+    printf "%s\n\n", hydro_all;
+    
+    printf "=== Hydrophobic by Residue Type ===\n";
+    for (aa in hydro_pos) {
+        printf "  %s (n=%d): %s\n", aa, hydro_sum[aa], hydro_pos[aa];
+    }
+    
+    printf "\n=== Hydrophilic Combined Positions ===\n";
+    printf "%s\n\n", phil_all;
+    
+    printf "=== Hydrophilic by Residue Type ===\n";
+    for (aa in phil_pos) {
+        printf "  %s (n=%d): %s\n", aa, phil_sum[aa], phil_pos[aa];
+    }
+}'</span> <span class="token string">"<span class="token variable">$orig_file</span>"</span>
+
+<span class="token comment"># 2. Calculate ratios from count file</span>
+<span class="token function">awk</span> <span class="token string">'
+BEGIN {
+    split("GLY,ALA,VAL,LEU,ILE,MET,PHE,TRP,PRO", hydro, ",");
+    for (i in hydro) hydrophobic[hydro[i]] = 1;
+    split("SER,THR,TYR,ASN,GLN,LYS,ARG,HIS,ASP,GLU", hydrophi, ",");
+    for (i in hydrophi) hydrophilic[hydrophi[i]] = 1;
+    total_hydrophobic = 0;
+    total_hydrophilic = 0;
+}
+{
+    if ($2 in hydrophobic) total_hydrophobic += $1;
+    else if ($2 in hydrophilic) total_hydrophilic += $1;
+}
+END {
+    total = total_hydrophobic + total_hydrophilic;
+    if (total &gt; 0) {
+        printf "\n=== Summary ===\n";
+        printf "Hydrophobic: %d (%.2f%%)\n", total_hydrophobic, total_hydrophobic/total*100;
+        printf "Hydrophilic: %d (%.2f%%)\n", total_hydrophilic, total_hydrophilic/total*100;
+        printf "Ratio (Hpho/Hphi): %.2f\n", total_hydrophobic/total_hydrophilic;
+    }
+}'</span> <span class="token string">"<span class="token variable">$count_file</span>"</span>
+</code></pre></li>
+<li>
+<p>Run <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Pocket/pocket.predict.residues.count.sh">script</a>;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Alter access to script</span>
+$ <span class="token function">chmod</span> <span class="token number">754</span> pocket.predict.residues.count.sh
+
+<span class="token comment"># Prepare input file</span>
+$ <span class="token function">awk</span> -F<span class="token string">' '</span> <span class="token string">'{print $5}'</span> pocket.predict.residues.txt <span class="token operator">|</span><span class="token punctuation">\</span>
+<span class="token operator">&gt;</span> <span class="token function">sort</span> <span class="token operator">|</span> <span class="token function">uniq</span> <span class="token parameter variable">-c</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-rn</span> <span class="token operator">&gt;</span> pocket.residues.count.txt
+</code></pre><pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Run</span>
+$ ./pocket.predict.residues.count.sh pocket.predict.residues.count.txt pocket.predict.residues.txt
+<span class="token operator">==</span><span class="token operator">=</span> Hydrophobic Combined Positions <span class="token operator">==</span><span class="token operator">=</span>
+<span class="token number">44,45</span>,46,50,53,54,55,59,61,63,73,75,78,80,90,91,92,94,105,108,117,152,153
+
+<span class="token operator">==</span><span class="token operator">=</span> Hydrophobic by Residue Type <span class="token operator">==</span><span class="token operator">=</span>
+  GLY <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>: <span class="token number">92,117</span>
+  LEU <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>: <span class="token number">53,55</span>,80
+  PRO <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">50</span>
+  ILE <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">59</span>
+  MET <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>: <span class="token number">45,90</span>,105
+  PHE <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>: <span class="token number">54,63</span>,94,152,153
+  TRP <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">108</span>
+  ALA <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>: <span class="token number">44,46</span>,61,73,75
+  VAL <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>: <span class="token number">78,91</span>
+
+<span class="token operator">==</span><span class="token operator">=</span> Hydrophilic Combined Positions <span class="token operator">==</span><span class="token operator">=</span>
+<span class="token number">47,48</span>,49,62,72,74,76,89,93,106,107,115,116,119,120,121,134,135,136,138,149,150,151
+
+<span class="token operator">==</span><span class="token operator">=</span> Hydrophilic by Residue Type <span class="token operator">==</span><span class="token operator">=</span>
+  GLN <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>: <span class="token number">115,134</span>
+  THR <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>: <span class="token number">74,93</span>
+  TYR <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>: <span class="token number">107,135</span>,150
+  LYS <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>: <span class="token number">47,48</span>,76,106,116
+  SER <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>: <span class="token number">72,136</span>,149,151
+  ASP <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>: <span class="token number">49,89</span>,119,120
+  HIS <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">121</span>
+  GLU <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">62</span>
+  ARG <span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>: <span class="token number">138</span>
+
+<span class="token operator">==</span><span class="token operator">=</span> Summary <span class="token operator">==</span><span class="token operator">=</span>
+Hydrophobic: <span class="token number">23</span> <span class="token punctuation">(</span><span class="token number">50.00</span>%<span class="token punctuation">)</span>
+Hydrophilic: <span class="token number">23</span> <span class="token punctuation">(</span><span class="token number">50.00</span>%<span class="token punctuation">)</span>
+Ratio <span class="token punctuation">(</span>Hpho/Hphi<span class="token punctuation">)</span>: <span class="token number">1.00</span>
+</code></pre></li>
+<li>
+<p>With the results above, we may highlight hydrophobic and hydrophilic residues respectively in ChimeraX (within the previous session) and show their relative position to the protein surface (inside or outside the surface).</p>
+<blockquote>
+<p>See <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Pocket/pocket.cxs"><code>cxs</code> session file</a>.</p>
+</blockquote>
+<ul>
+<li>
+<p>Pipeline;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 1. Calculate SASA (an index: the smaller, the deeper a residue is embedded in the protein)</span>
+measure sasa <span class="token comment">#1 &amp; protein setAttribute true</span>
+
+<span class="token comment"># 2. Select hydrophobic/philic residues</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1/A:&lt;the_position_vector_of_hydrophobic/philic_residues&gt;</span>
+<span class="token comment"># This vector is shown in the results from running the bash script</span>
+show sel atoms
+color sel lightgrey target a
+
+<span class="token comment"># 3. Single out embedded residues via SASA</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1/A:&lt;the_position_vector_of_hydrophobic/philic_residues&gt; ::area&lt;10</span>
+<span class="token comment"># From this step we can know that 4 hydrophilic and 9 hydrophobic residues can be termed embedded</span>
+color sel <span class="token comment">#8B6508 target a</span>
+
+<span class="token comment"># 4. Save png file</span>
+<span class="token keyword keyword-select">select</span> <span class="token function">clear</span>
+save <span class="token operator">&lt;</span>path_to_png_file<span class="token operator">&gt;</span> width <span class="token number">3000</span> height <span class="token number">2000</span> supersample <span class="token number">3</span>
+</code></pre></li>
+<li>
+<p>Acquire figures.</p>
+<ul>
+<li><a href="./README_files/pocket.predict.3.png">Fig.2c</a> shows hydrophobic residues among all pocket residues; embedded residues (9 out of 25) are shown in gold with others shown in lightgrey;<br>
+<img src="./README_files/pocket.predict.3.png" alt="Fig.2c"></li>
+<li><a href="./README_files/pocket.predict.4.png">Fig.2d</a> shows hydrophilic residues among all pocket residues; embedded residues (4 out of 25) are shown in gold with others shown in lightgrey;<br>
+<img src="./README_files/pocket.predict.4.png" alt="Fig.2d"></li>
+<li>These results combined suggests that <strong>the pocket core is more likely hydrophobic</strong>, with the hydrophilic residues mainly oriented outwards to keep the core stable.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="t4">T4 </h3>
+<blockquote>
+<p>Perform virtual screening for ligand.</p>
+</blockquote>
+<blockquote>
+<p>In this section, RBP4 structure is still based on prediction from <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t2">T2</a>.</p>
+</blockquote>
+<ul>
+<li><strong>Screening for potential ligands with <a href="https://www.drugclip.com/">DrugCLIP</a>;</strong>
+<ul>
+<li>Parameters and inputs;
+<ul>
+<li>
+<ol>
+<li>Upload protein <code>pdb</code> files;</li>
+</ol>
+<ul>
+<li>Uploaded <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif">RBP4_str_predict_sample_0.cif</a>.</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>Specify the pocket location;</li>
+</ol>
+<ul>
+<li>By Center Coordinates: use predicted residues from <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t3">T3</a>.
+<ul>
+<li>
+<p>In <code>linux</code>, run the following command;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">awk</span> <span class="token parameter variable">-F</span> <span class="token string">' '</span> <span class="token string">'{print $3}'</span> pocket.predict.residues.txt <span class="token operator">|</span><span class="token punctuation">\</span>
+<span class="token operator">&gt;</span> <span class="token function">awk</span> <span class="token parameter variable">-F</span> <span class="token string">':'</span> <span class="token string">'{printf $2 ","}'</span>
+<span class="token number">44,45</span>,46,47,48,49,50,53,54,55,59,61,62,63,72,73,74,75,76,78,80,89,90,91,92,93,94,105,106,107,108,115,116,117,119,120,121,134,135,136,138,149,150,151,152,153,<span class="token comment">#</span>
+</code></pre></li>
+<li>
+<p>In ChimeraX, run the following commands;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token keyword keyword-select">select</span> <span class="token comment">#1/A:44,45,46,47,48,49,50,53,54,55,59,61,62,63,72,73,74,75,76,78,80,89,90,91,92,93,94,105,106,107,108,115,116,117,119,120,121,134,135,136,138,149,150,151,152,153</span>
+measure center sel
+Center of mass of <span class="token number">378</span> atoms <span class="token operator">=</span> <span class="token punctuation">(</span>-9.23, -3.06, <span class="token number">1.41</span><span class="token punctuation">)</span>
+</code></pre></li>
+<li>
+<p>Input the coordinate into the platform.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>Others.</li>
+</ol>
+<ul>
+<li>Library: Public, check all;</li>
+<li>Model: Default_Model;</li>
+<li>Top_K: 100;</li>
+<li>Task info: RBP4.screening.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Outputs.
+<ul>
+<li>Cluster results (threshold: 0.65);</li>
+<li>Selected top 5 ligands in DrugCLIP score.
+<ul>
+<li>Downloaded corresponding <code>SMILES</code> information in <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Screening/ligands.csv"><code>csv</code> file</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Molecular docking via VinaDock module.</strong>
+<ul>
+<li>
+<p>Performed VinaDock analysis for the top 5 candidates with highest DrugCLIP score;</p>
+</li>
+<li>
+<p>Downloaded corresponding <code>SMILES</code> information in <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Screening/ligands.with.Vinascore.csv"><code>csv</code> file</a>;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Mol ID</th>
+<th style="text-align:left">DrugClip Score</th>
+<th style="text-align:left">Vina Docking Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">STL592018</td>
+<td style="text-align:left">3.14</td>
+<td style="text-align:left">43.81</td>
+</tr>
+<tr>
+<td style="text-align:left">F473-2218</td>
+<td style="text-align:left">3.07</td>
+<td style="text-align:left">3.87</td>
+</tr>
+<tr>
+<td style="text-align:left">OSSL_321529</td>
+<td style="text-align:left">2.83</td>
+<td style="text-align:left">2.55</td>
+</tr>
+<tr>
+<td style="text-align:left">STK174716</td>
+<td style="text-align:left">2.78</td>
+<td style="text-align:left">0.04</td>
+</tr>
+<tr>
+<td style="text-align:left">Z241121656</td>
+<td style="text-align:left">2.77</td>
+<td style="text-align:left">33.99</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>It is obvious that <a href="https://pubchem.ncbi.nlm.nih.gov/compound/1109041">the first candidate (Mol ID: STL592018)</a> would be the best ligand.</p>
+<ul>
+<li>
+<p>Ligand structure;</p>
+<pre data-role="codeBlock" data-info="smiles" class="language-smiles smiles"><code>O=C1C=CC(=O)N1c2ccc(cc2)-c(nc3-c4ccccc4)cc(n3)-c(cc5)ccc5N6C(=O)C=CC6=O
+</code></pre></li>
+<li>
+<p>Downloaded docked <code>pdb</code> file <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Screening/STL592018.docked.pdb">STL592018.docked.pdb</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="t5">T5 </h3>
+<blockquote>
+<p>Detailed interactions.</p>
+</blockquote>
+<blockquote>
+<p>In this section, docked <code>pdb</code> file is of the best ligand screened in <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#t4">T4</a>.</p>
+</blockquote>
+<ul>
+<li><strong>Basic visualization in ChimeraX;</strong><blockquote>
+<p>See <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Interactions/interactions.cxs"><code>cxs</code> session file</a>.</p>
+</blockquote>
+<ul>
+<li>
+<p>Pipeline;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Open file</span>
+<span class="token function">open</span> <span class="token operator">&lt;</span>path_to_pdb_file<span class="token operator">&gt;</span>
+
+<span class="token comment"># Disassociate ligand from protein</span>
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1 &amp; ligand</span>
+<span class="token function">split</span> <span class="token comment">#1 &amp; sel</span>
+
+<span class="token comment"># Basic outlook settings</span>
+<span class="token builtin class-name">set</span> bgColor white
+
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1.2</span>
+color sel byatom target a
+color sel <span class="token comment">#366d47ff target r</span>
+transparency <span class="token number">35</span> target a
+transparency <span class="token number">65</span> target r
+
+<span class="token keyword keyword-select">select</span> <span class="token comment">#1.1</span>
+color sel <span class="token comment">#8B6508</span>
+</code></pre></li>
+<li>
+<p>Acquire figures.</p>
+<ul>
+<li><a href="./README_files/interactions.1.png">Fig.3a</a> shows the selected ligand structure (colored by atom);<br>
+<img src="./README_files/interactions.1.png" alt="Fig.3a"></li>
+<li><a href="./README_files/interactions.2.png">Fig.3b</a> shows the relative position of the ligand to the protein and pocket.<br>
+<img src="./README_files/interactions.2.png" alt="Fig.3b"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Interaction hunting;</strong><blockquote>
+<p>I used the online analyzing platform <strong><a href="https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index">PLIP</a></strong> (Protein Ligand-Interaction Profiler) to analyze potential protein-ligand interactions.</p>
+</blockquote>
+<ul>
+<li>
+<p>Input: submitted <code>pdb</code> file <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Screening/STL592018.docked.pdb">STL592018.docked.pdb</a>;</p>
+</li>
+<li>
+<p>Output: a <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/report.txt"><code>txt</code> file</a> listing all interactions found and a <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse"><code>pse</code> file</a> that visualizes interactions in a PyMol session, and you may also check results on <a href="https://plip-tool.biotec.tu-dresden.de/plip-web/plip/result/61e0171a-6322-4af5-ae71-994f8d057af2">webpage</a>;</p>
+<blockquote>
+<p><a href="https://www.pymol.org/"><strong>PyMol</strong></a> is another structure analysis software similar to <strong>coot</strong>; you may acquire your PyMol license by agreeing to use PyMol for educational purposes solely.</p>
+</blockquote>
+<ul>
+<li>
+<p>Elaboration on <code>txt</code> report columns;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Column</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Meaning</th>
+<th style="text-align:left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>RESNR</strong></td>
+<td style="text-align:left">Protein residue number</td>
+<td style="text-align:left">Residue ID in protein chain</td>
+<td style="text-align:left"><code>38</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RESTYPE</strong></td>
+<td style="text-align:left">Protein residue type</td>
+<td style="text-align:left">3-letter amino acid code</td>
+<td style="text-align:left"><code>PHE</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RESCHAIN</strong></td>
+<td style="text-align:left">Protein chain ID</td>
+<td style="text-align:left">Chain identifier</td>
+<td style="text-align:left"><code>R</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RESNR_LIG</strong></td>
+<td style="text-align:left">Ligand residue number</td>
+<td style="text-align:left">Ligand residue ID</td>
+<td style="text-align:left"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RESTYPE_LIG</strong></td>
+<td style="text-align:left">Ligand residue type</td>
+<td style="text-align:left">Usually <code>UNL</code></td>
+<td style="text-align:left"><code>UNL</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RESCHAIN_LIG</strong></td>
+<td style="text-align:left">Ligand chain ID</td>
+<td style="text-align:left">Chain identifier</td>
+<td style="text-align:left"><code>L</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DIST</strong></td>
+<td style="text-align:left">Distance</td>
+<td style="text-align:left">Interaction distance (Å)</td>
+<td style="text-align:left"><code>3.16</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LIGCARBONIDX</strong></td>
+<td style="text-align:left">Ligand carbon index</td>
+<td style="text-align:left">Ligand C atom index</td>
+<td style="text-align:left"><code>1624</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PROTCARBONIDX</strong></td>
+<td style="text-align:left">Protein carbon index</td>
+<td style="text-align:left">Protein C atom index</td>
+<td style="text-align:left"><code>311</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LIGCOO</strong></td>
+<td style="text-align:left">Ligand coordinates</td>
+<td style="text-align:left">(x, y, z) in Å</td>
+<td style="text-align:left"><code>-3.952, 0.540, 6.468</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PROTCOO</strong></td>
+<td style="text-align:left">Protein coordinates</td>
+<td style="text-align:left">(x, y, z) in Å</td>
+<td style="text-align:left"><code>-2.068, 0.210, 8.989</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SIDECHAIN</strong></td>
+<td style="text-align:left">Sidechain involvement</td>
+<td style="text-align:left"><code>True</code> = sidechain involved</td>
+<td style="text-align:left"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DIST_H-A</strong></td>
+<td style="text-align:left">H to acceptor distance</td>
+<td style="text-align:left">Distance (Å)</td>
+<td style="text-align:left"><code>2.73</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DIST_D-A</strong></td>
+<td style="text-align:left">Donor to acceptor distance</td>
+<td style="text-align:left">Distance (Å)</td>
+<td style="text-align:left"><code>3.50</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DON_ANGLE</strong></td>
+<td style="text-align:left">Donor angle</td>
+<td style="text-align:left">Angle (degrees)</td>
+<td style="text-align:left"><code>139.41</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PROTISDON</strong></td>
+<td style="text-align:left">Protein is donor?</td>
+<td style="text-align:left"><code>True</code> = protein donates H</td>
+<td style="text-align:left"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DONORIDX</strong></td>
+<td style="text-align:left">Donor atom index</td>
+<td style="text-align:left">PDB atom index</td>
+<td style="text-align:left"><code>947</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DONORTYPE</strong></td>
+<td style="text-align:left">Donor atom type</td>
+<td style="text-align:left">e.g., <code>O3</code>, <code>Ng+</code></td>
+<td style="text-align:left"><code>O3</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ACCEPTORIDX</strong></td>
+<td style="text-align:left">Acceptor atom index</td>
+<td style="text-align:left">PDB atom index</td>
+<td style="text-align:left"><code>1614</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ACCEPTORTYPE</strong></td>
+<td style="text-align:left">Acceptor atom type</td>
+<td style="text-align:left">e.g., <code>Nar</code></td>
+<td style="text-align:left"><code>Nar</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PROT_IDX_LIST</strong></td>
+<td style="text-align:left">Protein atom index list</td>
+<td style="text-align:left">Comma-separated ring atom indices</td>
+<td style="text-align:left"><code>505,506,507,508,509,510</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CENTDIST</strong></td>
+<td style="text-align:left">Center distance</td>
+<td style="text-align:left">Distance between ring centers (Å)</td>
+<td style="text-align:left"><code>4.15</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ANGLE</strong></td>
+<td style="text-align:left">Interplanar angle</td>
+<td style="text-align:left">Angle between ring planes (deg)</td>
+<td style="text-align:left"><code>66.37</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>OFFSET</strong></td>
+<td style="text-align:left">Ring offset</td>
+<td style="text-align:left">Perpendicular distance between planes (Å)</td>
+<td style="text-align:left"><code>0.59</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TYPE</strong></td>
+<td style="text-align:left">Stacking type</td>
+<td style="text-align:left"><code>T</code> = T-shaped, <code>P</code> = parallel</td>
+<td style="text-align:left"><code>T</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LIG_IDX_LIST</strong></td>
+<td style="text-align:left">Ligand atom index list</td>
+<td style="text-align:left">Comma-separated ring atom indices</td>
+<td style="text-align:left"><code>1621,1623,1624,1625,1626</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Summary table.</p>
+<blockquote>
+<p>Note that the residue indexes below starts with <code>0</code>. For instance, the original 120 Asp is denoted 119D.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Interaction Type</th>
+<th style="text-align:left">Counts</th>
+<th style="text-align:left">Residues Involved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Hydrophobic</td>
+<td style="text-align:left">14</td>
+<td style="text-align:left">38F, 42W, 54F, 54F, 55L, 55L, 80L, 107Y, 114L, 115Q, 119D, 134Q, 138R, 153F</td>
+</tr>
+<tr>
+<td style="text-align:left">Hydrogen Bonds</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">119D, 136S, 138R</td>
+</tr>
+<tr>
+<td style="text-align:left">π-Stacking</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">63F, 153F</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>Visualize in <strong>PyMol</strong>.</p>
+<ul>
+<li>
+<p>Pipeline;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># First load from the pse file downloaded from PLIP</span>
+<span class="token comment"># Basic Settings</span>
+PyMOL<span class="token operator">&gt;</span>set antialias, <span class="token number">2</span>
+Setting: antialias <span class="token builtin class-name">set</span> to <span class="token number">2</span>.
+PyMOL<span class="token operator">&gt;</span>set ray_opaque_background, <span class="token number">1</span>
+Setting: ray_opaque_background <span class="token builtin class-name">set</span> to <span class="token number">1</span>.
+PyMOL<span class="token operator">&gt;</span>cmd.color_deep<span class="token punctuation">(</span><span class="token string">"cyan"</span>, <span class="token string">'HBonds'</span>, <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Show only residues involved in one specific interaction</span>
+PyMOL<span class="token operator">&gt;</span>select res, STL592018_complex_Protein <span class="token operator">&amp;</span> resi <span class="token operator">&lt;</span>RESID<span class="token operator">&gt;</span>
+<span class="token comment"># &lt;RESID&gt; is the string of IDs of residues involved in the interaction</span>
+<span class="token comment"># e.g., 63+153 for π-stacking</span>
+PyMOL<span class="token operator">&gt;</span>select other, STL592018_complex_Protein <span class="token operator">&amp;</span> not <span class="token punctuation">(</span>res or resn UNL<span class="token punctuation">)</span>
+<span class="token comment"># Selected all atoms in protein except previously selected atoms and UNL (code for the ligand)</span>
+PyMOL<span class="token operator">&gt;</span>cmd.hide<span class="token punctuation">(</span><span class="token string">"sticks"</span>    ,<span class="token string">"other_atoms"</span><span class="token punctuation">)</span>
+<span class="token comment"># Hide other atoms</span>
+
+<span class="token comment"># Save as figure</span>
+PyMOL<span class="token operator">&gt;</span>ray <span class="token number">3500</span>, <span class="token number">2500</span>
+<span class="token comment"># Ray is a rendering function</span>
+PyMOL<span class="token operator">&gt;</span>png <span class="token operator">&lt;</span>path_to_your_figure<span class="token operator">&gt;</span>, <span class="token assign-left variable">dpi</span><span class="token operator">=</span><span class="token number">300</span>
+</code></pre></li>
+<li>
+<p>Acquire figures.</p>
+<ul>
+<li><a href="./README_files/interactions.3.png">Fig.3c</a> shows <strong>all interactions</strong> detected;<br>
+<img src="./README_files/interactions.3.png" alt="Fig.3c"><blockquote>
+<p><span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #27FEFE">hydrogen bonds</span>, <span style="color: #717171">hydrophobic interactions</span>, <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.</p>
+</blockquote>
+</li>
+<li><a href="./README_files/interactions.4.png">Fig.3d</a> shows <strong>hydrogen bonds</strong> detected;<br>
+<img src="./README_files/interactions.4.png" alt="Fig.3d"><blockquote>
+<p><span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #27FEFE">hydrogen bonds</span>.</p>
+</blockquote>
+<ul>
+<li>Note that the lengths of these hydrogen bonds may exceed normal lengths, which is a result of <strong>loose</strong> hydrogen bond hunting; you may interpret these interactions as <strong>electrostatic interactions or dipolar interactions</strong> weaker than hydrogen bonds.</li>
+</ul>
+</li>
+<li><a href="./README_files/interactions.5.png">Fig.3e</a> shows <strong>hydrophobic interactions</strong> detected;<br>
+<img src="./README_files/interactions.5.png" alt="Fig.3e"><blockquote>
+<p><span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #717171">hydrophobic interactions</span>.</p>
+</blockquote>
+</li>
+<li><a href="./README_files/interactions.6.png">Fig.3f</a> shows <strong>π-stackings</strong> detected.<br>
+<img src="./README_files/interactions.6.png" alt="Fig.3f"><blockquote>
+<p><span style="color: #246F9E">Protein residues</span>, <span style="color: #C7894C">ligand</span>; <span style="color: #6C8C4C">T-shaped π-stacking</span>, <span style="color: #00F800">parallel π-stacking</span>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Visualize in <strong>LigPlot+</strong>.</p>
+<blockquote>
+<p><strong>LigPlot+</strong> is a structural biology software for 2D visualization of protein-ligand interactions.</p>
+</blockquote>
+<blockquote>
+<p>You may acquire academic license for and download <strong>LigPlot+</strong> on <a href="https://www.ebi.ac.uk/thornton-srv/software/LigPlus/">this webpage</a>.</p>
+</blockquote>
+<ul>
+<li>In the last <strong>PyMol</strong> session loaded from the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/STL592018_COMPLEX_PROTEIN_UNL_L_1.pse"><code>pse</code> file</a>, save the session as a <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/RBP4.interactions.ligplot+.input.pdb"><code>pdb</code> file</a> as input into <strong>LigPlot+</strong>;
+<ul>
+<li>Go to <code>file</code> → <code>Export Molecule</code>;</li>
+<li>Select <code>PDB</code> in <code>Save as Type</code> module, and click <code>Write CONECT records for all bonds</code>;</li>
+<li>Save <code>pdb</code> to appointed directory.</li>
+</ul>
+</li>
+<li>Open <strong>LigPlot+</strong> and set default runtime parameters (loosened to search for more potential interactions);
+<ul>
+<li>Hydrogen-bond calculation parameters;
+<ul>
+<li>Maximum H-A distance: 3.10 Å;</li>
+<li>Maximum D-A distance: 3.80 Å.</li>
+</ul>
+</li>
+<li>Non-bonded contact parameters.
+<ul>
+<li>Minimum contact distance: 3.75 Å;</li>
+<li>Maximum contact distance: 4.75 Å.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Load from the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/RBP4.interactions.ligplot+.input.pdb"><code>pdb</code> file</a> and export as <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Interactions/interactions.7.ps"><code>ps</code> image</a>, then convert <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Processed/Interactions/interactions.7.ps"><code>ps</code></a> to <a href="./README_files/interactions.7.png"><code>png</code></a>.
+<ul>
+<li>
+<p><a href="./README_files/interactions.7.png">Fig.3g</a> shows all interactions, though slightly different from the results acquired from previous analysis as <strong>LigPlot+</strong> tends to compute interactions by itself.<br>
+<img src="./README_files/interactions.7.png" alt="Fig.3g"></p>
+<blockquote>
+<p>Green dashed line: hydrogen bonds; red eyelashes:	hydrophobic contact; yellow ball and converging purple lines: π-stacking.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Structure optimization based on predicted interactions.</strong>
+<ul>
+<li>Prediction based on personal knowledge;
+<ul>
+<li>Summarized features of docking;
+<ul>
+<li>Main interactions are <strong>hydrophobic interactions</strong> between the aromatic rings on the ligand and residues;</li>
+<li>Others include a few <strong>weak hydrogen bonds</strong> and <strong>π-stackings</strong>.</li>
+</ul>
+</li>
+<li>Plausible modifications to enhance <strong>affinity</strong>;<blockquote>
+<p><strong>Affinity</strong> refers primarily to the binding strength of the ligand.</p>
+</blockquote>
+<ul>
+<li><strong>Hydrophobic interactions</strong> are essentially saturated;</li>
+<li><strong>Hydrogen bonds</strong> may be strengthened targeting the predicted sites on the ligand;<br>
+<img src="./README_files/interactions.7.png" alt="Fig.3g">
+<ul>
+<li>The ligand <code>O1</code> atom (the hydroxyl group) in <a href="./README_files/interactions.7.png">Fig.3g</a> is a proton donor for the <code>NE2</code> atom in residue <strong>His121</strong>, and it could be strengthened if the <code>O1</code> atom is substituted with a <strong>carboxyl group</strong> (<code>-COOH</code>), which might have more bonding sites (potentially with <strong>His121</strong> <code>ND1</code>), better bonding angles and shorter distance;</li>
+<li>The ligand <code>C18</code> atom in <a href="./README_files/interactions.7.png">Fig.3g</a> is close to both <strong>Asp119</strong> <code>OD1</code> and <strong>Arg138</strong> <code>NH1</code>, while <code>C19</code> is close to <strong>Asp119</strong> <code>O</code>, and hydrogen bonds might be created with the following methods;
+<ul>
+<li>Substituting <code>C18</code> with a <strong>nitrogen</strong> atom that potentially creates hydrogen bond with <strong>Asp119</strong> <code>OD1</code>;</li>
+<li>Adding a <strong>hydroxyl</strong> group (<code>-OH</code>) to <code>C18</code> that potentially creates hydrogen bonds with both <strong>Asp119</strong> <code>OD1</code> and <strong>Arg138</strong> <code>NH1</code>;</li>
+<li>Adding a <strong>hydroxyl</strong> group (<code>-OH</code>) or <strong>amino</strong> group (<code>-NH2</code>) to <code>C19</code> that potentially creates hydrogen bond with <strong>Asp119</strong> <code>O</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>π-stackings</strong> may be strengthened targeting the predicted sites on the ligand.
+<ul>
+<li>In <a href="./README_files/interactions.6.png">Fig.3f</a>, the left 5-carbon ring is the main actor in π-stacking;<br>
+<img src="./README_files/interactions.6.png" alt="Fig.3f"></li>
+<li>Increasing <strong>π cloud density</strong> of the ring could strengthen the interaction, and we can achieve this by adding an <strong>electron-donating group</strong> at the ring.
+<ul>
+<li><em>e.g.</em>, <code>-OMe</code> or <code>-Me</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Plausible modifications to enhance <strong>selectivity</strong>;<blockquote>
+<p><strong>Selectivity</strong> means that the ligand will bind specifically to RBP4, not other proteins alike.</p>
+</blockquote>
+<ul>
+<li>Run <code>BLAST</code> to find unique residues in RBP4 binding sites;
+<ul>
+<li>Find homologous proteins in <em>homo sapiens</em>;<blockquote>
+<p><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi"><strong>BLAST</strong></a> is an algorithm that searches for all homologous or similar sequences with the input in a reference database. <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins&amp;PROGRAM=blastp">blastp</a> means <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi"><strong>BLAST</strong></a> for proteins.</p>
+</blockquote>
+<ul>
+<li>Input UniProt ID <a href="https://www.uniprot.org/uniprotkb/P02753/entry">P02753</a> and run <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins&amp;PROGRAM=blastp">blastp</a>;</li>
+<li>From the output, we can identify 2 homologous proteins with RBP4, accession <a href="https://www.ncbi.nlm.nih.gov/protein/AAB32200.1?report=genbank&amp;log$=prottop&amp;blast_rank=9&amp;RID=X7JGN27J016">AAB32200.1</a> and <a href="https://www.ncbi.nlm.nih.gov/protein/2QOS_C?report=genbank&amp;log$=prottop&amp;blast_rank=11&amp;RID=X7JGN27J016">2QOS_C</a>.</li>
+</ul>
+</li>
+<li>Align all homologous proteins with <a href="https://blast.ncbi.nlm.nih.gov/tools/cobalt">COBALT</a>;<blockquote>
+<p><a href="https://blast.ncbi.nlm.nih.gov/tools/cobalt"><strong>COBALT</strong></a>, or Constraint-based Multiple Alignment Tool, is an alignment algorithm that supports <strong>structure- or function-constrained</strong> multiple alignment analysis.</p>
+</blockquote>
+<ul>
+<li>
+<p>Input 3 accessions: AAB32200.1, 2QOS_C, P02753 (RBP4);</p>
+</li>
+<li>
+<p>Download output <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/alignment.fa"><code>fa</code></a> and visualized <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/alignment.pdf"><code>pdf</code></a> files.</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>&gt;gb|AAB32200.1| apolipoprotein D, apoD [human, plasma, Peptide, 246 aa] [Homo sapiens]
+----------------QAFHLGKCPNPPVQENFDVNKYLGRWYEI-EKIPTTFENGRCIQ
+ANYSLMENGKIKVL--NQELRADGTVNQIEGEATPVNLTEPAKLEVKF---SWFMPSA--
+PYWILATDYENYALVYSCTCII--QLFHVDFAWILARNPN-LPPETVDSLKNILTSNNID
+VKKMTVTDQ-VNCPKLSQAKEPCVESLVSQYFQTVTDYGKDLMEKVKSPELQAEAKSYFE
+KSKEQLTPLIKKAGTELVNFLSYFVELGTQPATQ
+&gt;pdb|2QOS|C Chain C, Complement component 8, gamma polypeptide [Homo sapiens]
+--------------------ASPISTIQPKANFDAQQFAGTWLLV-AVGSAARFLQEQGH
+RAEATTLHVAPQGTAMAVSTFRKLDGICWQVRQLYGDTGVLGRFLLQARG-----ARGAV
+HVVVAETDYQSFAVLYLERAGQL-------SVKLYARSLP-VSDSVLSGFEQRVQEAHLT
+EDQIFYFPKYGFCEAADQFHVLDEVRR---------------------------------
+----------------------------------
+&gt;sp|P02753.3| RecName: Full=Retinol-binding protein 4; AltName: Full=Plasma retinol-binding protein; Short=PRBP; Short=RBP; Contains: RecName: Full=Plasma retinol-binding protein(1-182); Contains: RecName: Full=Plasma retinol-binding protein(1-181); Contains: RecName: Full=Plasma retinol-binding protein(1-179); Contains: RecName: Full=Plasma retinol-binding protein(1-176); Flags: Precursor [Homo sapiens]
+MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIV
+AEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGND
+DHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLA
+RQYRLIVHN-GYCDGRSERNLL--------------------------------------
+----------------------------------
+</code></pre></li>
+</ul>
+</li>
+<li>Create and run <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/alignment.unique.R"><code>R</code> script</a> to identify unique residues that form protein-ligand interactions.<blockquote>
+<p>You can download <strong><a href="https://posit.co/download/rstudio-desktop">RStudio</a></strong> to code in <code>R</code> language. If you're new to <code>R</code>, here's a <a href="https://b23.tv/Mq2BwVG">quick video tutorial</a>.</p>
+</blockquote>
+<ul>
+<li>
+<p>Create <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/alignment.unique.R"><code>R</code> script</a>;</p>
+<pre data-role="codeBlock" data-info="R" class="language-r R"><code>lines <span class="token operator">&lt;-</span> readLines<span class="token punctuation">(</span><span class="token string">"alignment.fa"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Extract sequences with gaps preserved</span>
+seq_apod_full <span class="token operator">&lt;-</span> <span class="token string">""</span>
+seq_c8g_full <span class="token operator">&lt;-</span> <span class="token string">""</span>
+seq_rbp4_full <span class="token operator">&lt;-</span> <span class="token string">""</span>
+
+current_seq <span class="token operator">&lt;-</span> <span class="token keyword keyword-NULL">NULL</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>line <span class="token keyword keyword-in">in</span> lines<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>grepl<span class="token punctuation">(</span><span class="token string">"apolipoprotein D"</span><span class="token punctuation">,</span> line<span class="token punctuation">,</span> ignore.case <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    current_seq <span class="token operator">&lt;-</span> <span class="token string">"apod"</span>
+  <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>grepl<span class="token punctuation">(</span><span class="token string">"2QOS"</span><span class="token punctuation">,</span> line<span class="token punctuation">,</span> ignore.case <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    current_seq <span class="token operator">&lt;-</span> <span class="token string">"c8g"</span>
+  <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>grepl<span class="token punctuation">(</span><span class="token string">"Retinol-binding protein 4"</span><span class="token punctuation">,</span> line<span class="token punctuation">,</span> ignore.case <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    current_seq <span class="token operator">&lt;-</span> <span class="token string">"rbp4"</span>
+  <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>grepl<span class="token punctuation">(</span><span class="token string">"^&gt;"</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> nchar<span class="token punctuation">(</span>trimws<span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    seq_line <span class="token operator">&lt;-</span> trimws<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>current_seq <span class="token operator">==</span> <span class="token string">"apod"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      seq_apod_full <span class="token operator">&lt;-</span> paste0<span class="token punctuation">(</span>seq_apod_full<span class="token punctuation">,</span> seq_line<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>current_seq <span class="token operator">==</span> <span class="token string">"c8g"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      seq_c8g_full <span class="token operator">&lt;-</span> paste0<span class="token punctuation">(</span>seq_c8g_full<span class="token punctuation">,</span> seq_line<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>current_seq <span class="token operator">==</span> <span class="token string">"rbp4"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      seq_rbp4_full <span class="token operator">&lt;-</span> paste0<span class="token punctuation">(</span>seq_rbp4_full<span class="token punctuation">,</span> seq_line<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Split into characters (including gaps)</span>
+apod_vec <span class="token operator">&lt;-</span> strsplit<span class="token punctuation">(</span>seq_apod_full<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+c8g_vec <span class="token operator">&lt;-</span> strsplit<span class="token punctuation">(</span>seq_c8g_full<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+rbp4_vec <span class="token operator">&lt;-</span> strsplit<span class="token punctuation">(</span>seq_rbp4_full<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Get RBP4 sequence without gaps (for position reference)</span>
+rbp4_no_gap <span class="token operator">&lt;-</span> rbp4_vec<span class="token punctuation">[</span>rbp4_vec <span class="token operator">!=</span> <span class="token string">"-"</span><span class="token punctuation">]</span>
+rbp4_seq <span class="token operator">&lt;-</span> paste<span class="token punctuation">(</span>rbp4_no_gap<span class="token punctuation">,</span> collapse <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>
+
+cat<span class="token punctuation">(</span><span class="token string">"\n=== RBP4 SEQUENCE (no gaps) ===\n"</span><span class="token punctuation">)</span>
+cat<span class="token punctuation">(</span>rbp4_seq<span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+cat<span class="token punctuation">(</span>paste0<span class="token punctuation">(</span><span class="token string">"Length: "</span><span class="token punctuation">,</span> nchar<span class="token punctuation">(</span>rbp4_seq<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"\n\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># LigPlot+ interaction residues (mature numbering)</span>
+interaction_ligplot <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">63</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">114</span><span class="token punctuation">,</span> <span class="token number">115</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">134</span><span class="token punctuation">,</span> <span class="token number">136</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">,</span> <span class="token number">153</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Convert to original sequence numbering (LigPlot+ + 1)</span>
+interaction_positions <span class="token operator">&lt;-</span> interaction_ligplot <span class="token operator">+</span> <span class="token number">1</span>
+
+<span class="token comment"># Function to classify amino acid properties</span>
+get_property <span class="token operator">&lt;-</span> <span class="token keyword keyword-function">function</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  hydrophobic <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"V"</span><span class="token punctuation">,</span> <span class="token string">"L"</span><span class="token punctuation">,</span> <span class="token string">"I"</span><span class="token punctuation">,</span> <span class="token string">"M"</span><span class="token punctuation">,</span> <span class="token string">"F"</span><span class="token punctuation">,</span> <span class="token string">"W"</span><span class="token punctuation">,</span> <span class="token string">"Y"</span><span class="token punctuation">,</span> <span class="token string">"P"</span><span class="token punctuation">,</span> <span class="token string">"G"</span><span class="token punctuation">)</span>
+  positive <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token string">"R"</span><span class="token punctuation">,</span> <span class="token string">"K"</span><span class="token punctuation">,</span> <span class="token string">"H"</span><span class="token punctuation">)</span>
+  negative <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">,</span> <span class="token string">"E"</span><span class="token punctuation">)</span>
+  polar <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token string">"S"</span><span class="token punctuation">,</span> <span class="token string">"T"</span><span class="token punctuation">,</span> <span class="token string">"N"</span><span class="token punctuation">,</span> <span class="token string">"Q"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>aa <span class="token percent-operator operator">%in%</span> hydrophobic<span class="token punctuation">)</span> return<span class="token punctuation">(</span><span class="token string">"hydrophobic"</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>aa <span class="token percent-operator operator">%in%</span> positive<span class="token punctuation">)</span> return<span class="token punctuation">(</span><span class="token string">"positive"</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>aa <span class="token percent-operator operator">%in%</span> negative<span class="token punctuation">)</span> return<span class="token punctuation">(</span><span class="token string">"negative"</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>aa <span class="token percent-operator operator">%in%</span> polar<span class="token punctuation">)</span> return<span class="token punctuation">(</span><span class="token string">"polar"</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-else">else</span> return<span class="token punctuation">(</span><span class="token string">"unknown"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Find alignment positions for each interaction residue</span>
+results <span class="token operator">&lt;-</span> data.frame<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>pos <span class="token keyword keyword-in">in</span> interaction_positions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment"># Get the actual amino acid at this position in RBP4 (no-gap sequence)</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>pos <span class="token operator">&gt;</span> nchar<span class="token punctuation">(</span>rbp4_seq<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-next">next</span>
+  <span class="token punctuation">}</span>
+  rbp4_aa <span class="token operator">&lt;-</span> substr<span class="token punctuation">(</span>rbp4_seq<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> pos<span class="token punctuation">)</span>
+  
+  <span class="token comment"># Find where this position is in the alignment (accounting for gaps)</span>
+  non_gap_count <span class="token operator">&lt;-</span> <span class="token number">0</span>
+  align_idx <span class="token operator">&lt;-</span> <span class="token keyword keyword-NA">NA</span>
+  <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>i <span class="token keyword keyword-in">in</span> <span class="token number">1</span><span class="token operator">:</span>length<span class="token punctuation">(</span>rbp4_vec<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rbp4_vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"-"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      non_gap_count <span class="token operator">&lt;-</span> non_gap_count <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>non_gap_count <span class="token operator">==</span> pos<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        align_idx <span class="token operator">&lt;-</span> i
+        <span class="token keyword keyword-break">break</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>is.na<span class="token punctuation">(</span>align_idx<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-next">next</span>
+  <span class="token punctuation">}</span>
+  
+  apod_aa <span class="token operator">&lt;-</span> ifelse<span class="token punctuation">(</span>apod_vec<span class="token punctuation">[</span>align_idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> apod_vec<span class="token punctuation">[</span>align_idx<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  c8g_aa <span class="token operator">&lt;-</span> ifelse<span class="token punctuation">(</span>c8g_vec<span class="token punctuation">[</span>align_idx<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> c8g_vec<span class="token punctuation">[</span>align_idx<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  
+  rbp4_prop <span class="token operator">&lt;-</span> get_property<span class="token punctuation">(</span>rbp4_aa<span class="token punctuation">)</span>
+  apod_prop <span class="token operator">&lt;-</span> ifelse<span class="token punctuation">(</span>apod_aa <span class="token operator">==</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> get_property<span class="token punctuation">(</span>apod_aa<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  c8g_prop <span class="token operator">&lt;-</span> ifelse<span class="token punctuation">(</span>c8g_aa <span class="token operator">==</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> <span class="token string">"gap"</span><span class="token punctuation">,</span> get_property<span class="token punctuation">(</span>c8g_aa<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  
+  <span class="token comment"># Calculate uniqueness score</span>
+  score <span class="token operator">&lt;-</span> <span class="token number">0</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rbp4_aa <span class="token operator">!=</span> apod_aa<span class="token punctuation">)</span> score <span class="token operator">&lt;-</span> score <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rbp4_aa <span class="token operator">!=</span> c8g_aa<span class="token punctuation">)</span> score <span class="token operator">&lt;-</span> score <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rbp4_prop <span class="token operator">!=</span> apod_prop<span class="token punctuation">)</span> score <span class="token operator">&lt;-</span> score <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rbp4_prop <span class="token operator">!=</span> c8g_prop<span class="token punctuation">)</span> score <span class="token operator">&lt;-</span> score <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>apod_prop <span class="token operator">==</span> c8g_prop <span class="token operator">&amp;</span> rbp4_prop <span class="token operator">!=</span> apod_prop<span class="token punctuation">)</span> score <span class="token operator">&lt;-</span> score <span class="token operator">+</span> <span class="token number">1</span>
+  
+  <span class="token comment"># Find original LigPlot+ number (pos - 1)</span>
+  ligplot_num <span class="token operator">&lt;-</span> pos <span class="token operator">-</span> <span class="token number">1</span>
+  
+  results <span class="token operator">&lt;-</span> rbind<span class="token punctuation">(</span>results<span class="token punctuation">,</span> data.frame<span class="token punctuation">(</span>
+    Num <span class="token operator">=</span> ligplot_num<span class="token punctuation">,</span>
+    Original_Num <span class="token operator">=</span> pos<span class="token punctuation">,</span>
+    RBP4 <span class="token operator">=</span> rbp4_aa<span class="token punctuation">,</span>
+    RBP4_Prop <span class="token operator">=</span> rbp4_prop<span class="token punctuation">,</span>
+    APOD <span class="token operator">=</span> apod_aa<span class="token punctuation">,</span>
+    APOD_Prop <span class="token operator">=</span> apod_prop<span class="token punctuation">,</span>
+    C8G <span class="token operator">=</span> c8g_aa<span class="token punctuation">,</span>
+    C8G_Prop <span class="token operator">=</span> c8g_prop<span class="token punctuation">,</span>
+    Score <span class="token operator">=</span> score
+  <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Sort by score descending</span>
+results <span class="token operator">&lt;-</span> results<span class="token punctuation">[</span>order<span class="token punctuation">(</span><span class="token operator">-</span>results<span class="token operator">$</span>Score<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
+
+cat<span class="token punctuation">(</span><span class="token string">"\n=== INTERACTION RESIDUES SORTED BY UNIQUENESS SCORE ===\n"</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>results<span class="token punctuation">)</span>
+</code></pre></li>
+<li>
+<p>Run <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/alignment.unique.R"><code>R</code> script</a>.</p>
+<blockquote>
+<p>Note that the original index starts from <code>1</code> while the index applied by PLIP starts from <code>0</code>.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="R" class="language-r R"><code>r<span class="token operator">$</span><span class="token operator">&gt;</span> source<span class="token punctuation">(</span><span class="token string">"alignment.unique.R"</span><span class="token punctuation">)</span>
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>=== RBP4 SEQUENCE (no gaps) ===
+MKWVWALLLLAALGSGRAERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMSATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLNLDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNLL 
+Length: 201
+
+
+=== INTERACTION RESIDUES SORTED BY UNIQUENESS SCORE ===
+  Num Original_Num RBP4   RBP4_Prop APOD   APOD_Prop C8G    C8G_Prop Score
+8  115          116    Q       polar    P hydrophobic   A hydrophobic     5
+10 134          135    Q       polar    V hydrophobic   L hydrophobic     5
+9  119          120    D    negative  gap         gap   V hydrophobic     4
+5   80           81    L hydrophobic    R    positive   F hydrophobic     3
+7  114          115    L hydrophobic    M hydrophobic gap         gap     3
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>From the output, we can see that <strong>Asp119</strong> is a critically unique residue involved in interactions.
+<ul>
+<li>Therefore, designing polar interactions with <strong>Asp119</strong> is a reasonable modification to enhance <strong>selectivity</strong>;</li>
+<li>We may consider adding an <strong>amino</strong> group (<code>-NH2</code>) to ligand <code>C19</code> that potentially creates hydrogen bond with <strong>Asp119</strong> <code>O</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Prediction based on computer analysis.
+<ul>
+<li>
+<p><a href="https://ambermd.org/index.php"><strong>AMBER MD</strong></a>;</p>
+<blockquote>
+<p>This software is for water molecule binding analysis. It can determine whether the interaction of a water molecule and a residue is stable or not. If the binding energy is low, we may modify the ligand to interact targeting this residue to enhance stability.</p>
+</blockquote>
+<blockquote>
+<p>Please take note that running an MD analysis is extremely time-consuming, sometimes lasting for days/weeks. If you insist running MD, please ensure that you don't shut down your computer during analysis and be patient. An alternative, much faster option is <strong><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408">HydraMap</a></strong>, which we will elaborate on later but will not run.</p>
+</blockquote>
+<ul>
+<li>
+<p>Install <strong>ambertools</strong> and prepare environment in <code>linux</code>;</p>
+<blockquote>
+<p>The <code>pdb</code> file we use is <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Pocket/RBP4.str.predict.pdb">RBP4.str.predict.pdb</a>.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Install ambertools</span>
+$ conda <span class="token function">install</span> <span class="token parameter variable">-c</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ <span class="token assign-left variable">ambertools</span><span class="token operator">=</span><span class="token number">24</span>
+
+<span class="token comment"># Make working directory and move the pdb file into it</span>
+$ <span class="token function">mkdir</span> ~/MD <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> ~/MD
+$ <span class="token function">mv</span> <span class="token operator">&lt;</span>path_to_pdb_file<span class="token operator">&gt;</span> <span class="token builtin class-name">.</span>
+
+<span class="token comment"># Create bash scripts for running MD</span>
+$ <span class="token function">touch</span> run_md.sh monitor.sh
+<span class="token comment"># These scripts can be edited via vim later</span>
+</code></pre></li>
+<li>
+<p>Edit 2 <code>bash</code> scripts;</p>
+<ul>
+<li>
+<p><strong><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/run_md.sh">run_md.sh</a></strong> is the script for running MD;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># GIST analysis pipeline for RBP4</span>
+
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>  <span class="token comment"># exit on error</span>
+
+<span class="token comment"># Log file</span>
+<span class="token assign-left variable">LOG</span><span class="token operator">=</span><span class="token string">"md_pipeline.log"</span>
+<span class="token builtin class-name">exec</span> <span class="token operator">&gt;</span> <span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token function">tee</span> <span class="token parameter variable">-a</span> <span class="token string">"<span class="token variable">$LOG</span>"</span><span class="token punctuation">)</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"=========================================="</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Starting MD pipeline at <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=========================================="</span>
+
+<span class="token comment"># Check if PDB exists</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> <span class="token string">"RBP4.str.predict.pdb"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: RBP4.str.predict.pdb not found in current directory"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+
+<span class="token comment"># Step 1: tleap</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 1] Running tleap..."</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> leap.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOFLEAP'
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+prot = loadpdb RBP4.str.predict.pdb
+solvateOct prot TIP3PBOX 10.0
+addIons prot Na+ 0
+saveamberparm prot rbp4.prmtop rbp4.inpcrd
+quit
+EOFLEAP</span>
+tleap <span class="token parameter variable">-f</span> leap.in <span class="token operator">&gt;</span> leap.out <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: tleap failed. Check leap.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"tleap completed successfully"</span>
+
+<span class="token comment"># Step 2: Minimization</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 2] Running minimization (1000 steps)..."</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> min.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOFM'
+Minimization
+&amp;cntrl
+  imin=1, maxcyc=1000, ncyc=500,
+  ntb=1, cut=10.0,
+  ntpr=100
+/
+EOFM</span>
+sander <span class="token parameter variable">-O</span> <span class="token parameter variable">-i</span> min.in <span class="token parameter variable">-o</span> min.out <span class="token parameter variable">-p</span> rbp4.prmtop <span class="token parameter variable">-c</span> rbp4.inpcrd <span class="token parameter variable">-r</span> min.rst
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: Minimization failed. Check min.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Minimization completed"</span>
+
+<span class="token comment"># Step 3: Heating (NVT)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 3] Running heating (NVT, 100 ps, gentle ramp)..."</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> heat.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOFH'
+Heating NVT with temperature ramp
+&amp;cntrl
+  irest=0, ntx=1,
+  nstlim=100000, dt=0.001,
+  ntt=3, gamma_ln=2.0, temp0=300.0,
+  ntb=1, cut=10.0,
+  ntr=1, restraint_wt=25.0,
+  restraintmask="!:WAT &amp; !@H=",
+  ntpr=500, ntwx=5000,
+  nmropt=1
+/
+&amp;wt type='TEMP0', istep1=0, istep2=100000, value1=0.0, value2=300.0 /
+&amp;wt type='END' /
+EOFH</span>
+
+sander <span class="token parameter variable">-O</span> <span class="token parameter variable">-i</span> heat.in <span class="token parameter variable">-o</span> heat.out <span class="token parameter variable">-p</span> rbp4.prmtop <span class="token parameter variable">-c</span> min.rst <span class="token parameter variable">-r</span> heat.rst <span class="token parameter variable">-ref</span> min.rst
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: Heating failed. Check heat.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Heating completed"</span>
+
+<span class="token comment"># Step 4: Equilibration (NPT)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 4] Running equilibration (NPT, 100 ps)..."</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> equil.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOFE'
+Equilibration NPT
+&amp;cntrl
+  irest=1, ntx=5,
+  nstlim=100000, dt=0.001,
+  ntt=3, gamma_ln=2.0, temp0=300.0,
+  ntb=2, ntp=1, pres0=1.0, taup=2.0,
+  cut=10.0,
+  ntr=1, restraint_wt=25.0,
+  restraintmask="!:WAT &amp; !@H=",
+  ntpr=500, ntwx=5000
+/
+EOFE</span>
+
+sander <span class="token parameter variable">-O</span> <span class="token parameter variable">-i</span> equil.in <span class="token parameter variable">-o</span> equil.out <span class="token parameter variable">-p</span> rbp4.prmtop <span class="token parameter variable">-c</span> heat.rst <span class="token parameter variable">-r</span> equil.rst <span class="token parameter variable">-ref</span> heat.rst
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: Equilibration failed. Check equil.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Equilibration completed"</span>
+
+<span class="token comment"># Step 5: Production MD</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 5] Running production MD (5 ns, 2.5M steps)..."</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> md.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOFM'
+Production MD 1 ns
+&amp;cntrl
+  irest=0, ntx=1,
+  nstlim=1000000, dt=0.001,
+  ntt=3, gamma_ln=2.0, temp0=300.0,
+  ntb=2, ntp=1, pres0=1.0, taup=2.0,
+  cut=10.0,
+  vlimit=20,
+  ntwx=5000, ntpr=500, ntwr=5000
+/
+EOFM</span>
+
+sander <span class="token parameter variable">-O</span> <span class="token parameter variable">-i</span> md.in <span class="token parameter variable">-o</span> md.out <span class="token parameter variable">-p</span> rbp4.prmtop <span class="token parameter variable">-c</span> equil.rst <span class="token parameter variable">-r</span> md.rst <span class="token parameter variable">-x</span> mdcrd.nc
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: Production MD failed. Check md.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Production MD completed"</span>
+
+<span class="token comment"># Step 6: GIST</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Step 6] Running GIST analysis..."</span>
+
+<span class="token function">cat</span> <span class="token operator">&gt;</span> gist.in <span class="token operator">&lt;&lt;</span> <span class="token string">'EOF'
+parm rbp4.prmtop
+trajin mdcrd.nc
+autoimage
+reference equil.rst
+rms !:WAT reference
+gist refdens 0.0334 gridcntr -9.23 -3.06 1.41 griddim 60 60 60 out gist.out
+go
+EOF</span>
+
+cpptraj <span class="token parameter variable">-i</span> gist.in
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"ERROR: GIST analysis failed. Check gist.out"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword keyword-fi">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"GIST analysis completed"</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=========================================="</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"MD PIPELINE COMPLETED SUCCESSFULLY at <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span>"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"=========================================="</span>
+<span class="token builtin class-name">echo</span> <span class="token string">""</span>
+</code></pre></li>
+<li>
+<p><strong><a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/monitor.sh">monitor.sh</a></strong> is the script for monitoring the process in case of errors.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword keyword-while">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword keyword-do">do</span>
+    <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> pgrep <span class="token parameter variable">-f</span> <span class="token string">"run_md.sh"</span> <span class="token operator">&gt;</span> /dev/null<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">"MD job has stopped at <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span>"</span> <span class="token operator">&gt;&gt;</span> monitor.log
+        <span class="token builtin class-name">echo</span> <span class="token string">"Last 20 lines of run.log:"</span> <span class="token operator">&gt;&gt;</span> monitor.log
+        <span class="token function">tail</span> <span class="token parameter variable">-20</span> run.log <span class="token operator">&gt;&gt;</span> monitor.log
+        <span class="token builtin class-name">break</span>
+    <span class="token keyword keyword-fi">fi</span>
+    <span class="token function">sleep</span> <span class="token number">900</span>  <span class="token comment"># Check every 15min</span>
+<span class="token keyword keyword-done">done</span>
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Run analysis;</p>
+<blockquote>
+<p>The reason we use <code>nohup</code> command to run these scripts is that the analysis might take days, and <code>nohup</code> ensures the project continues to run even if your computer is in sleep mode.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Run run_md.sh and record everything into run.log</span>
+$ <span class="token function">nohup</span> <span class="token function">bash</span> run_md.sh <span class="token operator">&gt;</span> run.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+
+<span class="token comment"># Run monitor.sh and record everything into monitor.out</span>
+$ <span class="token function">nohup</span> <span class="token function">bash</span> monitor.sh <span class="token operator">&gt;</span> monitor.out <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+
+<span class="token comment"># Open 2 terminals respectively and check timely updates on analysis</span>
+$ <span class="token function">tail</span> <span class="token parameter variable">-f</span> run.log
+$ <span class="token function">tail</span> <span class="token parameter variable">-f</span> monitor.out
+</code></pre></li>
+<li>
+<p>Acquire results and reach conclusions;</p>
+<ul>
+<li>Unfortunately, my computer and input failed to deliver qualified output data after a week of computing, and I sincerely welcome your attempt at this analysis if possible;</li>
+<li>The complete working folder is in <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Supplementary/Interactions/MD.tar.gz">./Supplementary/MD.tar.gz</a>, and if you're available you may check which step of analysis went wrong (the final output <code>dx</code> file says all water molecules have the same entropy, 0, which is absurd; production MD wasn't completed as the computing turns out to be unexpectedly time-consuming);
+<ul>
+<li>A possible explanation is that the input</li>
+</ul>
+</li>
+<li>Nevertheless, the principle is clear: water molecules with high entropy is subject to substitution, and that's the target we're looking for.</li>
+</ul>
+</li>
+<li>
+<p>Alternative solution: <strong><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408">HydraMap v.2</a></strong>.</p>
+<ul>
+<li>
+<p>Download the <strong><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408">HydraMap v.2</a></strong> program, test data and test results <a href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.3c00408/suppl_file/ci3c00408_si_002.zip">here</a> or directly get the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Supplementary/Interactions/HydraMap.zip"><code>zip</code> file</a>;</p>
+</li>
+<li>
+<p>Prepare <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Supplementary/Interactions/ligand.mol2">ligand file</a> through <strong>PyMol</strong>;</p>
+<ul>
+<li>
+<p>In the last PyMol session (loaded from <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Screening/STL592018.docked.pdb">docked <code>pdb</code> file</a>), run these commands;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>PyMOL<span class="token operator">&gt;</span> save ~<span class="token punctuation">\</span>ligand.mol2, resn UNL
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Run these commands in <code>linux</code> and acquire results.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Unzip the zip file</span>
+$ <span class="token function">unzip</span> <span class="token operator">&lt;</span>path_to_zip_file<span class="token operator">&gt;</span>
+
+<span class="token comment"># Prepare working directory</span>
+$ <span class="token builtin class-name">cd</span> HydraMap/Program
+$ <span class="token function">mv</span> <span class="token operator">&lt;</span>path_to_RBP4.str.predict.pdb_file<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>path_to_ligand.mol2_file<span class="token operator">&gt;</span> <span class="token builtin class-name">.</span>
+
+<span class="token comment"># Run MD (refer to HydraMap/README.txt for help)</span>
+$ ./wsitem RBP4.str.predict.pdb ligand.mol2 holo <span class="token number">3.0</span> <span class="token number">3.0</span> <span class="token number">2.0</span> <span class="token number">10</span>
+$ ./getwat RBP4.str.predict.pdb ligand.mol2 RBP4.str.predict_holo_ws.pdb <span class="token number">5.0</span>
+$ ./wnmin RBP4.str.predict.pdb RBP4.str.predict_holo_min-5A.pdb <span class="token number">100</span>
+$ ./wnmin2 RBP4.str.predict.pdb ligand.mol2 RBP4.str.predict_holo_min-5A.pdb <span class="token number">100</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://ring.biocomputingup.it/"><strong>RING</strong></a>.</p>
+<blockquote>
+<p>This web server is for <code>RIN</code> analysis. Abbreviated for Residue Interaction Network Generator. It is commonly acknowledged that the more involved a residue is in interactions within the protein, the more likely it's a critical residue in conformational changes, ligand recognition and signaling transduction.</p>
+</blockquote>
+<ul>
+<li>Input RBP4 UniProt ID <a href="https://www.uniprot.org/uniprotkb/P02753/entry">P02753</a> and run <a href="https://ring.biocomputingup.it/"><strong>RING</strong></a> analysis;</li>
+<li>Output results can be seen in <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/P02753.json">network <code>json</code> format</a>, <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/P02753.cif_ringNodes">RINGNode <code>cif</code> format</a> or directly on <a href="https://ring.biocomputingup.it/job/0d2073bf-5dba-4489-804f-a19980fd941c"><strong>webpage</strong></a>.
+<ul>
+<li>
+<p>The first column in <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/P02753.cif_ringNodes">RINGNode <code>cif</code> file</a> lists all residues, and the corresponding <strong>Degree</strong> column lists how many interactions they are involved in;</p>
+</li>
+<li>
+<p>In <code>linux</code>, run the following command;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>$ <span class="token function">awk</span> -F<span class="token string">'\t'</span> <span class="token string">'{print $1 "\t" $7}'</span> P02753.cif_ringNodes <span class="token operator">|</span><span class="token punctuation">\</span>
+<span class="token operator">&gt;</span> <span class="token function">head</span> <span class="token parameter variable">-5</span> <span class="token operator">|</span> <span class="token function">column</span> <span class="token parameter variable">-t</span>
+NodeId     Degree
+A:1:_:MET  <span class="token number">1</span>
+A:2:_:LYS  <span class="token number">2</span>
+A:3:_:TRP  <span class="token number">3</span>
+A:4:_:VAL  <span class="token number">3</span>
+</code></pre></li>
+<li>
+<p>Create <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/RINGNodes.sort.R"><code>R</code> script</a> to analyze this <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Results/Interactions/P02753.cif_ringNodes"><code>cif_ringNodes</code>file</a>;</p>
+<pre data-role="codeBlock" data-info="R" class="language-r R"><code><span class="token comment"># Load the node table</span>
+df <span class="token operator">&lt;-</span> read.table<span class="token punctuation">(</span><span class="token string">"P02753.cif_ringNodes"</span><span class="token punctuation">,</span> header <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> sep <span class="token operator">=</span> <span class="token string">"\t"</span><span class="token punctuation">,</span> fill <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Residues of interest</span>
+res <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">63</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">114</span><span class="token punctuation">,</span> <span class="token number">115</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">134</span><span class="token punctuation">,</span> <span class="token number">136</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">,</span> <span class="token number">153</span><span class="token punctuation">)</span>
+ring_res <span class="token operator">&lt;-</span> res <span class="token operator">+</span> <span class="token number">1</span>
+
+<span class="token comment"># Subset</span>
+df_sub <span class="token operator">&lt;-</span> df<span class="token punctuation">[</span>df<span class="token operator">$</span>Position <span class="token percent-operator operator">%in%</span> ring_res<span class="token punctuation">,</span> c<span class="token punctuation">(</span><span class="token string">"Position"</span><span class="token punctuation">,</span> <span class="token string">"Residue"</span><span class="token punctuation">,</span> <span class="token string">"Degree"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Sort by Degree descending</span>
+df_sorted <span class="token operator">&lt;-</span> df_sub<span class="token punctuation">[</span>order<span class="token punctuation">(</span><span class="token operator">-</span>df_sub<span class="token operator">$</span>Degree<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">]</span>
+
+<span class="token comment"># Switch to original indexes</span>
+df_sorted<span class="token operator">$</span>Position <span class="token operator">&lt;-</span> df_sorted<span class="token operator">$</span>Position <span class="token operator">-</span> <span class="token number">1</span>
+
+<span class="token comment"># Top 7</span>
+head<span class="token punctuation">(</span>df_sorted<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+</code></pre></li>
+<li>
+<p>Run the <a href="file:///C:/Users/steco/Documents/GitHub/Biochemistry.github.io/homewk4/Scripts/Interactions/RINGNodes.sort.R">script</a> and reach conclusion.</p>
+<pre data-role="codeBlock" data-info="R" class="language-r R"><code>r<span class="token operator">$</span><span class="token operator">&gt;</span> source<span class="token punctuation">(</span><span class="token string">"RINGNodes.sort.R"</span><span class="token punctuation">)</span>
+    Position Residue Degree
+<span class="token number">108</span>      <span class="token number">107</span>     TYR     <span class="token number">10</span>
+<span class="token number">135</span>      <span class="token number">134</span>     GLN     <span class="token number">10</span>
+<span class="token number">139</span>      <span class="token number">138</span>     ARG     <span class="token number">10</span>
+<span class="token number">154</span>      <span class="token number">153</span>     VAL     <span class="token number">10</span>
+<span class="token number">137</span>      <span class="token number">136</span>     SER      <span class="token number">9</span>
+<span class="token number">43</span>        <span class="token number">42</span>     TYR      <span class="token number">8</span>
+<span class="token number">120</span>      <span class="token number">119</span>     ASP      <span class="token number">8</span>
+</code></pre><ul>
+<li>From the result, we can see that these residues are interaction centers among pocket residues, and by cross-referring with both LigPlot+ and PLIP results, we can infer that ligand modifications targeting the following residues will be of most significance.
+<ul>
+<li><strong>Arg138</strong>;
+<ul>
+<li>Could be achieved by adding hydroxyl group to ligand <code>C18</code> or <code>C16</code>.</li>
+</ul>
+</li>
+<li><strong>Asp119</strong>;
+<ul>
+<li>Could be achieved by adding hydroxyl/amino group to ligand <code>C19</code>, or substituting <code>C18</code> with nitrogen.</li>
+</ul>
+</li>
+<li><strong>Ser136</strong>.
+<ul>
+<li>Could be achieved by adding carboxyl/amide group to ligand <code>C19</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="t6">T6 </h3>
+<blockquote>
+<p>Experimental strategies.</p>
+</blockquote>
+<ul>
+<li><strong>Assay 1: Fluorescence-Based Retinol Competition Assay</strong>
+<ul>
+<li>What it measures;
+<ul>
+<li>Determines if selected compound (<code>STL592018</code>) <strong>competes</strong> with RBP4's natural ligand, retinol (vitamin A), for binding to the same pocket.</li>
+</ul>
+</li>
+<li>Principle;
+<ul>
+<li>RBP4 has <strong>a natural fluorescence signal at Trp107</strong> inside its pocket;</li>
+<li>When retinol binds, it absorbs this signal (quenching), causing fluorescence to decrease;</li>
+<li>If the compound binds to the same pocket, it will also cause a measurable change in this signal.</li>
+</ul>
+</li>
+<li>Short protocol;
+<ul>
+<li>
+<ol>
+<li>Purify RBP4 protein;</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Add a fixed concentration of retinol to RBP4 in a 96-well plate;</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Add increasing concentrations of STL592018, from 0.1 nM to 100 µM, to different wells;</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Measure fluorescence using a plate reader (excitation at 280 nm, emission at 340 nm) targeting Trp;</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Plot fluorescence intensity vs. compound concentration to calculate <strong>IC₅₀</strong> (the concentration needed to displace 50% of bound retinol).</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Key Readouts.
+<ul>
+<li><strong>IC₅₀ (in nM or µM):</strong> A lower IC₅₀ indicates stronger binding competition. The natural ligand retinol has an IC₅₀ around 100 nM in similar assays<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn5" id="fnref5">[5]</a></sup>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Assay 2: Surface Plasmon Resonance (SPR) for Direct Binding Kinetics</strong>
+<ul>
+<li>What it measures;
+<ul>
+<li>Provides precise, real-time measurements of binding kinetics.
+<ul>
+<li>How fast the compound binds (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>o</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">k_{on}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) and how long it stays bound (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">k_{off}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>);</li>
+<li>How strong it binds (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">K_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Principle;
+<ul>
+<li>Immobilized RBP4 protein molecules on a <strong>chip</strong> are flushed with compound solution;</li>
+<li>When the compound binds, it changes the <strong>refractive index</strong> near the chip surface, generating a signal<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn6" id="fnref6">[6]</a></sup>;</li>
+<li>By measuring how this signal changes over time at different concentrations, we can acquire the precise binding parameters.</li>
+</ul>
+</li>
+<li>Short protocol;
+<ul>
+<li>
+<ol>
+<li>Immobilize RBP4 on a Biacore <strong>sensor chip</strong> CM5 using an amine coupling kit;</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Prepare the compound at different concentrations (<em>e.g.</em>, 1 nM to 100 µM);</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Inject each concentration over the chip (<strong>association phase</strong>), then flow buffer alone (<strong>dissociation phase</strong>);</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Regenerate the chip with a mild buffer (<em>e.g.</em>, Glycine-HCl, pH 2.5) to remove remaining compound between injections;</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Use the data to calculate kinetic parameters.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Key Readouts;
+<ul>
+<li><strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">K_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (nM or µM):</strong> The equilibrium dissociation constant: a lower <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">K_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> means tighter binding;</li>
+<li><strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">k_{off}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> (s⁻¹):</strong> The dissociation rate: in clinical terms, a slow dissociation rate (small <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>o</mi><mi>f</mi><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">k_{off}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>) is often more important for <strong>long-lasting</strong> effects.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Assay 3: Cellular Retinol Delivery Assay Using STRA6-Expressing Cells</strong>
+<ul>
+<li>What it measures;
+<ul>
+<li>Assesses whether the compound affects the <strong>physiological function</strong> of RBP4 (its ability to deliver retinol into cells via the STRA6 receptor).</li>
+</ul>
+</li>
+<li>Principle<sup class="footnote-ref"><a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fn7" id="fnref7">[7]</a></sup>;
+<ul>
+<li>Cells engineered to express the STRA6 receptor;</li>
+<li>Add RBP4 loaded with retinol, along with the compound;</li>
+<li>If the compound binds the pocket, it should hamper retinol delivery, which can be measured by quantifying how much retinol gets inside the cells.</li>
+</ul>
+</li>
+<li>Short protocol;
+<ul>
+<li>
+<ol>
+<li>Culture HEK293 cells that stably express human STRA6 and the enzyme LRAT, which traps retinol inside the cell;</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Load purified RBP4 with retinol;</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Pre-incubate the loaded RBP4 with STL592018 at various concentrations (0, 10 nM, 1 µM, 10 µM);</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Incubate the mixture with the cells;</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Wash the cells thoroughly to remove unbound RBP4 and the compound;</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Measure intracellular retinol content using <strong>HPLC</strong>, <strong>flow cytometry</strong> (if using a fluorescent retinol analog), or <strong>spectrophotometry</strong>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Key Readouts;
+<ul>
+<li><strong>Cellular retinol uptake (pmol/10⁶ cells):</strong> Quantifies how much retinol enters the cell, thereby reflecting the effect of compound binding.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://doi.org/10.1016/j.ajhg.2019.07.010">Williamson, K. A., et al. Mutations in RBP4 cause an autosomal dominant form of microphthalmia. <em>Am. J. Hum. Genet.</em> 105(3): 566-577, 2019.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://doi.org/10.1016/j.ophtha.2020.09.028">Verma, A., et al. Clinical spectrum of RBP4-related microphthalmia. <em>Ophthalmology</em>. 128(4): 612-619, 2021.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://doi.org/10.1007/s00412-020-00735-w">Chou, C. M., et al. RBP4 retinol-binding protein. <em>Mol. Vis.</em> 26: 412-425, 2020.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://doi.org/10.1016/j.cell.2015.03.006">Chou, C. M., et al. Biochemical basis for dominant inheritance, variable penetrance, and maternal effects in RBP4 congenital eye disease. <em>Cell.</em> 161(3): 634-646, 2015.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://doi.org/10.1016/j.ab.2009.05.038">Sharif, O., et al. Time-resolved fluorescence resonance energy transfer and surface plasmon resonance-based assays for retinoid and transthyretin binding to retinol-binding protein 4. <em>Analytical Biochemistry.</em> 393(1): 73-80, 2009.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://doi.org/10.1016/0250-6874(83)85036-7">Liedberg, B., Nylander, C., &amp; Lundström, I. Surface plasmon resonance for gas detection and biosensing. <em>Sensors and Actuators.</em> 4: 299-304, 1983.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="https://doi.org/10.1016/j.cmet.2007.12.003">Isken, A., et al. RBP4 disrupts vitamin A uptake homeostasis in a STRA6-deficient animal model for Matthew-Wood syndrome. <em>Cell Metabolism.</em> 7(3): 258-268, 2008.</a> <a href="file:///C:/Users/steco/AppData/Local/Temp/crossnote2026312-37664-1a954mz.sv5x.html#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  </body></html>

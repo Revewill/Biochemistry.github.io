@@ -70,6 +70,7 @@
   * Results are in folder [Predict](./Results/Predict/) under folder [Results](./Results/);
   * Later analysis are mostly based on this `cif` file: [RBP4_str_predict_sample_0.cif](./Results/Predict/RBP4_str_predict/seed_2802/predictions/RBP4_str_predict_sample_0.cif).
 * **Operate on `cif` file with ChimeraX**
+  > See [`cxs` session file](./Processed/Predict/predict.cxs).
 
     ```bash
     # 1. Open file
@@ -165,6 +166,7 @@
     * [RBP4.str.predict_info.txt](./Results/Pocket/RBP4.str.predict_out/RBP4.str.predict_info.txt) is a table that lists the credibility (score) of each predicted pocket;
     * [pocket1_atm.pdb](./Results/Pocket/RBP4.str.predict_out/pockets/pocket1_atm.pdb) is a `pdb` file that depicts all atoms predicted to form the most possible pocket among all.
 * **Visualization in ChimeraX.**
+  > See [`cxs` session file](./Processed/Pocket/pocket.cxs).
   * Pipeline;
     * Open files and set basic outlook;
 
@@ -403,6 +405,7 @@
           Ratio (Hpho/Hphi): 1.00
           ```
         * With the results above, we may highlight hydrophobic and hydrophilic residues respectively in ChimeraX (within the previous session) and show their relative position to the protein surface (inside or outside the surface).
+          > See [`cxs` session file](./Processed/Pocket/pocket.cxs).
           * Pipeline;
 
             ```bash
@@ -489,6 +492,7 @@
 
 > In this section, docked `pdb` file is of the best ligand screened in [T4](#t4).
 * **Basic visualization in ChimeraX;**
+  > See [`cxs` session file](./Processed/Interactions/interactions.cxs).
   * Pipeline;
 
     ```bash
@@ -831,7 +835,7 @@
     * [**AMBER MD**](https://ambermd.org/index.php);
       > This software is for water molecule binding analysis. It can determine whether the interaction of a water molecule and a residue is stable or not. If the binding energy is low, we may modify the ligand to interact targeting this residue to enhance stability.
 
-      > Please take note that running an MD analysis is extremely time-consuming, sometimes lasting for days. If you insist running MD, please ensure that you don't shut down your computer during analysis and be patient. An alternative, much faster option is **[HydraMap](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**, which we will elaborate on later but will not run.
+      > Please take note that running an MD analysis is extremely time-consuming, sometimes lasting for days/weeks. If you insist running MD, please ensure that you don't shut down your computer during analysis and be patient. An alternative, much faster option is **[HydraMap](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**, which we will elaborate on later but will not run.
       * Install **ambertools** and prepare environment in `linux`;
         > The `pdb` file we use is [RBP4.str.predict.pdb](./Results/Pocket/RBP4.str.predict.pdb).
 
@@ -852,7 +856,7 @@
 
           ```bash
           #!/bin/bash
-          # GIST analysis pipeline for RBP4 - runs with sander (AmberTools)
+          # GIST analysis pipeline for RBP4
 
           set -e  # exit on error
 
@@ -889,7 +893,7 @@
           fi
           echo "tleap completed successfully"
 
-          Step 2: Minimization
+          # Step 2: Minimization
           echo ""
           echo "[Step 2] Running minimization (1000 steps)..."
           cat > min.in << 'EOFM'
@@ -907,7 +911,7 @@
           fi
           echo "Minimization completed"
 
-          # Step 3: Heating (NVT) - modified parameters
+          # Step 3: Heating (NVT)
           echo ""
           echo "[Step 3] Running heating (NVT, 100 ps, gentle ramp)..."
           cat > heat.in << 'EOFH'
@@ -933,7 +937,7 @@
           fi
           echo "Heating completed"
 
-          # Step 4: Equilibration (NPT) - modified parameters (dt=0.002, nstlim=50000 for 100 ps)
+          # Step 4: Equilibration (NPT)
           echo ""
           echo "[Step 4] Running equilibration (NPT, 100 ps)..."
           cat > equil.in << 'EOFE'
@@ -957,17 +961,18 @@
           fi
           echo "Equilibration completed"
 
-          # Step 5: Production MD (5 ns) - dt=0.002, nstlim=2500000
+          # Step 5: Production MD
           echo ""
           echo "[Step 5] Running production MD (5 ns, 2.5M steps)..."
           cat > md.in << 'EOFM'
-          Production MD 5 ns
+          Production MD 1 ns
           &cntrl
-            irest=1, ntx=5,
-            nstlim=500000, dt=0.002,
+            irest=0, ntx=1,
+            nstlim=1000000, dt=0.001,
             ntt=3, gamma_ln=2.0, temp0=300.0,
-            ntb=2, ntp=1, pres0=1.0, taup=1.0,
+            ntb=2, ntp=1, pres0=1.0, taup=2.0,
             cut=10.0,
+            vlimit=20,
             ntwx=5000, ntpr=500, ntwr=5000
           /
           EOFM
@@ -979,13 +984,31 @@
           fi
           echo "Production MD completed"
 
+          # Step 6: GIST
+          echo ""
+          echo "[Step 6] Running GIST analysis..."
+
+          cat > gist.in << 'EOF'
+          parm rbp4.prmtop
+          trajin mdcrd.nc
+          autoimage
+          reference equil.rst
+          rms !:WAT reference
+          gist refdens 0.0334 gridcntr -9.23 -3.06 1.41 griddim 60 60 60 out gist.out
+          go
+          EOF
+
+          cpptraj -i gist.in
+          if [ $? -ne 0 ]; then
+              echo "ERROR: GIST analysis failed. Check gist.out"
+              exit 1
+          fi
+          echo "GIST analysis completed"
+
           echo ""
           echo "=========================================="
           echo "MD PIPELINE COMPLETED SUCCESSFULLY at $(date)"
           echo "=========================================="
-          echo ""
-          echo "Generated files:"
-          ls -lh rbp4.prmtop rbp4.inpcrd min.rst heat.rst equil.rst md.rst mdcrd.nc pocket_center.txt 2>/dev/null
           echo ""
           ```
 
@@ -1018,6 +1041,10 @@
         $ tail -f monitor.out
         ```
       * Acquire results and reach conclusions;
+        * Unfortunately, my computer and input failed to deliver qualified output data after a week of computing, and I sincerely welcome your attempt at this analysis if possible;
+        * The complete working folder is in [./Supplementary/MD.tar.gz](./Supplementary/Interactions/MD.tar.gz), and if you're available you may check which step of analysis went wrong (the final output `dx` file says all water molecules have the same entropy, 0, which is absurd; production MD wasn't completed as the computing turns out to be unexpectedly time-consuming);
+          * A possible explanation is that the input 
+        * Nevertheless, the principle is clear: water molecules with high entropy is subject to substitution, and that's the target we're looking for.
       * Alternative solution: **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)**.
         * Download the **[HydraMap v.2](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00408)** program, test data and test results [here](https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.3c00408/suppl_file/ci3c00408_si_002.zip) or directly get the [`zip` file](./Supplementary/Interactions/HydraMap.zip);
         * Prepare [ligand file](./Supplementary/Interactions/ligand.mol2) through **PyMol**;
