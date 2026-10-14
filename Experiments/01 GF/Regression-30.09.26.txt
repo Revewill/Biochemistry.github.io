@@ -1,0 +1,25 @@
+Linear regression: logMW = a * Kav + b
+========================================
+
+a (slope)     = -2.558999
+b (intercept) = 2.098405
+R^2           = 0.998958
+P (slope, two-sided) = 0.0205584 (*)
+n (standards)       = 3
+Residual df         = 1
+
+Test: H0: slope = 0; two-sided t-test.
+Significance: * P < 0.05; ** P < 0.01; *** P < 0.001;
+              ns P >= 0.05.
+
+Equation: logMW = -2.558999 * Kav + 2.098405
+
+Data points used (Kav, logMW):
+  (0.1103, 1.826070)
+  (0.1690, 1.653210)
+  (0.3769, 1.136720)
+
+Unknown protein:
+  Kav      = 0.2976
+  logMW    = 1.336847
+  MW (kDa) = 21.7194
