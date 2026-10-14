@@ -1,0 +1,187 @@
+BCA ASSAY: A562
+============================================
+
+Input: Data-BCA-14.10.26.csv 
+Concentration unit: mg/mL
+Mean blank A562 = 0.09350000
+The same mean blank is subtracted from all standards and unknowns.
+All calibration models retain an intercept.
+Figures d-f show LINEAR models.
+Unknown concentrations below are provisional linear estimates.
+
+--------------------------------------------
+Standard 1-6 
+Blank-corrected equation: A562 = 0.76165714 * C - 0.00719048
+Raw-absorbance equation: A562_raw = 0.76165714 * C + 0.08630952
+Number of readings = 6
+R-squared = 0.992842541
+Adjusted R-squared = 0.991053176
+Slope P (two-sided) = 1.9256977e-05 (***)
+Residual SD = 0.00676329
+Residual df = 4
+Coefficient estimates and tests:
+                Estimate  Std. Error   t value     Pr(>|t|)
+(Intercept) -0.007190476 0.004894908 -1.468971 2.157692e-01
+C            0.761657143 0.032334695 23.555414 1.925698e-05
+95% coefficient confidence intervals:
+                  2.5 %      97.5 %
+(Intercept) -0.02078092 0.006399966
+C            0.67188164 0.851432649
+
+--------------------------------------------
+Standard 1'-6' 
+Blank-corrected equation: A562 = 0.72365714 * C - 0.00692381
+Raw-absorbance equation: A562_raw = 0.72365714 * C + 0.08657619
+Number of readings = 6
+R-squared = 0.974717644
+Adjusted R-squared = 0.968397055
+Slope P (two-sided) = 0.00024174835 (***)
+Residual SD = 0.01218881
+Residual df = 4
+Coefficient estimates and tests:
+               Estimate  Std. Error   t value     Pr(>|t|)
+(Intercept) -0.00692381 0.008821612 -0.784869 0.4764085968
+C            0.72365714 0.058273650 12.418257 0.0002417484
+95% coefficient confidence intervals:
+                  2.5 %     97.5 %
+(Intercept) -0.03141653 0.01756891
+C            0.56186355 0.88545073
+
+--------------------------------------------
+Combined standards 
+Blank-corrected equation: A562 = 0.74265714 * C - 0.00705714
+Raw-absorbance equation: A562_raw = 0.74265714 * C + 0.08644286
+Number of readings = 12
+R-squared = 0.982309278
+Adjusted R-squared = 0.980540205
+Slope P (two-sided) = 4.2959037e-10 (***)
+Residual SD = 0.00932269
+Residual df = 10
+Coefficient estimates and tests:
+                Estimate  Std. Error   t value     Pr(>|t|)
+(Intercept) -0.007057143 0.004771037 -1.479163 1.698934e-01
+C            0.742657143 0.031516430 23.564126 4.295904e-10
+95% coefficient confidence intervals:
+                  2.5 %      97.5 %
+(Intercept) -0.01768767 0.003573389
+C            0.67243416 0.812880126
+
+============================================
+BETWEEN-OPERATOR SLOPE COMPARISON
+
+Analysis of Variance Table
+
+Model 1: A ~ C + Operator
+Model 2: A ~ C * Operator
+  Res.Df        RSS Df  Sum of Sq      F Pr(>F)
+1      9 0.00080882                            
+2      8 0.00077724  1 3.1588e-05 0.3251 0.5842
+
+Slope difference: second minus first operator
+                         Estimate Std. Error    t value  Pr(>|t|)
+C:OperatorStandard 1'-6'   -0.038 0.06664346 -0.5701985 0.5841972
+95% confidence interval for slope difference:
+                              2.5 %    97.5 %
+C:OperatorStandard 1'-6' -0.1916801 0.1156801
+
+Relative slope difference (symmetric) = 5.1168%
+Slope comparison assumes the linear model is adequate.
+Nonsignificance does not establish equivalence.
+Only one calibration preparation per operator is available.
+
+============================================
+MODEL CHECK: LINEAR VS QUADRATIC
+
+Combined standards:
+Analysis of Variance Table
+
+Model 1: A ~ C
+Model 2: A ~ C + I(C^2)
+  Res.Df        RSS Df  Sum of Sq      F   Pr(>F)   
+1     10 0.00086912                                 
+2      9 0.00038258  1 0.00048654 11.445 0.008087 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Quadratic model coefficients:
+               Estimate  Std. Error   t value     Pr(>|t|)
+(Intercept) 0.001451786 0.004178421 0.3474484 0.7362414655
+C           0.487389286 0.078606858 6.2003405 0.0001588009
+I(C^2)      1.021071429 0.301813636 3.3831189 0.0080868662
+95% coefficient confidence intervals:
+                   2.5 %     97.5 %
+(Intercept) -0.008000458 0.01090403
+C            0.309568219 0.66521035
+I(C^2)       0.338321549 1.70382131
+
+Quadratic equation: A562_corrected = 0.00145179 + 0.48738929*C + 1.02107143*C^2
+Quadratic R-squared = 0.992212636
+Quadratic adjusted R-squared = 0.990482111
+
+Common curvature after allowing operator-specific intercepts and slopes:
+Analysis of Variance Table
+
+Model 1: A ~ C * Operator
+Model 2: A ~ C * Operator + I(C^2)
+  Res.Df        RSS Df  Sum of Sq      F  Pr(>F)  
+1      8 0.00077724                               
+2      7 0.00029070  1 0.00048654 11.716 0.01109 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+These are curvature checks, not proof of full method validity.
+No automatic model replacement or point deletion is performed.
+If curvature is supported, reconsider linear concentration estimates before final reporting.
+
+============================================
+UNKNOWN SAMPLE: LINEAR CALIBRATION
+
+ Sample  A_raw      A Dilution  C_assayed C_original Within_range                                    Status
+      7 0.3486 0.2551        1 0.35299888  0.3529989        FALSE Extrapolation: exclude from final summary
+     7' 0.3567 0.2632        1 0.36390567  0.3639057        FALSE Extrapolation: exclude from final summary
+      8 0.2143 0.1208        2 0.17216174  0.3443235         TRUE                  Within calibration range
+     8' 0.2244 0.1309        2 0.18576155  0.3715231         TRUE                  Within calibration range
+      9 0.1557 0.0622        4 0.09325588  0.3730235         TRUE                  Within calibration range
+     9' 0.1633 0.0698        4 0.10348940  0.4139576         TRUE                  Within calibration range
+
+Dilution-specific summaries:
+ Dilution N_readings Mean_assayed Mean_original SD_original CV_percent All_within_range
+        1          2   0.35845228     0.3584523  0.00771226   2.151544            FALSE
+        2          2   0.17896164     0.3579233  0.01923304   5.373510             TRUE
+        4          2   0.09837264     0.3934906  0.02894478   7.355902             TRUE
+
+C_assayed: diluted sample concentration before addition of BCA reagent.
+C_original = C_assayed * dilution factor (1, 2 or 4).
+No additional factor of 11 is applied: standards receive the same reagent dilution.
+Out-of-range results are extrapolations and must not enter the final concentration summary.
+Different dilutions are not independent biological samples.
+No pooled mean across all six readings is reported.
+BCA response slope is not the protein's A280 percent absorption coefficient.
+
+============================================
+STANDARD READINGS AND LINEAR RESIDUALS
+
+    C  A_raw       A       Operator     Residual
+ 0.00 0.0929 -0.0006   Standard 1-6  0.006457143
+ 0.00 0.0941  0.0006 Standard 1'-6'  0.007657143
+ 0.05 0.1222  0.0287   Standard 1-6 -0.001375714
+ 0.05 0.1217  0.0282 Standard 1'-6' -0.001875714
+ 0.10 0.1594  0.0659   Standard 1-6 -0.001308571
+ 0.10 0.1571  0.0636 Standard 1'-6' -0.003608571
+ 0.15 0.1956  0.1021   Standard 1-6 -0.002241429
+ 0.15 0.1885  0.0950 Standard 1'-6' -0.009341429
+ 0.20 0.2336  0.1401   Standard 1-6 -0.001374286
+ 0.20 0.2167  0.1232 Standard 1'-6' -0.018274286
+ 0.25 0.2854  0.1919   Standard 1-6  0.013292857
+ 0.25 0.2841  0.1906 Standard 1'-6'  0.011992857
+
+FIGURE NOTES
+d: Operator-specific linear calibrations.
+e: Combined linear calibration; grey standards and coloured unknown readings.
+Green squares: unprimed unknowns; purple diamonds: primed unknowns.
+Unknown shades identify dilution conditions; open symbols indicate extrapolation.
+The dashed extension beyond the standard range is extrapolation, not validated calibration.
+f: Individual residuals from the combined linear model.
+Figure P values test H0: slope = 0, not model adequacy.
+* P < 0.05; ** P < 0.01; *** P < 0.001; ns P >= 0.05.
+Standard concentration errors and shared preparation errors are not modelled.

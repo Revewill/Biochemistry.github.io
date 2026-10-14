@@ -1,0 +1,39 @@
+PROTEIN CONCENTRATION COMPARISON: PANEL h
+============================================
+
+A280 input: ./Data-Spec-14.10.26.csv 
+BCA input: ./Data-BCA-14.10.26.csv 
+BCA mean blank = 0.09350000
+All calibrations are linear and retain an intercept.
+Unit: mg/mL; dilution factors: 1, 2, 4.
+
+A280 calibration (BCA absorbance is blank-corrected):
+                Estimate  Std. Error    t value     Pr(>|t|)
+(Intercept) -0.003952381 0.001142162  -3.460437 6.118278e-03
+C            0.618571429 0.001886219 327.942482 1.709774e-21
+Residual SD = 0.00223180; R-squared = 0.999907025
+
+BCA calibration (BCA absorbance is blank-corrected):
+                Estimate  Std. Error   t value     Pr(>|t|)
+(Intercept) -0.007057143 0.004771037 -1.479163 1.698934e-01
+C            0.742657143 0.031516430 23.564126 4.295904e-10
+Residual SD = 0.00932269; R-squared = 0.982309278
+
+  Method N_readings Dilution   Estimate    Lower95    Upper95 Technical_SD Readings_within_range Interval_within_range
+    A280          2        1 0.39276366 0.38657551 0.39894192  0.000000000                  TRUE                  TRUE
+ BCA 1/2          2        2 0.35792329 0.31476156 0.40303229  0.019233043                  TRUE                  TRUE
+ BCA 1/4          2        4 0.39349056 0.30609539 0.47896395  0.028944778                  TRUE                  TRUE
+
+Bars: estimates from mean unknown absorbance.
+Error bars: 95% calibration intervals, NOT SD or SEM.
+Intervals invert prediction limits for the mean of the unknown readings.
+Assumptions: valid linear calibration; independent normal equal-variance response errors.
+Unknown response variance is estimated from calibration residuals.
+Standard concentrations and dilution factors are treated as exact.
+Pipetting, dilution uncertainty, shared preparation errors and model misspecification are not included.
+Identical A280 readings do not imply zero calibration uncertainty.
+BCA intervals are conditional on the linear model despite residual curvature.
+Both BCA estimates share a calibration; they are not independent biological groups.
+Undiluted BCA extrapolations are excluded; no pooled BCA estimate is reported.
+No significance test is performed; interval overlap does not establish equivalence.
+Method reference: https://www.itl.nist.gov/div898/handbook/pmd/section5/pmd521.htm

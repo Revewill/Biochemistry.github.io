@@ -1,0 +1,17 @@
+BCA DILUTION CONSISTENCY: PANEL g
+============================================
+
+Concentrations are calculated using the combined linear calibration.
+Original concentration = assayed concentration * dilution factor.
+Unit: mg/mL
+Bars: arithmetic means; error bars: +/- sample SD.
+Points: two technical readings per dilution condition.
+SD does not include calibration uncertainty.
+Open bars and points indicate extrapolation.
+Extrapolated results are displayed only, not included in a final concentration summary.
+No significance tests are performed.
+
+ Dilution N      Mean         SD Within_range
+        1 2 0.3584523 0.00771226        FALSE
+        2 2 0.3579233 0.01923304         TRUE
+        4 2 0.3934906 0.02894478         TRUE

@@ -1,8 +1,26 @@
 library(ggplot2)
 
+# Accept the original filename or one numbered downloaded copy.
+resolve_input <- function(filename) {
+  if (file.exists(filename)) return(filename)
+  stem <- sub("\\.csv$", "", filename)
+  candidates <- list.files(pattern = "\\.csv$", full.names = FALSE)
+  pattern <- paste0("^\\Q", stem, "\\E\\([0-9]+\\)\\.csv$")
+  hits <- candidates[grepl(pattern, candidates, perl = TRUE)]
+  if (length(hits) != 1) {
+    stop("Please specify the input filename: ", filename,
+         "; matching numbered copies: ", paste(hits, collapse = ", "))
+  }
+  hits
+}
+
+
 INPUT      <- "TrueData-30.09.26.csv"
 PEAKS_FILE <- "Peaks-30.09.26.csv"
 OUTPUT     <- "ElutionCurve-30.09.26.png"
+
+INPUT <- resolve_input(INPUT)
+PEAKS_FILE <- resolve_input(PEAKS_FILE)
 
 # ---------- 配色 ----------
 col_curve    <- "#8ED3F5"
@@ -156,7 +174,8 @@ p <- ggplot(df_s, aes(x = vol, y = uv)) +
 
   labs(
     x = "Elution volume (mL)",
-    y = "UV absorbance"
+    y = "UV absorbance",
+    tag = "a"
   ) +
 
   theme_void() +
@@ -173,6 +192,7 @@ p <- ggplot(df_s, aes(x = vol, y = uv)) +
       angle = 90,
       margin = margin(r = 10)
     ),
+    plot.tag = element_text(size = 13, face = "bold", colour = "#252A2E"),
     plot.margin = margin(10, 10, 10, 10)
   )
 

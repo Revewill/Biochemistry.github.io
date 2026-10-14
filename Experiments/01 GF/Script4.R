@@ -1,11 +1,31 @@
 library(ggplot2)
 
+# Accept the original filename or one numbered downloaded copy.
+resolve_input <- function(filename) {
+  if (file.exists(filename)) return(filename)
+  stem <- sub("\\.csv$", "", filename)
+  candidates <- list.files(pattern = "\\.csv$", full.names = FALSE)
+  pattern <- paste0("^\\Q", stem, "\\E\\([0-9]+\\)\\.csv$")
+  hits <- candidates[grepl(pattern, candidates, perl = TRUE)]
+  if (length(hits) != 1) {
+    stop("Please specify the input filename: ", filename,
+         "; matching numbered copies: ", paste(hits, collapse = ", "))
+  }
+  hits
+}
+
+
 INPUT      <- "RegressionData-30.09.26.csv"
 OUTPUT_TXT <- "Regression-30.09.26.txt"
 OUTPUT_PNG <- "Regression-30.09.26.png"
 
+INPUT <- resolve_input(INPUT)
+OUTPUT_RESIDUAL <- "Residuals-30.09.26.png"
+
 # ================= 读取 =================
 df <- read.csv(INPUT, header = TRUE, stringsAsFactors = FALSE)
+
+if (nrow(df) < 5 || ncol(df) < 5) stop("Unexpected regression table dimensions.")
 
 Table    <- df[2:nrow(df), ]
 Unknown  <- Table[3, ]
@@ -13,6 +33,8 @@ Table_wo <- Table[-3, ]
 
 x <- as.numeric(Table_wo[[3]])
 y <- as.numeric(Table_wo[[5]])
+
+if (any(!is.finite(c(x, y)))) stop("Invalid standard values.")
 
 # ================= 回归 =================
 fit <- lm(y ~ x)
@@ -47,6 +69,14 @@ kav_u   <- as.numeric(Unknown[[3]])
 logmw_u <- a * kav_u + b
 mw_u    <- 10^logmw_u
 
+# Observed minus fitted log10(MW/kDa), standards only.
+residual_table <- data.frame(
+  Kav = x, MW_kDa = as.numeric(Table_wo[[4]]),
+  Observed_logMW = y, Fitted_logMW = fitted(fit),
+  Residual = residuals(fit)
+)
+residual_table <- residual_table[order(residual_table$Kav), ]
+
 # ================= TXT 与控制台输出 =================
 report <- capture.output({
   cat("Linear regression: logMW = a * Kav + b\n")
@@ -72,6 +102,11 @@ report <- capture.output({
   for (i in seq_along(x)) {
     cat(sprintf("  (%.4f, %.6f)\n", x[i], y[i]))
   }
+
+  cat("\nStandard residuals (observed minus fitted log10(MW/kDa)):\n")
+  print(residual_table, row.names = FALSE, digits = 8)
+  cat("Panel c: one bar per standard; unknown excluded.\n")
+  cat("Only three standards and one residual degree of freedom; residuals are descriptive.\n")
 
   cat("\nUnknown protein:\n")
   cat(sprintf("  Kav      = %.4f\n", kav_u))
@@ -235,7 +270,8 @@ p <- ggplot(plot_df, aes(x, y)) +
 
   labs(
     x = expression(plain(K)[plain(av)]),
-    y = expression(plain(log)(plain(MW) / plain(kDa)))
+    y = expression(plain(log)(plain(MW) / plain(kDa))),
+    tag = "b"
   ) +
 
   theme_classic(
@@ -280,6 +316,7 @@ p <- ggplot(plot_df, aes(x, y)) +
       margin = margin(r = 8)
     ),
 
+    plot.tag = element_text(size = 13, face = "bold", colour = col_text),
     plot.margin = margin(12, 14, 10, 8)
   )
 
@@ -298,3 +335,66 @@ ggsave(
 
 cat("\n统计结果已保存:", OUTPUT_TXT, "\n")
 cat("图已保存:", OUTPUT_PNG, "\n")
+
+# ================= c: standard calibration residuals =================
+# Equal category spacing, as in Fig.2c; labels show each standard's Kav.
+# No residual is defined for the unknown protein without a known MW.
+residual_table$BarX <- seq_len(nrow(residual_table))
+residual_table$BarColour <- colorRampPalette(
+  c("#8ED3F5", "#59A9CE", "#226482")
+)(nrow(residual_table))
+
+res_max <- max(abs(residual_table$Residual))
+if (!is.finite(res_max) || res_max == 0) res_max <- 0.001
+res_breaks <- pretty(c(-res_max, res_max), n = 5)
+res_limits <- range(c(res_breaks, -res_max * 1.15, res_max * 1.15))
+
+p_c <- ggplot(residual_table) +
+  geom_col(
+    aes(x = BarX, y = Residual, fill = BarColour),
+    width = 0.60, colour = NA
+  ) +
+  geom_hline(yintercept = 0, colour = "#70777B", linewidth = 0.45) +
+  scale_fill_identity() +
+  scale_x_continuous(
+    breaks = residual_table$BarX,
+    labels = sprintf("%.4f", residual_table$Kav),
+    expand = expansion(mult = 0)
+  ) +
+  scale_y_continuous(
+    breaks = res_breaks,
+    labels = function(z) sprintf("%.3f", z),
+    expand = expansion(mult = 0)
+  ) +
+  coord_cartesian(
+    xlim = c(0.45, nrow(residual_table) + 0.55),
+    ylim = res_limits
+  ) +
+  labs(
+    x = expression(plain(K)[plain(av)]),
+    y = expression("Residual (" * plain(log)[10](plain(MW) / plain(kDa)) * ")"),
+    tag = "c"
+  ) +
+  theme_classic(base_size = 10, base_family = "sans") +
+  theme(
+    aspect.ratio = 1.55,
+    axis.line = element_line(colour = col_text, linewidth = 0.45),
+    axis.ticks = element_line(colour = col_text, linewidth = 0.4),
+    axis.ticks.length = grid::unit(1.5, "mm"),
+    axis.text = element_text(colour = col_text, size = 9),
+    axis.text.x = element_text(margin = margin(t = 4)),
+    axis.text.y = element_text(margin = margin(r = 4)),
+    axis.title = element_text(colour = col_text, size = 11),
+    axis.title.x = element_text(margin = margin(t = 8)),
+    axis.title.y = element_text(margin = margin(r = 8)),
+    plot.tag = element_text(size = 13, face = "bold", colour = col_text),
+    plot.margin = margin(12, 14, 10, 8),
+    legend.position = "none"
+  )
+
+print(p_c)
+ggsave(
+  filename = OUTPUT_RESIDUAL, plot = p_c,
+  width = 4.0, height = 5.7, units = "in", dpi = 600, bg = "white"
+)
+cat("Residual panel saved:", OUTPUT_RESIDUAL, "\n")

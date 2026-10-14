@@ -1,0 +1,135 @@
+SPECTROPHOTOMETRIC ASSAY: A280
+============================================
+
+Input: Data-Spec-14.10.26.csv 
+Concentration unit: mg/mL
+Model: A280 = intercept + slope * concentration
+All models retain an intercept.
+No additional blank subtraction was applied.
+Each operator prepared one six-level standard series.
+Unknown readings are technical measurements, not biological replicates.
+
+--------------------------------------------
+Standard 1-6 
+Equation: A280 = 0.61585714 * C - 0.00309524
+Number of readings = 6
+R-squared = 0.999921590
+Adjusted R-squared = 0.999901988
+Slope P (two-sided) = 2.3055801e-09 (***)
+Residual SD = 0.00228139
+Residual df = 4
+Coefficient estimates and tests:
+                Estimate  Std. Error    t value     Pr(>|t|)
+(Intercept) -0.003095238 0.001651152  -1.874593 1.341169e-01
+C            0.615857143 0.002726788 225.854407 2.305580e-09
+95% coefficient confidence intervals:
+                   2.5 %      97.5 %
+(Intercept) -0.007679572 0.001489096
+C            0.608286365 0.623427921
+E(1%, 1 cm) = 6.158571, assuming path length = 1.000 cm
+
+--------------------------------------------
+Standard 1'-6' 
+Equation: A280 = 0.62128571 * C - 0.00480952
+Number of readings = 6
+R-squared = 0.999941986
+Adjusted R-squared = 0.999927482
+Slope P (two-sided) = 1.2621437e-09 (***)
+Residual SD = 0.00197966
+Residual df = 4
+Coefficient estimates and tests:
+                Estimate  Std. Error    t value     Pr(>|t|)
+(Intercept) -0.004809524 0.001432772  -3.356797 2.838908e-02
+C            0.621285714 0.002366144 262.573031 1.262144e-09
+95% coefficient confidence intervals:
+                   2.5 %        97.5 %
+(Intercept) -0.008787536 -0.0008315121
+C            0.614716244  0.6278551844
+E(1%, 1 cm) = 6.212857, assuming path length = 1.000 cm
+
+--------------------------------------------
+Combined standards 
+Equation: A280 = 0.61857143 * C - 0.00395238
+Number of readings = 12
+R-squared = 0.999907025
+Adjusted R-squared = 0.999897728
+Slope P (two-sided) = 1.709774e-21 (***)
+Residual SD = 0.00223180
+Residual df = 10
+Coefficient estimates and tests:
+                Estimate  Std. Error    t value     Pr(>|t|)
+(Intercept) -0.003952381 0.001142162  -3.460437 6.118278e-03
+C            0.618571429 0.001886219 327.942482 1.709774e-21
+95% coefficient confidence intervals:
+                   2.5 %       97.5 %
+(Intercept) -0.006497278 -0.001407484
+C            0.614368670  0.622774187
+E(1%, 1 cm) = 6.185714, assuming path length = 1.000 cm
+
+============================================
+BETWEEN-OPERATOR SLOPE COMPARISON
+
+Reduced model: A ~ C + Operator
+Full model: A ~ C * Operator
+Analysis of Variance Table
+
+Model 1: A ~ C + Operator
+Model 2: A ~ C * Operator
+  Res.Df        RSS Df  Sum of Sq     F Pr(>F)
+1      9 4.6810e-05                           
+2      8 3.6495e-05  1 1.0314e-05 2.261 0.1711
+
+Slope difference: second operator minus first operator
+                            Estimate  Std. Error  t value  Pr(>|t|)
+C:OperatorStandard 1'-6' 0.005428571 0.003610265 1.503649 0.1710803
+95% confidence interval for slope difference:
+                                2.5 %     97.5 %
+C:OperatorStandard 1'-6' -0.002896715 0.01375386
+
+Relative slope difference (symmetric) = 0.8776%
+A nonsignificant interaction does not establish equivalence.
+Inference is conditional on the linear-model assumptions.
+Results describe these two preparations, not general operator performance.
+
+============================================
+UNKNOWN SAMPLE: COMBINED CALIBRATION
+
+     Sample     A         C Within_range
+  Unknown 7 0.239 0.3927637         TRUE
+ Unknown 7' 0.239 0.3927637         TRUE
+
+Mean concentration = 0.39276366 mg/mL
+Technical SD = 0.00000000 mg/mL
+Technical CV = 0.00000%
+Mean concentration, two significant figures = 0.39 mg/mL
+Identical recorded readings do not imply zero measurement uncertainty.
+No additional sample dilution factor has been applied.
+Unknowns are not included in standard-curve fitting.
+
+============================================
+STANDARD READINGS AND COMBINED-MODEL RESIDUALS
+
+   C      A       Operator      Residual
+ 0.0  0.000   Standard 1-6  0.0039523810
+ 0.0 -0.005 Standard 1'-6' -0.0010476190
+ 0.2  0.118   Standard 1-6 -0.0017619048
+ 0.2  0.118 Standard 1'-6' -0.0017619048
+ 0.4  0.241   Standard 1-6 -0.0024761905
+ 0.4  0.247 Standard 1'-6'  0.0035238095
+ 0.6  0.366   Standard 1-6 -0.0011904762
+ 0.6  0.367 Standard 1'-6' -0.0001904762
+ 0.8  0.490   Standard 1-6 -0.0009047619
+ 0.8  0.491 Standard 1'-6'  0.0000952381
+ 1.0  0.614   Standard 1-6 -0.0006190476
+ 1.0  0.617 Standard 1'-6'  0.0023809524
+
+Figure P values test H0: slope = 0.
+* P < 0.05; ** P < 0.01; *** P < 0.001; ns P >= 0.05.
+Each residual bar represents one reading.
+No per-concentration residual tests are performed.
+Point coordinates in panels a and b are unchanged.
+
+FIGURE PANEL DESCRIPTIONS
+a: Separate linear calibrations for the two standard preparations.
+b: Combined calibration and unknown-sample interpolation.
+c: Individual residuals from the combined calibration.

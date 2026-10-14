@@ -19,6 +19,14 @@ Data points used (Kav, logMW):
   (0.1690, 1.653210)
   (0.3769, 1.136720)
 
+Standard residuals (observed minus fitted log10(MW/kDa)):
+    Kav MW_kDa Observed_logMW Fitted_logMW      Residual
+ 0.1103   67.0        1.82607    1.8161474  0.0099225834
+ 0.1690   45.0        1.65321    1.6659342 -0.0127241978
+ 0.3769   13.7        1.13672    1.1339184  0.0028016145
+Panel c: one bar per standard; unknown excluded.
+Only three standards and one residual degree of freedom; residuals are descriptive.
+
 Unknown protein:
   Kav      = 0.2976
   logMW    = 1.336847
