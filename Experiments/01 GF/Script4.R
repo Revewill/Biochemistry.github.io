@@ -372,7 +372,7 @@ p_c <- ggplot(residual_table) +
   ) +
   labs(
     x = expression(plain(K)[plain(av)]),
-    y = expression("Residual (" * plain(log)[10](plain(MW) / plain(kDa)) * ")"),
+    y = expression("Residual (" * plain(log)(plain(MW) / plain(kDa)) * ")"),
     tag = "c"
   ) +
   theme_classic(base_size = 10, base_family = "sans") +
