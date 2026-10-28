@@ -1,0 +1,4 @@
+"model","parameter","estimate","equation"
+"Power","a",-0.266136135482723,"y = a + b*D^(-q)"
+"Power","b",5.66238209856632,"y = a + b*D^(-q)"
+"Power","q",0.268876072140957,"y = a + b*D^(-q)"

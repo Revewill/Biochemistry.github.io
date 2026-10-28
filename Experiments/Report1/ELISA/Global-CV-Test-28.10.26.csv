@@ -1,0 +1,2 @@
+"test","groups","wells_per_group","statistic","P_value","common_CV_percent","bootstrap_requested","bootstrap_valid","Monte_Carlo_SE","seed"
+"Equal-CV normal-model parametric-bootstrap LRT",7,3,7.17872205710415,0.6774,6.0763520665127,4999,4999,0.00661103985769259,281026

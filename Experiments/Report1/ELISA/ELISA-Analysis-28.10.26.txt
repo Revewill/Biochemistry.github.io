@@ -1,0 +1,179 @@
+ELISA | 28.10.26
+========================
+
+INPUT
+/root/data/ELISA/Data-28.10.26.csv 
+
+UNITS
+D denotes the dilution denominator.
+Relative antibody fraction = 1/D.
+No absolute antibody concentration is reported.
+Panel c uses a linear relative-concentration axis (1/D), labelled as dilution ratios.
+The curve is drawn only within the measured standard range.
+BACKGROUND CORRECTION
+No-primary mean = 0.04166667; SD = 0.01855622; n = 3.
+The common no-primary mean is subtracted from standards and sample A.
+No-antigen and no-blocking controls are not additionally subtracted.
+
+MODEL COMPARISON
+                  model        R2       AICc  LOCO_RMSE boundary validation_stable delta_AICc selected
+                    Log 0.9531919  -99.05629 0.07823079    FALSE              TRUE   5.305474    FALSE
+              Hyperbola 0.9689650 -103.09060 0.06423810    FALSE              TRUE   1.271155    FALSE
+                  Power 0.9710811 -104.36176 0.05354995    FALSE              TRUE   0.000000     TRUE
+ Exponential saturation 0.9641265 -100.48270 0.08868036    FALSE              TRUE   3.879060    FALSE
+                    4PL 0.9712259 -100.52902         NA    FALSE             FALSE   3.832737    FALSE
+
+Selected model: Power 
+Selection uses stable leave-one-concentration-level-out response RMSE.
+Sample A was excluded from model fitting and selection.
+AICc omits a common Gaussian constant.
+R2 = 1 - RSS/TSS and is descriptive for nonlinear models.
+
+SELECTED MODEL IN DILUTION COORDINATES
+y = a + b*D^(-q) 
+y denotes background-corrected A490.
+ model parameter    estimate         equation
+ Power         a -0.26613614 y = a + b*D^(-q)
+ Power         b  5.66238210 y = a + b*D^(-q)
+ Power         q  0.26887607 y = a + b*D^(-q)
+
+CALIBRATION ASSOCIATION TEST
+
+	Spearman's rank correlation rho
+
+data:  level_means$conc and level_means$y
+S = 0, p-value = 0.002778
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+rho 
+  1 
+
+The displayed two-sided P tests monotonic association across six level means.
+It is not a test of nonlinear-model goodness of fit.
+Replacing relative content with dilution denominator reverses the association
+sign but leaves this two-sided P value unchanged.
+
+STANDARD FIT AND RESIDUALS
+ well row denominator relative_fraction corrected    fitted    residual
+   B2   B         400        2.5000e-03 0.9173333 0.8646162  0.05271711
+   C2   C         400        2.5000e-03 0.8943333 0.8646162  0.02971711
+   D2   D         400        2.5000e-03 0.7913333 0.8646162 -0.07328289
+   B3   B         800        1.2500e-03 0.6843333 0.6723497  0.01198360
+   C3   C         800        1.2500e-03 0.6403333 0.6723497 -0.03201640
+   D3   D         800        1.2500e-03 0.6453333 0.6723497 -0.02701640
+   B4   B        1600        6.2500e-04 0.4543333 0.5127751 -0.05844178
+   C4   C        1600        6.2500e-04 0.5983333 0.5127751  0.08555822
+   D4   D        1600        6.2500e-04 0.5423333 0.5127751  0.02955822
+   B5   B        3200        3.1250e-04 0.3673333 0.3803336 -0.01300029
+   C5   C        3200        3.1250e-04 0.4233333 0.3803336  0.04299971
+   D5   D        3200        3.1250e-04 0.3873333 0.3803336  0.00699971
+   B6   B        6400        1.5625e-04 0.2263333 0.2704117 -0.04407837
+   C6   C        6400        1.5625e-04 0.2353333 0.2704117 -0.03507837
+   D6   D        6400        1.5625e-04 0.2463333 0.2704117 -0.02407837
+   B7   B       12800        7.8125e-05 0.1923333 0.1791803  0.01315307
+   C7   C       12800        7.8125e-05 0.2103333 0.1791803  0.03115307
+   D7   D       12800        7.8125e-05 0.1823333 0.1791803  0.00315307
+
+SAMPLE A: INDIVIDUAL BACKCALCULATIONS
+ well row corrected estimated_fraction estimated_denominator recovery_percent
+   B8   B 0.4663333       0.0004972600              2011.020         99.45200
+   C8   C 0.4403333       0.0004347171              2300.347         86.94342
+   D8   D 0.3883333       0.0003271258              3056.928         65.42517
+
+SAMPLE A: SUMMARY
+ nominal_denominator mean_denominator SD_denominator CV_denominator_percent denominator_of_mean_relative_fraction mean_relative_fraction SD_relative_fraction
+                2000         2456.098       540.0689                21.9889                              2382.649            0.000419701         8.605534e-05
+ CV_relative_fraction_percent recovery_percent relative_content_bias_percent
+                     20.50396          83.9402                      -16.0598
+
+Panel f shows the mean and sample SD of individual dilution-denominator estimates.
+Mean(1/D) is not equal to 1/mean(D).
+Recovery = mean[(1/D_estimated)/(1/2000)] * 100.
+Recovery is therefore not calculated from the ratio of the two bar heights.
+The nominal value has no assigned uncertainty bar.
+Measured SD describes technical-well spread, not total calibration uncertainty.
+
+GROUP SUMMARY AND REPEATABILITY
+ col   mean_raw      SD_raw variance_raw    CV_raw mean_corrected SD_corrected           condition
+   2 0.90933333 0.067099429 4.502333e-03  7.378969    0.867666667  0.067099429      Standard 1:400
+   3 0.69833333 0.024090109 5.803333e-04  3.449658    0.656666667  0.024090109      Standard 1:800
+   4 0.57333333 0.072590174 5.269333e-03 12.661077    0.531666667  0.072590174     Standard 1:1600
+   5 0.43433333 0.028378396 8.053333e-04  6.533783    0.392666667  0.028378396     Standard 1:3200
+   6 0.27766667 0.010016653 1.003333e-04  3.607438    0.236000000  0.010016653     Standard 1:6400
+   7 0.23666667 0.014189198 2.013333e-04  5.995436    0.195000000  0.014189198    Standard 1:12800
+   8 0.47333333 0.039715656 1.577333e-03  8.390632    0.431666667  0.039715656            Sample A
+   9 0.04166667 0.018556221 3.443333e-04 44.534930    0.000000000  0.018556221 No primary antibody
+  10 0.85000000 0.040000000 1.600000e-03  4.705882    0.808333333  0.040000000         No blocking
+  11 0.03333333 0.001527525 2.333333e-06  4.582576   -0.008333333  0.001527525          No antigen
+
+Raw CV = sample SD/raw group mean * 100.
+A common background subtraction leaves within-group SD unchanged.
+Panel e colours represent mean raw A490 using the panel b colour scale.
+
+GLOBAL EQUALITY-OF-CV TEST
+                                           test groups wells_per_group statistic P_value common_CV_percent bootstrap_requested bootstrap_valid Monte_Carlo_SE
+ Equal-CV normal-model parametric-bootstrap LRT      7               3  7.178722  0.6774          6.076352                4999            4999     0.00661104
+   seed
+ 281026
+
+Exploratory normal-model likelihood-ratio test calibrated by parametric bootstrap.
+H0: the six standard groups and sample A have equal population CVs.
+Group means may differ under both hypotheses.
+Independent normal technical wells are assumed; each group contains only three wells.
+Non-significance does not establish equivalence or good repeatability.
+No pairwise CV comparisons or tests against zero CV were performed.
+
+BLOCKING COMPARISON
+ mean_blocked SD_blocked mean_unblocked SD_unblocked unblocked_minus_blocked change_percent  Welch_t Welch_df  P_value
+    0.9093333 0.06709943           0.85         0.04             -0.05933333      -6.524927 1.315562 3.262097 0.273146
+
+Exploratory Welch test assumes independent technical wells.
+No row pairing is assumed.
+This comparison concerns total signal, not isolated nonspecific binding.
+Non-significance does not establish that blocking has no effect.
+
+FIGURE PANELS
+a: blank space for the experimental schematic.
+b: raw plate map with a separate local colour scale.
+c: calibration against relative concentration (1/D), labelled as dilution ratios; yellow diamonds show A.
+d: individual standard residuals.
+e: raw CV bars and global equality-of-CV P value.
+f: nominal vs measured dilution denominator; measured error bar is SD.
+g: blocked vs unblocked means +/- SD with Welch P.
+
+OUTPUT FILES
+ELISA-Figure-28.10.26.tiff: complete lossless figure.
+Model-Comparison-28.10.26.csv: comparison of candidate models.
+Selected-Model-Parameters-28.10.26.csv: selected equation and parameters.
+Standard-Fit-and-Residuals-28.10.26.csv: standard predictions and residuals.
+Sample-A-Backcalculation-28.10.26.csv: individual sample A estimates.
+Sample-A-Summary-28.10.26.csv: mean, SD, CV and recovery of sample A.
+Group-Summary-and-CV-28.10.26.csv: group summaries and repeatability.
+Global-CV-Test-28.10.26.csv: global CV comparison.
+Blocking-Comparison-28.10.26.csv: blocking comparison and test.
+
+SESSION INFORMATION
+R version 4.5.3 (2026-03-11)
+Platform: x86_64-conda-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /root/miniconda3/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8        LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C           LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] patchwork_1.3.2 ggplot2_4.0.3  
+
+loaded via a namespace (and not attached):
+ [1] labeling_0.4.3     RColorBrewer_1.1-3 R6_2.6.1           tidyselect_1.2.1   farver_2.1.2       magrittr_2.0.5     gtable_0.3.6       glue_1.8.1        
+ [9] tibble_3.3.1       pkgconfig_2.0.3    dplyr_1.2.1        generics_0.1.4     lifecycle_1.0.5    cli_3.6.6          S7_0.2.1           scales_1.4.0      
+[17] grid_4.5.3         vctrs_0.7.3        withr_3.0.2        compiler_4.5.3     tools_4.5.3        pillar_1.11.1      rlang_1.2.0       
